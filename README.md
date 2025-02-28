@@ -72,7 +72,7 @@ OmniDocBench is *“a benchmark for evaluating diverse document parsing in real-
 **Notable features:** OmniDocBench covers a wide variety of document types and layouts, comprising **981 PDF pages across 9 document types, 4 layout styles, and 3 languages**. It provides **rich annotations**: over 20k block-level elements (paragraphs, headings, tables, etc.) and 80k+ span-level elements (lines, formulas, etc.), including reading order and various attribute tags for pages, text, and tables. The dataset undergoes strict quality control (combining manual annotation, intelligent assistance, and expert review for high accuracy). OmniDocBench also comes with **evaluation code** for fair, end-to-end comparisons of document parsing methods. It supports multiple evaluation tasks (overall extraction, layout detection, table recognition, formula recognition, OCR text recognition) and standard metrics (Normalized Edit Distance, BLEU, METEOR, TEDS, COCO mAP/mAR, etc.) to benchmark performance across different aspects of document parsing.
 
 
-### End-to-End Evaluation
+**End-to-End Evaluation**
 
 End-to-end evaluation assesses the model's accuracy in parsing PDF page content. The evaluation uses the model's Markdown output of the entire PDF page parsing results as the prediction.
 
