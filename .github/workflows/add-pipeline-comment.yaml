@@ -71,10 +71,14 @@ jobs:
                 'Additional Notes': 'additional_notes'
               };
             
+              function escapeRegExp(string) {
+                  return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); // Escapes special regex characters
+              }
+            
               function extractField(label) {
-                const regex = new RegExp(`### ${label}\\n\\n(.*?)(?=\\n### |$)`, 's');
+                const escapedLabel = escapeRegExp(label);  // Ensure special characters in the label are escaped
+                const regex = new RegExp(`### ${escapedLabel}\\n\\n(.*?)(?=\\n### |$)`, 's');
                 const match = issue.body.match(regex);
-                console.log(`Extracting field: ${label}, Match: ${match}`);
                 return match && match[1].trim() !== "_No response_" ? match[1].trim() : '';
               }
             
