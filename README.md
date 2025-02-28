@@ -513,6 +513,16 @@ that aligns text with ground truth text segments, and an LLM as a judge scoring 
 | mathpix    | 6.36223  | 86.4281         | 4.15626   |
 | docling    | 3.69949  | 86.7073         | 3.70429   |
 
+### [Actualize pro](https://www.actualize.pro/recourses/unlocking-insights-from-pdfs-a-comparative-study-of-extraction-tools)
+
+[![GitHub last commit](https://img.shields.io/github/last-commit/actualize-ae/pdf-benchmarking?label=GitHub&logo=github)](https://github.com/actualize-ae/pdf-benchmarking)
+
+> In the digital age, PDF documents remain a cornerstone for disseminating and archiving information.
+> However, extracting meaningful data from these structured and unstructured formats continues to challenge modern AI systems.
+> Our recent benchmarking study evaluated seven prominent PDF extraction tools to determine their capabilities across diverse document types and applications.
+
+TODO
+
 <!---
 ## Extraction Properties
 
