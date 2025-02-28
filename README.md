@@ -79,9 +79,39 @@ License: Apache 2.0
 Primary language: Python
 -->
 
-The olmOCR project provides an **evaluation toolkit** (`runeval.py`) for side-by-side comparison of PDF conversion pipeline outputs. This tool allows researchers to directly compare text extraction results from different pipeline versions against a gold-standard reference.
+The olmOCR project provides an **evaluation toolkit** (`runeval.py`) for side-by-side comparison of PDF conversion pipeline outputs. This tool allows researchers to directly compare text extraction results from different pipeline versions against a gold-standard reference. Also olmoOCR authors made some evalutions in their [technical report](https://olmocr.allenai.org/papers/olmocr.pdf).
 
-**Notable features:** This evaluation script generates a set of accuracy scores by comparing OCR outputs to ground-truth data. It is designed for easy **side-by-side evaluation**, producing metrics and even visual HTML reports for qualitative review of differences. By providing a standardized way to assess OCR pipeline performance, *olmOCR eval* helps validate improvements and ensures fair comparisons between different OCR approaches. (Note: *olmOCR eval* is part of the `allenai/olmocr` repository, not a standalone project.)
+
+> We then sampled 2,000 comparison pairs (same PDF, different tool). We asked 11 data researchers and
+engineers at Ai2 to assess which output was the higher quality representation of the original PDF, focusing on
+reading order, comprehensiveness of content and representation of structured information. The user interface
+used is similar to that in Figure 5. Exact participant instructions are listed in Appendix B.
+> 
+> Figure 6 ELO ranking of olmOCR vs other popular PDF content extraction tools.
+
+| OCR Tool  | Median Score | Interquartile Range |
+|-----------|--------------|---------------------|
+| olmOCR    | **~1850**    | **~1750 - 1900**    |
+| MinerU    | ~1550        | ~1400 - 1650        |
+| Marker    | ~1400        | ~1300 - 1500        |
+| GOTOCOR   | ~1250        | ~1150 - 1350        |
+
+<br/>
+
+> Table 7: Pairwise Win/Loss Statistics Between Models
+
+| Model Pair              | Wins   | Win Rate (%) |
+|-------------------------|--------|-------------|
+| olmOCR vs. Marker      | 49/31  | **61.3**    |
+| olmOCR vs. GOTOCOR     | 41/29  | **58.6**    |
+| olmOCR vs. MinerU      | 55/22  | **71.4**    |
+| Marker vs. MinerU      | 53/26  | 67.1        |
+| Marker vs. GOTOCOR     | 45/26  | 63.4        |
+| GOTOCOR vs. MinerU     | 38/37  | 50.7        |
+| **Total**              | **452** |             |
+
+
+
 
 ### Marker benchmarks
 [![GitHub last commit](https://img.shields.io/github/last-commit/VikParuchuri/marker?label=GitHub&logo=github)](https://github.com/VikParuchuri/marker?tab=readme-ov-file#benchmarks)
