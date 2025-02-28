@@ -13,16 +13,18 @@ contents [by default](https://github.blog/changelog/2021-04-13-table-of-contents
 
 ## Comparison
 
-| Pipeline                  | [OmniDocBench](#omnidocbench) - Overall Edit ↓ | [olmOCR Eval](#olmoocr-eval) - Elo Rating ↑ | [Marker Bench](#marker-benchmarks) - Overall Edit ↓ |
-|---------------------------|------------------------------------------------|---------------------------------------------|-----------------------------------------------------|
-| [MinerU](#MinerU)         | **0.150**    ⚠️                                | 1545.2                                      | -                                                   |
-| [Marker](#Marker)         | 0.336                                          | 1429.1                                      | **4.23916**  ⚠️                                     |
-| [Mathpix](#Mathpix)       | 0.189                                          | -                                           | 4.15626                                             |
-| [DocLing](#DocLing)       | 0.589                                          | -                                           | 3.70429                                             |
-| [GOT-OCR](#GOT-OCR)       | 0.289                                          | 1212.7                                      | -                                                   |
-| [olmOCR](#olmOCR)         | -                                              | **1813.0**   ⚠️                             | -                                                   |
-| [LlamaParse](#LlamaParse) | -                                              | -                                           | 3.97619                                             |
-| [MarkItDown](#MarkItDown) | -                                              | -                                           | -                                                   |
+| Pipeline                  | [OmniDocBench](#omnidocbench) - Overall Edit ↓ | [olmOCR Eval](#olmoocr-eval) - Elo Rating ↑ | [Marker Bench](#marker-benchmarks) - Overall Edit ↓ | [Actualize.pro](#actualize-pro) Score ↑  |
+|---------------------------|------------------------------------------------|---------------------------------------------|-----------------------------------------------------|:-----------------------------------------|
+| [MinerU](#MinerU)         | **0.150**    ⚠️                                | 1545.2                                      | -                                                   | **8**                                    |
+| [Marker](#Marker)         | 0.336                                          | 1429.1                                      | **4.23916**  ⚠️                                     | 6.5                                      |
+| [Mathpix](#Mathpix)       | 0.189                                          | -                                           | 4.15626                                             | -                                        |
+| [DocLing](#DocLing)       | 0.589                                          | -                                           | 3.70429                                             | 7.3                                      |
+| [GOT-OCR](#GOT-OCR)       | 0.289                                          | 1212.7                                      | -                                                   | -                                        |
+| [olmOCR](#olmOCR)         | -                                              | **1813.0**   ⚠️                             | -                                                   | -                                        |
+| [LlamaParse](#LlamaParse) | -                                              | -                                           | 3.97619                                             | 7.1                                      |
+| [MarkItDown](#MarkItDown) | -                                              | -                                           | -                                                   | 7.78                                     |
+| Xerox                     | -                                              | -                                           | -                                                   | 7.9                                      |
+| Unstructured              | -                                              | -                                           | -                                                   | 6.2                                      |
 
 - **Bold** indicates the best result for a given metric.
 - "-" means the pipeline was not evaluated in that benchmark.
@@ -518,10 +520,20 @@ that aligns text with ground truth text segments, and an LLM as a judge scoring 
 [![GitHub last commit](https://img.shields.io/github/last-commit/actualize-ae/pdf-benchmarking?label=GitHub&logo=github)](https://github.com/actualize-ae/pdf-benchmarking)
 
 > In the digital age, PDF documents remain a cornerstone for disseminating and archiving information.
-> However, extracting meaningful data from these structured and unstructured formats continues to challenge modern AI systems.
-> Our recent benchmarking study evaluated seven prominent PDF extraction tools to determine their capabilities across diverse document types and applications.
+> However, extracting meaningful data from these structured and unstructured formats continues to challenge modern AI
+> systems.
+> Our recent benchmarking study evaluated seven prominent PDF extraction tools to determine their capabilities across
+> diverse document types and applications.
 
-TODO
+| PDF Parser   | Overall Score (out of 10) | Text Extraction Accuracy (Score out of 10) | Table Extraction Accuracy (Score out of 10) | Reading Order Accuracy (Score out of 10) | Markdown Conversion Accuracy (Score out of 10) | Code and Math Equations Extraction (Score out of 10) | Image Extraction Accuracy (Score out of 10) |
+|--------------|---------------------------|--------------------------------------------|---------------------------------------------|------------------------------------------|------------------------------------------------|------------------------------------------------------|---------------------------------------------|
+| MinerU       | 8                         | 9.3                                        | 7.3                                         | 8.7                                      | 8.3                                            | 6.5                                                  | 7                                           |
+| Xerox        | 7.9                       | 8.7                                        | 7.7                                         | 9                                        | 8.7                                            | 7                                                    | 6                                           |
+| MarkItdown   | 7.78                      | 9                                          | 6.83                                        | 9                                        | 7.67                                           | 7.83                                                 | 5.83                                        |
+| Docling      | 7.3                       | 8.7                                        | 6.3                                         | 9                                        | 8                                              | 6.5                                                  | 5                                           |
+| Llama parse  | 7.1                       | 7.3                                        | 7.7                                         | 8.7                                      | 7.3                                            | 6                                                    | 5.3                                         |
+| Marker       | 6.5                       | 7.3                                        | 5.7                                         | 7.3                                      | 6.7                                            | 4.5                                                  | 6.7                                         |
+| Unstructured | 6.2                       | 7.3                                        | 5                                           | 8.3                                      | 6.7                                            | 5                                                    | 4.7                                         |
 
 <!---
 ## Extraction Properties
