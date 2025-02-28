@@ -5,9 +5,14 @@
 
 This repository provides an overview of selected **pipeline** and **benchmark** repositories related to PDF/OCR document processing. Each entry includes a brief description, latest commit date, contributor count, license, primary language, and notable features for quick reference.
 
+## Table of contents
+
+Did you know that GitHub supports table of
+contents [by default](https://github.blog/changelog/2021-04-13-table-of-contents-support-in-markdown-files/) 🤔
+
 ## Pipelines
 
-### MinerU
+### [MinerU](https://github.com/opendatalab/MinerU)
 [![GitHub last commit](https://img.shields.io/github/last-commit/opendatalab/MinerU?label=GitHub&logo=github)](https://github.com/opendatalab/MinerU)
 ![GitHub License](https://img.shields.io/github/license/opendatalab/MinerU)
 [![Demo](https://img.shields.io/badge/DEMO-black?logo=huggingface)](https://huggingface.co/spaces/opendatalab/MinerU)
@@ -20,7 +25,7 @@ MinerU is described as *“a high-quality tool for convert PDF to Markdown and J
 
 **Notable features:** Provides a new API with composable processing stages and a `Dataset` class supporting multiple document formats (images, PDFs, Word, PPT, etc.). It includes advanced capabilities like automatic language identification for OCR (selecting the appropriate model from 84 supported languages). MinerU has a focus on performance and compatibility (optimized for ARM Linux and integrated with Huawei Ascend NPU for acceleration) and implements robust layout analysis (e.g. reading order with `layoutreader`) and table recognition modules to improve parsing accuracy.
 
-### Marker
+### [Marker](https://github.com/VikParuchuri/marker)
 [![GitHub last commit](https://img.shields.io/github/last-commit/VikParuchuri/marker?label=GitHub&logo=github)](https://github.com/VikParuchuri/marker)
 ![GitHub License](https://img.shields.io/github/license/VikParuchuri/marker)
 [![Demo](https://img.shields.io/badge/DEMO%20after%20registration-black?logo=awwwards)](https://olmocr.allenai.org/)
@@ -35,7 +40,7 @@ Marker *“converts PDFs and images to markdown, JSON, and HTML quickly and accu
 
 **Notable features:** Marker supports complex document elements: it properly formats tables, forms, equations, inline math, links, references, and code blocks. It also extracts and saves images and removes common artifacts (headers, footers, etc.). The tool is extensible with user-defined formatting logic, and it offers an optional hybrid mode that uses LLM assistance (`--use_llm`) to boost accuracy (e.g. merging tables across pages, handling complex math). Marker is flexible in execution, working on GPU, CPU, or Apple’s MPS, and provides high throughput in batch processing scenarios.
 
-### markitdown by Microsoft
+### [markitdown by Microsoft](https://github.com/microsoft/markitdown)
 [![GitHub last commit](https://img.shields.io/github/last-commit/microsoft/markitdown?label=GitHub&logo=github)](https://github.com/microsoft/markitdown)
 ![GitHub License](https://img.shields.io/github/license/microsoft/markitdown)
 <!--- 
@@ -47,7 +52,7 @@ MarkItDown is a Python-based utility for converting various files to Markdown. *
 
 **Notable features:** The tool is currently in alpha (v0.0.2a1) and recently introduced a plugin-based architecture for extensibility. Despite its early stage, MarkItDown emphasizes broad format coverage, allowing conversion of Office documents, PDFs, images, and even audio to Markdown in a single workflow. It supports third-party plugins (disabled by default) which can be enabled via command-line (`--use-plugins`), and it provides a mechanism to discover plugins (search by `#markitdown-plugin`) for extending its capabilities.
 
-### olmoOCR
+### [olmoOCR](https://github.com/allenai/olmocr)
 [![GitHub last commit](https://img.shields.io/github/last-commit/allenai/olmocr?label=GitHub&logo=github)](https://github.com/allenai/olmocr)
 ![GitHub License](https://img.shields.io/github/license/allenai/olmocr)
 [![Demo](https://img.shields.io/badge/DEMO-black?logo=awwwards)](https://olmocr.allenai.org/)
@@ -62,7 +67,7 @@ olmOCR is a **toolkit for linearizing PDFs for LLM datasets/training**. In other
 **Notable features:** This toolkit includes multiple components for high-quality PDF-to-text conversion. Key features outlined by the project include a prompting strategy for superior natural text extraction using ChatGPT-4, a **side-by-side evaluation toolkit** to compare different pipeline versions, language filtering and spam removal, and fine-tuning code for vision-language models. It supports large-scale processing, capable of converting millions of PDFs in parallel using a distributed pipeline (with integration of *sglang* for efficient GPU inference). Additionally, olmOCR provides a viewer to inspect extracted results in context (Dolma JSONL outputs with an HTML preview), facilitating easier validation of the conversion results.
 
 ## Benchmarks
-### OmniDocBench by MinerU devs
+### [OmniDocBench by MinerU devs](https://github.com/opendatalab/OmniDocBench)
 [![GitHub last commit](https://img.shields.io/github/last-commit/opendatalab/OmniDocBench?label=GitHub&logo=github)](https://github.com/opendatalab/OmniDocBench)
 ![GitHub License](https://img.shields.io/github/license/opendatalab/OmniDocBench)
 <!--- 
@@ -272,7 +277,7 @@ End-to-end evaluation assesses the model's accuracy in parsing PDF page content.
   Comprehensive evaluation of document parsing algorithms on OmniDocBench: performance metrics for text, formula, table, and reading order extraction, with overall scores derived from ground truth comparisons.
 </p>
 
-### olmoOCR eval
+### [olmoOCR eval](https://github.com/allenai/olmocr)
 [![GitHub last commit](https://img.shields.io/github/last-commit/allenai/olmocr?label=GitHub&logo=github)](https://github.com/allenai/olmocr)
 ![GitHub License](https://img.shields.io/github/license/allenai/olmocr)
 <!--- 
@@ -314,7 +319,7 @@ used is similar to that in Figure 5. Exact participant instructions are listed i
 
 
 
-### Marker benchmarks
+### [Marker benchmarks](https://github.com/VikParuchuri/marker?tab=readme-ov-file#benchmarks)
 [![GitHub last commit](https://img.shields.io/github/last-commit/VikParuchuri/marker?label=GitHub&logo=github)](https://github.com/VikParuchuri/marker?tab=readme-ov-file#benchmarks)
 ![GitHub License](https://img.shields.io/github/license/VikParuchuri/marker)
 <!--- 

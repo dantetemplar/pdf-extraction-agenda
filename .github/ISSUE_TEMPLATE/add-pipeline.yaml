@@ -9,7 +9,13 @@ body:
       placeholder: "Example: MinerU"
     validations:
       required: true
-  
+
+  - type: input
+    id: url
+    attributes:
+      label: "URL"
+      placeholder: "Example: https://github.com/opendatalab/MinerU or https://mathpix.com/"
+
   - type: input
     id: github_url
     attributes:

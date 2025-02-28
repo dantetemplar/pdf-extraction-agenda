@@ -23,6 +23,7 @@ jobs:
 
             const fields = {
               'Pipeline Name': 'name',
+              'URL': 'url',
               'GitHub URL': 'github_url',
               'License': 'license',
               'Primary Language': 'primary_language',
@@ -42,9 +43,9 @@ jobs:
               extractedData[id] = (match && match[1].trim() !== "_No response_") ? match[1].trim() : '';
             }
 
-            const { name, github_url, license, primary_language, pipeline_description, demo_link, benchmarked, benchmark_results, additional_notes } = extractedData;
+            const { name, url, github_url, license, primary_language, pipeline_description, demo_link, benchmarked, benchmark_results, additional_notes } = extractedData;
 
-            const formattedOutput = `### ${name}
+            const formattedOutput = `### $[{name}](${url})
             [![GitHub last commit](https://img.shields.io/github/last-commit/${github_url.replace('https://github.com/', '')}?label=GitHub&logo=github)](${github_url})
             ![GitHub License](https://img.shields.io/github/license/${github_url.replace('https://github.com/', '')})
             ${demo_link ? `[![Demo](https://img.shields.io/badge/DEMO-black?logo=awwwards)](${demo_link})` : ''}
