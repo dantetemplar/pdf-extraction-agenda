@@ -71,6 +71,204 @@ OmniDocBench is *“a benchmark for evaluating diverse document parsing in real-
 
 **Notable features:** OmniDocBench covers a wide variety of document types and layouts, comprising **981 PDF pages across 9 document types, 4 layout styles, and 3 languages**. It provides **rich annotations**: over 20k block-level elements (paragraphs, headings, tables, etc.) and 80k+ span-level elements (lines, formulas, etc.), including reading order and various attribute tags for pages, text, and tables. The dataset undergoes strict quality control (combining manual annotation, intelligent assistance, and expert review for high accuracy). OmniDocBench also comes with **evaluation code** for fair, end-to-end comparisons of document parsing methods. It supports multiple evaluation tasks (overall extraction, layout detection, table recognition, formula recognition, OCR text recognition) and standard metrics (Normalized Edit Distance, BLEU, METEOR, TEDS, COCO mAP/mAR, etc.) to benchmark performance across different aspects of document parsing.
 
+
+### End-to-End Evaluation
+
+End-to-end evaluation assesses the model's accuracy in parsing PDF page content. The evaluation uses the model's Markdown output of the entire PDF page parsing results as the prediction.
+
+<table style="width: 92%; margin: auto; border-collapse: collapse;">
+  <thead>
+    <tr>
+      <th rowspan="2">Method Type</th>
+      <th rowspan="2">Methods</th>
+      <th colspan="2">Text<sup>Edit</sup>↓</th>
+      <th colspan="2">Formula<sup>Edit</sup>↓</th>
+      <th colspan="2">Formula<sup>CDM</sup>↑</th>
+      <th colspan="2">Table<sup>TEDS</sup>↑</th>
+      <th colspan="2">Table<sup>Edit</sup>↓</th>
+      <th colspan="2">Read Order<sup>Edit</sup>↓</th>
+      <th colspan="2">Overall<sup>Edit</sup>↓</th>
+    </tr>
+    <tr>
+      <th>EN</th>
+      <th>ZH</th>
+      <th>EN</th>
+      <th>ZH</th>
+      <th>EN</th>
+      <th>ZH</th>
+      <th>EN</th>
+      <th>ZH</th>
+      <th>EN</th>
+      <th>ZH</th>
+      <th>EN</th>
+      <th>ZH</th>
+      <th>EN</th>
+      <th>ZH</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td rowspan="4">Pipeline Tools</td>
+      <td>MinerU-0.9.3</td>
+      <td><strong>0.061</strong></td>
+      <td><strong>0.211</strong></td>
+      <td><strong>0.278</strong></td>
+      <td>0.577</td>
+      <td>66.9</td>
+      <td>49.5</td>
+      <td><strong>78.6</strong></td>
+      <td>62.1</td>
+      <td><strong>0.180</strong></td>
+      <td>0.344</td>
+      <td><strong>0.079</strong></td>
+      <td>0.288</td>
+      <td><strong>0.150</strong></td>
+      <td><u>0.355</u></td>
+    </tr>
+    <tr>
+      <td>Marker-1.2.3</td>
+      <td><u>0.080</u></td>
+      <td>0.315</td>
+      <td>0.530</td>
+      <td>0.883</td>
+      <td>20.1</td>
+      <td>16.8</td>
+      <td>67.6</td>
+      <td>49.2</td>
+      <td>0.619</td>
+      <td>0.685</td>
+      <td>0.114</td>
+      <td>0.340</td>
+      <td>0.336</td>
+      <td>0.556</td>
+    </tr>
+    <tr>
+      <td>Mathpix</td>
+      <td>0.101</td>
+      <td>0.358</td>
+      <td><u>0.306</u></td>
+      <td><strong>0.454</strong></td>
+      <td>71.4</td>
+      <td><strong>72.7</strong></td>
+      <td><u>77.0</u></td>
+      <td><strong>67.1</strong></td>
+      <td>0.243</td>
+      <td><strong>0.320</strong></td>
+      <td><u>0.105</u></td>
+      <td>0.275</td>
+      <td><u>0.189</u></td>
+      <td><strong>0.352</strong></td>
+    </tr>
+    <tr>
+      <td>Docling</td>
+      <td>0.416</td>
+      <td>0.987</td>
+      <td>0.999</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>61.3</td>
+      <td>25.0</td>
+      <td>0.627</td>
+      <td>0.810</td>
+      <td>0.313</td>
+      <td>0.837</td>
+      <td>0.589</td>
+      <td>0.909</td>
+    </tr>
+    <tr>
+      <td rowspan="2">Expert VLMs</td>
+      <td>GOT-OCR</td>
+      <td>0.191</td>
+      <td>0.315</td>
+      <td>0.360</td>
+      <td><u>0.528</u></td>
+      <td><strong>81.8</strong></td>
+      <td>51.4</td>
+      <td>53.2</td>
+      <td>47.2</td>
+      <td>0.459</td>
+      <td>0.520</td>
+      <td>0.143</td>
+      <td>0.280</td>
+      <td>0.289</td>
+      <td>0.411</td>
+    </tr>
+    <tr>
+      <td>Nougat</td>
+      <td>0.367</td>
+      <td>0.998</td>
+      <td>0.488</td>
+      <td>0.941</td>
+      <td>17.4</td>
+      <td>16.9</td>
+      <td>39.9</td>
+      <td>0</td>
+      <td>0.572</td>
+      <td>1</td>
+      <td>0.384</td>
+      <td>0.954</td>
+      <td>0.453</td>
+      <td>0.973</td>
+    </tr>
+    <tr>
+      <td rowspan="3">General VLMs</td>
+      <td>GPT4o</td>
+      <td>0.146</td>
+      <td>0.409</td>
+      <td>0.425</td>
+      <td>0.606</td>
+      <td><u>76.4</u></td>
+      <td>48.2</td>
+      <td>72.0</td>
+      <td>62.9</td>
+      <td><u>0.234</u></td>
+      <td><u>0.329</u></td>
+      <td>0.128</td>
+      <td>0.251</td>
+      <td>0.233</td>
+      <td>0.399</td>
+    </tr>
+    <tr>
+      <td>Qwen2-VL-72B</td>
+      <td>0.253</td>
+      <td><u>0.251</u></td>
+      <td>0.468</td>
+      <td>0.572</td>
+      <td>54.9</td>
+      <td><u>60.9</u></td>
+      <td>59.5</td>
+      <td><u>66.4</u></td>
+      <td>0.551</td>
+      <td>0.518</td>
+      <td>0.254</td>
+      <td><strong>0.223</strong></td>
+      <td>0.381</td>
+      <td>0.391</td>
+    </tr>
+    <tr>
+      <td>InternVL2-76B</td>
+      <td>0.353</td>
+      <td>0.29</td>
+      <td>0.543</td>
+      <td>0.701</td>
+      <td>69.8</td>
+      <td>49.6</td>
+      <td>63.0</td>
+      <td>60.2</td>
+      <td>0.547</td>
+      <td>0.555</td>
+      <td>0.317</td>
+      <td><u>0.228</u></td>
+      <td>0.440</td>
+      <td>0.443</td>
+    </tr>
+  </tbody>
+</table>
+<p style="text-align: center; margin-top: -4pt;">
+  Comprehensive evaluation of document parsing algorithms on OmniDocBench: performance metrics for text, formula, table, and reading order extraction, with overall scores derived from ground truth comparisons.
+</p>
+
 ### olmoOCR eval
 [![GitHub last commit](https://img.shields.io/github/last-commit/allenai/olmocr?label=GitHub&logo=github)](https://github.com/allenai/olmocr)
 ![GitHub License](https://img.shields.io/github/license/allenai/olmocr)
