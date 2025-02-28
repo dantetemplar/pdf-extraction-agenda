@@ -2,7 +2,7 @@ name: Parse New Pipeline Submission
 
 on:
   issues:
-    types: [opened, edited]  # Runs automatically when an issue is opened or edited
+    types: [ opened, edited ]  # Runs automatically when an issue is opened or edited
   workflow_dispatch:  # Allows manual execution on all existing issues
 
 permissions:
@@ -14,25 +14,46 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
-
       - name: Extract Issue Data
         uses: actions/github-script@v7
         with:
           script: |
             const githubContext = context;
-            const isManualRun = process.env.GITHUB_EVENT_NAME === "workflow_dispatch";  // Correct detection!
-
+            const isManualRun = process.env.GITHUB_EVENT_NAME === "workflow_dispatch";
+            
+            async function deleteExistingComments(issue_number) {
+              console.log(`Fetching existing comments for issue #${issue_number}...`);
+            
+              const comments = await github.paginate(github.rest.issues.listComments, {
+                owner: githubContext.repo.owner,
+                repo: githubContext.repo.repo,
+                issue_number: issue_number,
+                per_page: 100
+              });
+            
+              for (const comment of comments) {
+                if (comment.user.type === "Bot") {
+                  console.log(`Deleting comment ID: ${comment.id}`);
+                  await github.rest.issues.deleteComment({
+                    owner: githubContext.repo.owner,
+                    repo: githubContext.repo.repo,
+                    comment_id: comment.id
+                  });
+                }
+              }
+            }
+            
             async function processIssue(issue) {
               if (!issue.body) {
                 console.log(`Skipping issue #${issue.number} due to empty body.`);
                 return;
               }
-              
+            
               if (!issue.labels.some(label => label.name === 'pipeline')) {
                 console.log(`Skipping issue #${issue.number}, no "pipeline" label.`);
                 return;
               }
-
+                        
               const fields = {
                 'Pipeline Name': 'name',
                 'URL': 'url',
@@ -49,25 +70,25 @@ jobs:
                 'API Average Price per 1000 Page (if applicable)': 'api_average_price',
                 'Additional Notes': 'additional_notes'
               };
-
+            
               function extractField(label) {
                 const regex = new RegExp(`### ${label}\\n\\n(.*?)(?=\\n### |$)`, 's');
                 const match = issue.body.match(regex);
                 return match && match[1].trim() !== "_No response_" ? match[1].trim() : '';
               }
-
+            
               const extractedData = {};
               for (const [label, id] of Object.entries(fields)) {
                 extractedData[id] = extractField(label);
               }
-
+            
               const { 
                 name, url, github_url, license, custom_license, 
                 primary_language, pipeline_description, demo_link, 
                 benchmark_results, api_available, api_url, api_pricing, 
                 api_average_price, additional_notes 
               } = extractedData;
-
+                                          
               const licenseColors = {
                 'Apache-2.0': 'brightgreen',
                 'MIT': 'brightgreen',
@@ -85,43 +106,45 @@ jobs:
 
               const githubBadge = github_url ? `[![GitHub last commit](https://img.shields.io/github/last-commit/${github_url.replace('https://github.com/', '')}?label=GitHub&logo=github)](${github_url})` : '';
               const demoBadge = demo_link ? `[![Demo](https://img.shields.io/badge/DEMO-black?logo=awwwards)](${demo_link})` : '';
-
+            
               const displayURL = url || github_url || '';
-              
+            
               const title = displayURL ? `[${name}](${displayURL})` : name;
               let formattedOutput = `### ${title}
               ${githubBadge}
               ${licenseBadge}
               ${demoBadge}`;
-
+            
               if (primary_language) {
                 formattedOutput += `\n\n**Primary Language:** ${primary_language}`;
               }
-
+            
               if (licenseDisplay) {
                 formattedOutput += `\n**License:** ${licenseDisplay}`;
               }
-
+            
               if (pipeline_description) {
                 formattedOutput += `\n\n**Description:** ${pipeline_description}`;
               }
-
+            
               if (benchmark_results) {
                 formattedOutput += `\n\n**Benchmark Results:** ${benchmark_results}`;
               }
-
+            
               if (api_available === "Yes") {
                 formattedOutput += `\n\n**API Details:**`;
                 if (api_url) formattedOutput += `\n- **API URL:** ${api_url}`;
                 if (api_pricing) formattedOutput += `\n- **Pricing:** ${api_pricing}`;
                 if (api_average_price) formattedOutput += `\n- **Average Price per 1000 Pages:** ${api_average_price}`;
               }
-
+            
               if (additional_notes && additional_notes.trim()) {
                 if (additional_notes.trim() !== '```markdown\n\n```') {
                   formattedOutput += `\n\n**Additional Notes:**\n${additional_notes}`;
                 }
               }
+            
+              await deleteExistingComments(issue.number);
 
               console.log(`Updating issue #${issue.number}...`);
               await github.rest.issues.createComment({
@@ -131,7 +154,7 @@ jobs:
                 body: formattedOutput
               });
             }
-
+            
             if (isManualRun) {
               console.log("Manual run triggered: Processing all open pipeline issues...");
               const issues = await github.paginate(github.rest.issues.listForRepo, {
@@ -140,7 +163,7 @@ jobs:
                 state: 'open',  
                 per_page: 100
               });
-
+            
               for (const issue of issues) {
                 await processIssue(issue);
               }
