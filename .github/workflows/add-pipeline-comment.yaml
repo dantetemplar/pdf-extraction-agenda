@@ -111,7 +111,10 @@ jobs:
 
               const githubBadge = github_url ? `[![GitHub last commit](https://img.shields.io/github/last-commit/${github_url.replace('https://github.com/', '')}?label=GitHub&logo=github)](${github_url})` : '';
               const demoBadge = demo_link ? `[![Demo](https://img.shields.io/badge/DEMO-black?logo=awwwards)](${demo_link})` : '';
-            
+              const apiBadge = api_available === "Yes" && api_url 
+                  ? `[![API](https://img.shields.io/badge/API-Available-blue?logo=swagger&logoColor=85EA2D)](${api_url})` 
+                  : '';
+
               const displayURL = url || github_url || '';
               
               const title = displayURL 
@@ -120,7 +123,9 @@ jobs:
               let formattedOutput = `### ${title}
               ${githubBadge}
               ${licenseBadge}
-              ${demoBadge}`;
+              ${demoBadge}
+              ${apiBadge}
+              `;
             
               if (primary_language) {
                 formattedOutput += `\n\n**Primary Language:** ${primary_language}`;
