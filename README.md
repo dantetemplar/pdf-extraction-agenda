@@ -3,26 +3,20 @@
 ## Pipelines
 
 ### MinerU
-[Github](https://github.com/opendatalab/MinerU)
-![GitHub last commit](https://img.shields.io/github/last-commit/opendatalab/MinerU)
+[![GitHub last commit](https://img.shields.io/github/last-commit/opendatalab/MinerU?label=GitHub&logo=github)](https://github.com/opendatalab/MinerU)
 
 ### Marker
-[Github](https://github.com/VikParuchuri/marker)
-![GitHub last commit](https://img.shields.io/github/last-commit/VikParuchuri/marker)
+[![GitHub last commit](https://img.shields.io/github/last-commit/VikParuchuri/marker?label=GitHub&logo=github)](https://github.com/VikParuchuri/marker)
 
 ### markitdown
-[Github](https://github.com/microsoft/markitdown)
-![GitHub last commit](https://img.shields.io/github/last-commit/microsoft/markitdown)
+[![GitHub last commit](https://img.shields.io/github/last-commit/microsoft/markitdown?label=GitHub&logo=github)](https://github.com/microsoft/markitdown)
 
 ### olmoOCR
-[Github](https://github.com/allenai/olmocr)
-![GitHub last commit](https://img.shields.io/github/last-commit/allenai/olmocr)
+[![GitHub last commit](https://img.shields.io/github/last-commit/allenai/olmocr?label=GitHub&logo=github)](https://github.com/allenai/olmocr)
 
 ## Benchmarks
 ### OmniDocBench
-[Github](https://github.com/opendatalab/OmniDocBench)
-![GitHub last commit](https://img.shields.io/github/last-commit/opendatalab/OmniDocBench)
+[![GitHub last commit](https://img.shields.io/github/last-commit/opendatalab/OmniDocBench?label=GitHub&logo=github)](https://github.com/opendatalab/OmniDocBench)
 
 ### olmoOCR eval
-[Github](https://github.com/allenai/olmocr)
-![GitHub last commit](https://img.shields.io/github/last-commit/allenai/olmocr)
+[![GitHub last commit](https://img.shields.io/github/last-commit/allenai/olmocr?label=GitHub&logo=github)](https://github.com/allenai/olmocr)
