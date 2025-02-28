@@ -120,43 +120,43 @@ jobs:
               const title = displayURL 
                   ? `[${name}](${displayURL}) [✏️](${issue.html_url})` 
                   : `${name} [✏️](${issue.html_url})`;
-              let formattedOutput = `### ${title}
-              ${githubBadge}
-              ${licenseBadge}
-              ${demoBadge}
-              ${apiBadge}
-              `;
-            
+              let formattedOutput = `### ${title}`.trim();
+
+              if (githubBadge || licenseBadge || demoBadge || apiBadge) {
+                  formattedOutput += `\n${[githubBadge, licenseBadge, demoBadge, apiBadge].filter(Boolean).join("\n")}`;
+              }
+              
               if (primary_language) {
-                formattedOutput += `\n\n**Primary Language:** ${primary_language}`;
+                  formattedOutput += `\n\n**Primary Language:** ${primary_language}`;
               }
-            
+              
               if (licenseDisplay) {
-                formattedOutput += `\n**License:** ${licenseDisplay}`;
+                  formattedOutput += `\n**License:** ${licenseDisplay}`;
               }
-            
+              
               if (pipeline_description) {
-                formattedOutput += `\n\n**Description:** ${pipeline_description}`;
+                  formattedOutput += `\n\n**Description:** ${pipeline_description}`;
               }
-            
+              
               if (benchmark_results) {
-                formattedOutput += `\n\n**Benchmark Results:** ${benchmark_results}`;
+                  formattedOutput += `\n\n**Benchmark Results:** ${benchmark_results}`;
               }
-            
+              
               if (api_available === "Yes") {
-                formattedOutput += `\n\n**API Details:**`;
-                if (api_url) formattedOutput += `\n- **API URL:** ${api_url}`;
-                if (api_pricing) formattedOutput += `\n- **Pricing:** ${api_pricing}`;
-                if (api_average_price) formattedOutput += `\n- **Average Price:** ${api_average_price}`;
+                  formattedOutput += `\n\n**API Details:**`;
+                  if (api_url) formattedOutput += `\n- **API URL:** ${api_url}`;
+                  if (api_pricing) formattedOutput += `\n- **Pricing:** ${api_pricing}`;
+                  if (api_average_price) formattedOutput += `\n- **Average Price:** ${api_average_price}`;
               }
-            
+              
               if (additional_notes && additional_notes.trim()) {
-                // remove ```markdown from the beginning and end
-                const formattedNotes = additional_notes.replace(/```markdown/g, '').replace(/```/g, '').trim();
-                if (formattedNotes) {
-                  formattedOutput += `\n\n**Additional Notes:**\n${formattedNotes}`;
-                }
+                  const formattedNotes = additional_notes.replace(/```markdown/g, '').replace(/```/g, '').trim();
+                  if (formattedNotes) {
+                      formattedOutput += `\n\n**Additional Notes:**\n${formattedNotes}`;
+                  }
               }
+              
+              formattedOutput = formattedOutput.trim(); // Remove leading/trailing spaces
             
               await deleteExistingComments(issue.number);
 
