@@ -83,6 +83,18 @@ The olmOCR project provides an **evaluation toolkit** (`runeval.py`) for side-by
 
 **Notable features:** This evaluation script generates a set of accuracy scores by comparing OCR outputs to ground-truth data. It is designed for easy **side-by-side evaluation**, producing metrics and even visual HTML reports for qualitative review of differences. By providing a standardized way to assess OCR pipeline performance, *olmOCR eval* helps validate improvements and ensures fair comparisons between different OCR approaches. (Note: *olmOCR eval* is part of the `allenai/olmocr` repository, not a standalone project.)
 
+### Marker benchmarks
+[![GitHub last commit](https://img.shields.io/github/last-commit/VikParuchuri/marker?label=GitHub&logo=github)](https://github.com/VikParuchuri/marker?tab=readme-ov-file#benchmarks)
+![GitHub License](https://img.shields.io/github/license/VikParuchuri/marker)
+<!--- 
+License: GPL 3.0
+Primary language: Python
+-->
+
+The Marker repository provides benchmark results comparing various PDF processing methods based on structured data extraction accuracy, processing time, and layout preservation.
+
+**Notable features:** Benchmarks include comparison against open-source OCR solutions (Tesseract, EasyOCR, Adobe Extract API) and proprietary tools. Evaluates document type coverage, layout reconstruction accuracy, and OCR text correctness. Uses standardized metrics such as BLEU score, METEOR, and Levenshtein distance to assess output quality. Includes dataset-based testing to track improvements in text extraction accuracy over time.
+
 ## Extraction Properties
 
 This section defines the properties available for configuring the extraction process. Each property governs a specific aspect of how PDFs are processed.
