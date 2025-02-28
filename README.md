@@ -87,6 +87,7 @@ handle a wide range of document types in all languages and produce structured ou
 [✏️](https://github.com/dantetemplar/pdf-extraction-agenda/issues/9)
 [![GitHub last commit](https://img.shields.io/github/last-commit/microsoft/markitdown?label=GitHub&logo=github)](https://github.com/microsoft/markitdown)
 ![License](https://img.shields.io/badge/License-MIT-brightgreen)
+[![Demo](https://img.shields.io/badge/DEMO-black?logo=awwwards)](https://mitdown.ca/)
 
 **Primary Language:** Python
 
