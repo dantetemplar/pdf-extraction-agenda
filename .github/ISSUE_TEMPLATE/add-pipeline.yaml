@@ -109,4 +109,3 @@ body:
     attributes:
       label: "Additional Notes"
       description: "Include any other relevant details or context for the submission."
-      render: markdown
