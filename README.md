@@ -4,8 +4,7 @@
 > Part of text in this repo written by ChatGPT. Also, I haven't yet run all pipelines because of lack of compute power.
 
 This repository provides an overview of selected **pipeline** and **benchmark** repositories related to PDF/OCR document
-processing. Each entry includes a brief description, latest commit date, contributor count, license, primary language,
-and notable features for quick reference.
+processing. Each entry includes a brief description, and useful data.
 
 ## Table of contents
 
