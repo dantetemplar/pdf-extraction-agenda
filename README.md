@@ -83,19 +83,53 @@ The olmOCR project provides an **evaluation toolkit** (`runeval.py`) for side-by
 
 **Notable features:** This evaluation script generates a set of accuracy scores by comparing OCR outputs to ground-truth data. It is designed for easy **side-by-side evaluation**, producing metrics and even visual HTML reports for qualitative review of differences. By providing a standardized way to assess OCR pipeline performance, *olmOCR eval* helps validate improvements and ensures fair comparisons between different OCR approaches. (Note: *olmOCR eval* is part of the `allenai/olmocr` repository, not a standalone project.)
 
-# Properties
-### Property: Embedded Graphics Handling
+## Extraction Properties
+
+This section defines the properties available for configuring the extraction process. Each property governs a specific aspect of how PDFs are processed.
+
+
+### PDF Processing Type
+
+This property determines how the PDF content is processed based on its format and structure.
+
+#### Available Options
+
+- **Native PDF**  
+  Extracts text directly from machine-readable PDFs without any conversion. This method is the fastest and retains the highest accuracy for structured content.
+
+- **Converting to Image**  
+  Converts PDF pages into images before applying OCR. This method is used for scanned or image-based PDFs but may introduce OCR-related errors.
+
+- **Virtually Hybrid**  
+  Uses a combination of direct text extraction and image conversion with OCR. If a page contains selectable text, it is extracted natively; otherwise, the page is converted to an image and processed with OCR.
+
+- **Hybrid**  
+  Processes both text and visual elements in PDFs simultaneously (f.e. sending anchored text and page image to VLLM), leveraging both native extraction and OCR-based or VLLM image analysis in a unified approach.
+
+#### Choosing the Right Option
+- If working with digital PDFs that contain selectable text and no images of figures, **Native PDF** provides the best results.
+- For scanned documents, at least **Converting to Image** is required to retrieve text using OCR.
+- If PDFs contain a mix of text-based pages and image-based pages, **Virtually Hybrid** ensures maximum text extraction accuracy.
+- If both text and visual data are crucial for analysis, **Hybrid** is the most comprehensive option, and actually it is rare approach.
+
+### Embedded Graphics Handling
 
 When processing PDFs, embedded graphics such as vector diagrams, charts, and images can be handled in different ways depending on the extraction strategy. This property determines how these graphics are treated during extraction and whether additional processing, such as OCR, is applied.
+
+#### Available Options
+
 - **Ignore**  
-  The extraction process does not process embedded graphics, and no additional files or links are generated.
+  The extraction process does not process embedded graphics. They remain in the PDF, and no additional files or links are generated.
+
 - **Replace with OCR**  
   Embedded graphics are removed from the output, and OCR is applied to any raster images within the PDF. The extracted text replaces the original graphic content where possible.
+
 - **Extract to Folder with Markdown Link**  
   Vector-based graphics and embedded images are extracted to a separate folder. In the Markdown output, a reference is added using a standard image link format:  
   ```markdown
   ![Extracted Graphic](path/to/image.png)
   ```
+
 - **Extract to Folder with Markdown Link and OCR Comment**  
   This mode extracts graphics to a folder, inserts a Markdown link to the extracted image, and appends any OCR-extracted text as a comment below the reference. Example:
   ```markdown
@@ -104,10 +138,8 @@ When processing PDFs, embedded graphics such as vector diagrams, charts, and ima
   <!-- OCR Extracted Text: "Figure 2 - Sales Growth Trends" -->
   ```
 
-**Choosing the Right Option**
+#### Choosing the Right Option
 - If the PDF contains machine-readable text and graphics are not required, **Ignore** is the most efficient choice.
 - When working with scanned documents containing important visual text, **Replace with OCR** ensures that no information is lost.
 - For preserving visual elements while keeping Markdown structured, **Extract to Folder with Markdown Link** is recommended.
 - If both graphics and extracted text are needed, **Extract to Folder with Markdown Link and OCR Comment** provides the most comprehensive output.
-
-
