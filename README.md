@@ -3,16 +3,36 @@
 > [!CAUTION]
 > Part of text in this repo written by ChatGPT. Also, I haven't yet run all pipelines because of lack of compute power.
 
-This repository provides an overview of selected **pipeline** and **benchmark** repositories related to PDF/OCR document processing. Each entry includes a brief description, latest commit date, contributor count, license, primary language, and notable features for quick reference.
+This repository provides an overview of selected **pipeline** and **benchmark** repositories related to PDF/OCR document
+processing. Each entry includes a brief description, latest commit date, contributor count, license, primary language,
+and notable features for quick reference.
 
 ## Table of contents
 
 Did you know that GitHub supports table of
 contents [by default](https://github.blog/changelog/2021-04-13-table-of-contents-support-in-markdown-files/) 🤔
 
+## Comparison
+
+| Pipeline                  | [OmniDocBench](#omnidocbench) - Overall Edit ↓ | [olmOCR Eval](#olmoocr-eval) - Elo Rating ↑ | [Marker Bench](#marker-benchmarks) - Overall Edit ↓ |
+|---------------------------|------------------------------------------------|---------------------------------------------|-----------------------------------------------------|
+| [MinerU](#MinerU)         | **0.150**    ⚠️                                | 1545.2                                      | -                                                   |
+| [Marker](#Marker)         | 0.336                                          | 1429.1                                      | **4.23916**  ⚠️                                     |
+| [Mathpix](#Mathpix)       | 0.189                                          | -                                           | 4.15626                                             |
+| [DocLing](#DocLing)       | 0.589                                          | -                                           | 3.70429                                             |
+| [GOT-OCR](#GOT-OCR)       | 0.289                                          | 1212.7                                      | -                                                   |
+| [olmOCR](#olmOCR)         | -                                              | **1813.0**   ⚠️                             | -                                                   |
+| [LlamaParse](#LlamaParse) | -                                              | -                                           | 3.97619                                             |
+
+- **Bold** indicates the best result for a given metric.
+- "-" means the pipeline was not evaluated in that benchmark.
+- ⚠️ means the pipeline authors are the ones who did the benchmark.
+
 ## Pipelines
 
-### [MinerU](https://github.com/opendatalab/MinerU) [✏️](https://github.com/dantetemplar/pdf-extraction-agenda/issues/7)
+### [MinerU](https://github.com/opendatalab/MinerU)
+
+[✏️](https://github.com/dantetemplar/pdf-extraction-agenda/issues/7)
 [![GitHub last commit](https://img.shields.io/github/last-commit/opendatalab/MinerU?label=GitHub&logo=github)](https://github.com/opendatalab/MinerU)
 ![License](https://img.shields.io/badge/License-AGPL--3.0-orange)
 [![Demo](https://img.shields.io/badge/DEMO-black?logo=awwwards)](https://huggingface.co/spaces/opendatalab/MinerU)
@@ -21,31 +41,40 @@ contents [by default](https://github.blog/changelog/2021-04-13-table-of-contents
 
 **License:** AGPL-3.0
 
-**Description:** MinerU is an open-source tool designed to convert PDFs into machine-readable formats, such as Markdown and JSON, facilitating seamless data extraction and further processing. Developed during the pre-training phase of InternLM, MinerU addresses symbol conversion challenges in scientific literature, making it invaluable for research and development in large language models. Key features include:
+**Description:** MinerU is an open-source tool designed to convert PDFs into machine-readable formats, such as Markdown
+and JSON, facilitating seamless data extraction and further processing. Developed during the pre-training phase of
+InternLM, MinerU addresses symbol conversion challenges in scientific literature, making it invaluable for research and
+development in large language models. Key features include:
 
 - **Content Cleaning**: Removes headers, footers, footnotes, and page numbers to ensure semantic coherence.
 - **Structure Preservation**: Maintains the original document structure, including titles, paragraphs, and lists.
 - **Multimodal Extraction**: Accurately extracts images, image descriptions, tables, and table captions.
 - **Formula Recognition**: Converts recognized formulas into LaTeX format.
 - **Table Conversion**: Transforms tables into LaTeX or HTML formats.
-- **OCR Capabilities**: Detects scanned or corrupted PDFs and enables OCR functionality, supporting text recognition in 84 languages.
-- **Cross-Platform Compatibility**: Operates on Windows, Linux, and Mac platforms, supporting both CPU and GPU environments.
+- **OCR Capabilities**: Detects scanned or corrupted PDFs and enables OCR functionality, supporting text recognition in
+  84 languages.
+- **Cross-Platform Compatibility**: Operates on Windows, Linux, and Mac platforms, supporting both CPU and GPU
+  environments.
 
-### [Marker](https://github.com/VikParuchuri/marker) [✏️](https://github.com/dantetemplar/pdf-extraction-agenda/issues/8)
+### [Marker](https://github.com/VikParuchuri/marker)
+
+[✏️](https://github.com/dantetemplar/pdf-extraction-agenda/issues/8)
 [![GitHub last commit](https://img.shields.io/github/last-commit/VikParuchuri/marker?label=GitHub&logo=github)](https://github.com/VikParuchuri/marker)
 ![License](https://img.shields.io/badge/License-GPL--3.0-yellow)
 [![Demo](https://img.shields.io/badge/DEMO-black?logo=awwwards)](https://www.datalab.to/)
 [![API](https://img.shields.io/badge/API-Available-blue?logo=swagger&logoColor=85EA2D)](https://www.datalab.to/)
-  
+
 **Primary Language:** Python
 
 **License:** GPL-3.0
 
-**Description:** Marker “converts PDFs and images to markdown, JSON, and HTML quickly and accurately.” It is designed to handle a wide range of document types in all languages and produce structured outputs.
+**Description:** Marker “converts PDFs and images to markdown, JSON, and HTML quickly and accurately.” It is designed to
+handle a wide range of document types in all languages and produce structured outputs.
 
 **Benchmark Results:** https://github.com/VikParuchuri/marker?tab=readme-ov-file#performance
 
 **API Details:**
+
 - **API URL:** https://www.datalab.to/
 - **Pricing:** https://www.datalab.to/plans
 - **Average Price:** $3 per 1000 pages, at least $25 per month
@@ -53,7 +82,9 @@ contents [by default](https://github.blog/changelog/2021-04-13-table-of-contents
 **Additional Notes:**
 **Demo available after registration on https://www.datalab.to/**
 
-### [MarkItDown by Microsoft](https://github.com/microsoft/markitdown) [✏️](https://github.com/dantetemplar/pdf-extraction-agenda/issues/9)
+### [MarkItDown by Microsoft](https://github.com/microsoft/markitdown)
+
+[✏️](https://github.com/dantetemplar/pdf-extraction-agenda/issues/9)
 [![GitHub last commit](https://img.shields.io/github/last-commit/microsoft/markitdown?label=GitHub&logo=github)](https://github.com/microsoft/markitdown)
 ![License](https://img.shields.io/badge/License-MIT-brightgreen)
 
@@ -61,7 +92,8 @@ contents [by default](https://github.blog/changelog/2021-04-13-table-of-contents
 
 **License:** MIT
 
-**Description:** MarkItDown is a Python-based utility developed by Microsoft for converting various file formats into Markdown. It supports a wide range of file types, including:
+**Description:** MarkItDown is a Python-based utility developed by Microsoft for converting various file formats into
+Markdown. It supports a wide range of file types, including:
 
 - **Office Documents**: Word (.docx), PowerPoint (.pptx), Excel (.xlsx)
 - **Media Files**: Images (with EXIF metadata and OCR capabilities), Audio (with speech transcription)
@@ -69,9 +101,14 @@ contents [by default](https://github.blog/changelog/2021-04-13-table-of-contents
 - **Archives**: ZIP files (with recursive content parsing)
 - **URLs**: YouTube links
 
-This versatility makes MarkItDown a valuable tool for tasks such as indexing, text analysis, and preparing content for Large Language Model (LLM) training. The utility offers both command-line and Python API interfaces, providing flexibility for various use cases. Additionally, MarkItDown features a plugin-based architecture, allowing for easy integration of third-party extensions to enhance its functionality.
+This versatility makes MarkItDown a valuable tool for tasks such as indexing, text analysis, and preparing content for
+Large Language Model (LLM) training. The utility offers both command-line and Python API interfaces, providing
+flexibility for various use cases. Additionally, MarkItDown features a plugin-based architecture, allowing for easy
+integration of third-party extensions to enhance its functionality.
 
-### [olmOCR](https://olmocr.allenai.org/) [✏️](https://github.com/dantetemplar/pdf-extraction-agenda/issues/10)
+### [olmOCR](https://olmocr.allenai.org/)
+
+[✏️](https://github.com/dantetemplar/pdf-extraction-agenda/issues/10)
 [![GitHub last commit](https://img.shields.io/github/last-commit/allenai/olmocr?label=GitHub&logo=github)](https://github.com/allenai/olmocr)
 ![License](https://img.shields.io/badge/License-Apache--2.0-brightgreen)
 [![Demo](https://img.shields.io/badge/DEMO-black?logo=awwwards)](https://olmocr.allenai.org/)
@@ -80,46 +117,68 @@ This versatility makes MarkItDown a valuable tool for tasks such as indexing, te
 
 **License:** Apache-2.0
 
-**Description:** olmOCR is an open-source toolkit developed by the Allen Institute for AI, designed to convert PDFs and document images into clean, plain text suitable for large language model (LLM) training and other applications. Key features include:
+**Description:** olmOCR is an open-source toolkit developed by the Allen Institute for AI, designed to convert PDFs and
+document images into clean, plain text suitable for large language model (LLM) training and other applications. Key
+features include:
 
 - **High Accuracy**: Preserves reading order and supports complex elements such as tables, equations, and handwriting.
 - **Document Anchoring**: Combines text and visual information to enhance extraction accuracy.
-- **Structured Content Representation**: Utilizes Markdown to represent structured content, including sections, lists, equations, and tables.
-- **Optimized Pipeline**: Compatible with SGLang and vLLM inference engines, enabling efficient scaling from single to multiple GPUs.
+- **Structured Content Representation**: Utilizes Markdown to represent structured content, including sections, lists,
+  equations, and tables.
+- **Optimized Pipeline**: Compatible with SGLang and vLLM inference engines, enabling efficient scaling from single to
+  multiple GPUs.
 
+### [LlamaParse](https://www.llamaindex.ai/llamaparse)
 
-### [LlamaParse](https://www.llamaindex.ai/llamaparse) [✏️](https://github.com/dantetemplar/pdf-extraction-agenda/issues/6)
+[✏️](https://github.com/dantetemplar/pdf-extraction-agenda/issues/6)
 [![GitHub last commit](https://img.shields.io/github/last-commit/run-llama/llama_parse?label=GitHub&logo=github)](https://github.com/run-llama/llama_parse)
 ![License](https://img.shields.io/badge/License-Proprietary-red)
 [![API](https://img.shields.io/badge/API-Available-blue?logo=swagger&logoColor=85EA2D)](https://api.cloud.llamaindex.ai/api/parsing/upload)
-  
+
 **Primary Language:** Python
 
 **License:** Proprietary
 
-**Description:** LlamaParse is a GenAI-native document parsing platform developed by LlamaIndex. It transforms complex documents—including PDFs, PowerPoint presentations, Word documents, and spreadsheets—into structured, LLM-ready formats. LlamaParse excels in accurately extracting and formatting tables, images, and other non-standard layouts, ensuring high-quality data for downstream applications such as Retrieval-Augmented Generation (RAG) and data processing. The platform supports over 10 file types and offers features like natural language parsing instructions, JSON output, and multilingual support.
+**Description:** LlamaParse is a GenAI-native document parsing platform developed by LlamaIndex. It transforms complex
+documents—including PDFs, PowerPoint presentations, Word documents, and spreadsheets—into structured, LLM-ready formats.
+LlamaParse excels in accurately extracting and formatting tables, images, and other non-standard layouts, ensuring
+high-quality data for downstream applications such as Retrieval-Augmented Generation (RAG) and data processing. The
+platform supports over 10 file types and offers features like natural language parsing instructions, JSON output, and
+multilingual support.
 
 **API Details:**
+
 - **API URL:** https://api.cloud.llamaindex.ai/api/parsing/upload
 - **Pricing:** https://docs.cloud.llamaindex.ai/llamaparse/usage_data
-- **Average Price:** **Free Plan**: 1,000 pages per day; **Paid Plan**: 7,000 pages per week, with additional pages at $3 per 1,000 pages
+- **Average Price:** **Free Plan**: 1,000 pages per day; **Paid Plan**: 7,000 pages per week, with additional pages at $
+  3 per 1,000 pages
 
-### [Mathpix](https://mathpix.com/) [✏️](https://github.com/dantetemplar/pdf-extraction-agenda/issues/5)
+### [Mathpix](https://mathpix.com/)
+
+[✏️](https://github.com/dantetemplar/pdf-extraction-agenda/issues/5)
 ![License](https://img.shields.io/badge/License-Proprietary-red)
-[![API](https://img.shields.io/badge/API-Available-blue?logo=swagger&logoColor=85EA2D)](https://docs.mathpix.com/) 
+[![API](https://img.shields.io/badge/API-Available-blue?logo=swagger&logoColor=85EA2D)](https://docs.mathpix.com/)
 
 **Primary Language:** Not publicly available
 
 **License:** Proprietary
 
-**Description:** Mathpix offers advanced Optical Character Recognition (OCR) technology tailored for STEM content. Their services include the Convert API, which accurately digitizes images and PDFs containing complex elements such as mathematical equations, chemical diagrams, tables, and handwritten notes. The platform supports multiple output formats, including LaTeX, MathML, HTML, and Markdown, facilitating seamless integration into various applications and workflows. Additionally, Mathpix provides the Snipping Tool, a desktop application that allows users to capture and convert content from their screens into editable formats with a single keyboard shortcut.
+**Description:** Mathpix offers advanced Optical Character Recognition (OCR) technology tailored for STEM content. Their
+services include the Convert API, which accurately digitizes images and PDFs containing complex elements such as
+mathematical equations, chemical diagrams, tables, and handwritten notes. The platform supports multiple output formats,
+including LaTeX, MathML, HTML, and Markdown, facilitating seamless integration into various applications and workflows.
+Additionally, Mathpix provides the Snipping Tool, a desktop application that allows users to capture and convert content
+from their screens into editable formats with a single keyboard shortcut.
 
 **API Details:**
+
 - **API URL:** https://docs.mathpix.com/
 - **Pricing:** https://mathpix.com/pricing
 - **Average Price:** $5 per 1000 pages
 
-### [Nougat](https://facebookresearch.github.io/nougat/) [✏️](https://github.com/dantetemplar/pdf-extraction-agenda/issues/4)
+### [Nougat](https://facebookresearch.github.io/nougat/)
+
+[✏️](https://github.com/dantetemplar/pdf-extraction-agenda/issues/4)
 [![GitHub last commit](https://img.shields.io/github/last-commit/facebookresearch/nougat?label=GitHub&logo=github)](https://github.com/facebookresearch/nougat)
 ![License](https://img.shields.io/badge/License-MIT-brightgreen)
 
@@ -127,9 +186,16 @@ This versatility makes MarkItDown a valuable tool for tasks such as indexing, te
 
 **License:** MIT
 
-**Description:** Nougat (Neural Optical Understanding for Academic Documents) is an open-source Visual Transformer model developed by Meta AI Research. It is designed to perform Optical Character Recognition (OCR) on scientific documents, converting PDFs into a machine-readable markup language. Nougat simplifies the extraction of complex elements such as mathematical expressions and tables, enhancing the accessibility of scientific knowledge. The model processes raw pixel data from document images and outputs structured markdown text, bridging the gap between human-readable content and machine-readable formats.
+**Description:** Nougat (Neural Optical Understanding for Academic Documents) is an open-source Visual Transformer model
+developed by Meta AI Research. It is designed to perform Optical Character Recognition (OCR) on scientific documents,
+converting PDFs into a machine-readable markup language. Nougat simplifies the extraction of complex elements such as
+mathematical expressions and tables, enhancing the accessibility of scientific knowledge. The model processes raw pixel
+data from document images and outputs structured markdown text, bridging the gap between human-readable content and
+machine-readable formats.
 
-### [GOT-OCR](https://github.com/Ucas-HaoranWei/GOT-OCR2.0) [✏️](https://github.com/dantetemplar/pdf-extraction-agenda/issues/3)
+### [GOT-OCR](https://github.com/Ucas-HaoranWei/GOT-OCR2.0)
+
+[✏️](https://github.com/dantetemplar/pdf-extraction-agenda/issues/3)
 [![GitHub last commit](https://img.shields.io/github/last-commit/Ucas-HaoranWei/GOT-OCR2.0?label=GitHub&logo=github)](https://github.com/Ucas-HaoranWei/GOT-OCR2.0)
 ![License](https://img.shields.io/badge/License-Apache--2.0-brightgreen)
 [![Demo](https://img.shields.io/badge/DEMO-black?logo=awwwards)](https://huggingface.co/spaces/ucaslcl/GOT_online)
@@ -138,11 +204,17 @@ This versatility makes MarkItDown a valuable tool for tasks such as indexing, te
 
 **License:** Apache-2.0
 
-**Description:** GOT-OCR (General OCR Theory) is an open-source, unified end-to-end model designed to advance OCR to version 2.0. It supports a wide range of tasks, including plain document OCR, scene text OCR, formatted document OCR, and OCR for tables, charts, mathematical formulas, geometric shapes, molecular formulas, and sheet music. The model is highly versatile, supporting various input types and producing structured outputs, making it well-suited for complex OCR tasks.
+**Description:** GOT-OCR (General OCR Theory) is an open-source, unified end-to-end model designed to advance OCR to
+version 2.0. It supports a wide range of tasks, including plain document OCR, scene text OCR, formatted document OCR,
+and OCR for tables, charts, mathematical formulas, geometric shapes, molecular formulas, and sheet music. The model is
+highly versatile, supporting various input types and producing structured outputs, making it well-suited for complex OCR
+tasks.
 
 **Benchmark Results:** https://github.com/Ucas-HaoranWei/GOT-OCR2.0#benchmarks
 
-### [DocLing](https://github.com/DS4SD/docling) [✏️](https://github.com/dantetemplar/pdf-extraction-agenda/issues/2)
+### [DocLing](https://github.com/DS4SD/docling)
+
+[✏️](https://github.com/dantetemplar/pdf-extraction-agenda/issues/2)
 [![GitHub last commit](https://img.shields.io/github/last-commit/DS4SD/docling?label=GitHub&logo=github)](https://github.com/DS4SD/docling)
 ![License](https://img.shields.io/badge/License-MIT-brightgreen)
 
@@ -150,10 +222,15 @@ This versatility makes MarkItDown a valuable tool for tasks such as indexing, te
 
 **License:** MIT
 
-**Description:** DocLing is an open-source document processing pipeline developed by IBM Research. It simplifies the parsing of diverse document formats—including PDF, DOCX, PPTX, HTML, and images—and provides seamless integrations with the generative AI ecosystem. Key features include advanced PDF understanding, optical character recognition (OCR) support, and plug-and-play integrations with frameworks like LangChain and LlamaIndex.
+**Description:** DocLing is an open-source document processing pipeline developed by IBM Research. It simplifies the
+parsing of diverse document formats—including PDF, DOCX, PPTX, HTML, and images—and provides seamless integrations with
+the generative AI ecosystem. Key features include advanced PDF understanding, optical character recognition (OCR)
+support, and plug-and-play integrations with frameworks like LangChain and LlamaIndex.
 
 ## Benchmarks
-### [OmniDocBench by MinerU devs](https://github.com/opendatalab/OmniDocBench)
+
+### [OmniDocBench](https://github.com/opendatalab/OmniDocBench)
+
 [![GitHub last commit](https://img.shields.io/github/last-commit/opendatalab/OmniDocBench?label=GitHub&logo=github)](https://github.com/opendatalab/OmniDocBench)
 ![GitHub License](https://img.shields.io/github/license/opendatalab/OmniDocBench)
 <!--- 
@@ -161,14 +238,24 @@ License: Apache 2.0
 Primary language: Python
 -->
 
-OmniDocBench is *“a benchmark for evaluating diverse document parsing in real-world scenarios”*. It establishes a comprehensive evaluation standard for document content extraction methods.
+OmniDocBench is *“a benchmark for evaluating diverse document parsing in real-world scenarios”* by MinerU devs. It
+establishes a
+comprehensive evaluation standard for document content extraction methods.
 
-**Notable features:** OmniDocBench covers a wide variety of document types and layouts, comprising **981 PDF pages across 9 document types, 4 layout styles, and 3 languages**. It provides **rich annotations**: over 20k block-level elements (paragraphs, headings, tables, etc.) and 80k+ span-level elements (lines, formulas, etc.), including reading order and various attribute tags for pages, text, and tables. The dataset undergoes strict quality control (combining manual annotation, intelligent assistance, and expert review for high accuracy). OmniDocBench also comes with **evaluation code** for fair, end-to-end comparisons of document parsing methods. It supports multiple evaluation tasks (overall extraction, layout detection, table recognition, formula recognition, OCR text recognition) and standard metrics (Normalized Edit Distance, BLEU, METEOR, TEDS, COCO mAP/mAR, etc.) to benchmark performance across different aspects of document parsing.
-
+**Notable features:** OmniDocBench covers a wide variety of document types and layouts, comprising **981 PDF pages
+across 9 document types, 4 layout styles, and 3 languages**. It provides **rich annotations**: over 20k block-level
+elements (paragraphs, headings, tables, etc.) and 80k+ span-level elements (lines, formulas, etc.), including reading
+order and various attribute tags for pages, text, and tables. The dataset undergoes strict quality control (combining
+manual annotation, intelligent assistance, and expert review for high accuracy). OmniDocBench also comes with *
+*evaluation code** for fair, end-to-end comparisons of document parsing methods. It supports multiple evaluation tasks (
+overall extraction, layout detection, table recognition, formula recognition, OCR text recognition) and standard
+metrics (Normalized Edit Distance, BLEU, METEOR, TEDS, COCO mAP/mAR, etc.) to benchmark performance across different
+aspects of document parsing.
 
 **End-to-End Evaluation**
 
-End-to-end evaluation assesses the model's accuracy in parsing PDF page content. The evaluation uses the model's Markdown output of the entire PDF page parsing results as the prediction.
+End-to-end evaluation assesses the model's accuracy in parsing PDF page content. The evaluation uses the model's
+Markdown output of the entire PDF page parsing results as the prediction.
 
 <table style="width: 92%; margin: auto; border-collapse: collapse;">
   <thead>
@@ -364,6 +451,7 @@ End-to-end evaluation assesses the model's accuracy in parsing PDF page content.
 </p>
 
 ### [olmoOCR eval](https://github.com/allenai/olmocr)
+
 [![GitHub last commit](https://img.shields.io/github/last-commit/allenai/olmocr?label=GitHub&logo=github)](https://github.com/allenai/olmocr)
 ![GitHub License](https://img.shields.io/github/license/allenai/olmocr)
 <!--- 
@@ -371,40 +459,42 @@ License: Apache 2.0
 Primary language: Python
 -->
 
-The olmOCR project provides an **evaluation toolkit** (`runeval.py`) for side-by-side comparison of PDF conversion pipeline outputs. This tool allows researchers to directly compare text extraction results from different pipeline versions against a gold-standard reference. Also olmoOCR authors made some evalutions in their [technical report](https://olmocr.allenai.org/papers/olmocr.pdf).
+The olmOCR project provides an **evaluation toolkit** (`runeval.py`) for side-by-side comparison of PDF conversion
+pipeline outputs. This tool allows researchers to directly compare text extraction results from different pipeline
+versions against a gold-standard reference. Also olmoOCR authors made some evalutions in
+their [technical report](https://olmocr.allenai.org/papers/olmocr.pdf).
 
 
 > We then sampled 2,000 comparison pairs (same PDF, different tool). We asked 11 data researchers and
-engineers at Ai2 to assess which output was the higher quality representation of the original PDF, focusing on
-reading order, comprehensiveness of content and representation of structured information. The user interface
-used is similar to that in Figure 5. Exact participant instructions are listed in Appendix B.
+> engineers at Ai2 to assess which output was the higher quality representation of the original PDF, focusing on
+> reading order, comprehensiveness of content and representation of structured information. The user interface
+> used is similar to that in Figure 5. Exact participant instructions are listed in Appendix B.
 
 **Bootstrapped Elo Ratings (95% CI)**
 
-| Model         | Elo Rating ± CI  | 95% CI Range           |
-|---------------|------------------|------------------------|
-| olmoOCR       | 1813.0 ± 84.9    | [1605.9, 1930.0]       |
-| MinerU        | 1545.2 ± 99.7    | [1336.7, 1714.1]       |
-| Marker        | 1429.1 ± 100.7   | [1267.6, 1645.5]       |
-| GOTOCOR       | 1212.7 ± 82.0    | [1097.3, 1408.3]       |
+| Model   | Elo Rating ± CI | 95% CI Range     |
+|---------|-----------------|------------------|
+| olmoOCR | 1813.0 ± 84.9   | [1605.9, 1930.0] |
+| MinerU  | 1545.2 ± 99.7   | [1336.7, 1714.1] |
+| Marker  | 1429.1 ± 100.7  | [1267.6, 1645.5] |
+| GOTOCOR | 1212.7 ± 82.0   | [1097.3, 1408.3] |
 
 <br/>
 
 > Table 7: Pairwise Win/Loss Statistics Between Models
 
-| Model Pair              | Wins    | Win Rate (%) |
-|-------------------------|---------|--------------|
-| olmOCR vs. Marker       | 49/31   | **61.3**     |
-| olmOCR vs. GOTOCOR      | 41/29   | **58.6**     |
-| olmOCR vs. MinerU       | 55/22   | **71.4**     |
-| Marker vs. MinerU       | 53/26   | 67.1         |
-| Marker vs. GOTOCOR      | 45/26   | 63.4         |
-| GOTOCOR vs. MinerU      | 38/37   | 50.7         |
-| **Total**               | **452** |              |
-
-
+| Model Pair         | Wins    | Win Rate (%) |
+|--------------------|---------|--------------|
+| olmOCR vs. Marker  | 49/31   | **61.3**     |
+| olmOCR vs. GOTOCOR | 41/29   | **58.6**     |
+| olmOCR vs. MinerU  | 55/22   | **71.4**     |
+| Marker vs. MinerU  | 53/26   | 67.1         |
+| Marker vs. GOTOCOR | 45/26   | 63.4         |
+| GOTOCOR vs. MinerU | 38/37   | 50.7         |
+| **Total**          | **452** |              |
 
 ### [Marker benchmarks](https://github.com/VikParuchuri/marker?tab=readme-ov-file#benchmarks)
+
 [![GitHub last commit](https://img.shields.io/github/last-commit/VikParuchuri/marker?label=GitHub&logo=github)](https://github.com/VikParuchuri/marker?tab=readme-ov-file#benchmarks)
 ![GitHub License](https://img.shields.io/github/license/VikParuchuri/marker)
 <!--- 
@@ -412,7 +502,8 @@ License: GPL 3.0
 Primary language: Python
 -->
 
-The Marker repository provides benchmark results comparing various PDF processing methods, scored based on a heuristic that aligns text with ground truth text segments, and an LLM as a judge scoring method.
+The Marker repository provides benchmark results comparing various PDF processing methods, scored based on a heuristic
+that aligns text with ground truth text segments, and an LLM as a judge scoring method.
 
 | Method     | Avg Time | Heuristic Score | LLM Score |
 |------------|----------|-----------------|-----------|

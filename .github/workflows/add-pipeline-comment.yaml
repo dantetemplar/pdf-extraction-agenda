@@ -118,8 +118,8 @@ jobs:
               const displayURL = url || github_url || '';
               
               const title = displayURL 
-                  ? `[${name}](${displayURL}) [✏️](${issue.html_url})` 
-                  : `${name} [✏️](${issue.html_url})`;
+                  ? `[${name}](${displayURL})\n[✏️](${issue.html_url})` 
+                  : `${name}\n[✏️](${issue.html_url})`;
               let formattedOutput = `### ${title}`.trim();
 
               if (githubBadge || licenseBadge || demoBadge || apiBadge) {
