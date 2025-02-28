@@ -2,14 +2,14 @@ name: Parse New Pipeline Submission
 
 on:
   issues:
-    types: [opened, edited]
+    types: [opened, edited]  # Runs automatically on new and edited issues
+  workflow_dispatch:  # Allows manual execution on all existing issues
 
 permissions:
   issues: write
 
 jobs:
   parse_issue:
-    if: contains(github.event.issue.labels.*.name, 'pipeline')
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
@@ -19,94 +19,117 @@ jobs:
         uses: actions/github-script@v7
         with:
           script: |
-            const issue = context.payload.issue;
-            const body = issue.body || '';
+            const githubContext = context;
+            const isManualRun = githubContext.event_name === "workflow_dispatch";
 
-            const fields = {
-              'Pipeline Name': 'name',
-              'URL': 'url',
-              'GitHub URL': 'github_url',
-              'License': 'license',
-              'Custom License': 'custom_license',
-              'Pipeline Description': 'pipeline_description',
-              'Primary Language': 'primary_language',
-              'Demo (if available)': 'demo_link',
-              'Has the pipeline been benchmarked? If yes, provide benchmark results or a link to evaluation metrics.': 'benchmark_results',
-              'Does it have an API?': 'api_available',
-              'API URL (if applicable)': 'api_url',
-              'API Pricing Page (if applicable)': 'api_pricing',
-              'API Average Price per 1000 Page (if applicable)': 'api_average_price',
-              'Additional Notes': 'additional_notes'
-            };
+            async function processIssue(issue) {
+              const body = issue.body || '';
 
-            function extractField(label) {
-              const regex = new RegExp(`### ${label}\\n\\n(.*?)(?=\\n### |$)`, 's');
-              const match = body.match(regex);
-              return match && match[1].trim() !== "_No response_" ? match[1].trim() : '';
+              if (!issue.labels.some(label => label.name === 'pipeline')) {
+                console.log(`Skipping issue #${issue.number}, no "pipeline" label.`);
+                return;
+              }
+
+              const fields = {
+                'Pipeline Name': 'name',
+                'URL': 'url',
+                'GitHub URL': 'github_url',
+                'License': 'license',
+                'Custom License': 'custom_license',
+                'Pipeline Description': 'pipeline_description',
+                'Primary Language': 'primary_language',
+                'Demo (if available)': 'demo_link',
+                'Has the pipeline been benchmarked? If yes, provide benchmark results or a link to evaluation metrics.': 'benchmark_results',
+                'Does it have an API?': 'api_available',
+                'API URL (if applicable)': 'api_url',
+                'API Pricing Page (if applicable)': 'api_pricing',
+                'API Average Price per 1000 Page (if applicable)': 'api_average_price',
+                'Additional Notes': 'additional_notes'
+              };
+
+              function extractField(label) {
+                const regex = new RegExp(`### ${label}\\n\\n(.*?)(?=\\n### |$)`, 's');
+                const match = body.match(regex);
+                return match && match[1].trim() !== "_No response_" ? match[1].trim() : '';
+              }
+
+              const extractedData = {};
+              for (const [label, id] of Object.entries(fields)) {
+                extractedData[id] = extractField(label);
+              }
+
+              const { 
+                name, url, github_url, license, custom_license, 
+                primary_language, pipeline_description, demo_link, 
+                benchmark_results, api_available, api_url, api_pricing, 
+                api_average_price, additional_notes 
+              } = extractedData;
+
+              const licenseColors = {
+                'Apache-2.0': 'brightgreen',
+                'MIT': 'brightgreen',
+                'BSD-3-Clause': 'brightgreen',
+                'GPL-3.0': 'yellow',
+                'MPL-2.0': 'yellow',
+                'AGPL-3.0': 'orange',
+                'Proprietary': 'red',
+                'Other (please specify below)': 'red'
+              };
+
+              const licenseDisplay = license === 'Other (please specify below)' && custom_license ? custom_license : license;
+              const licenseColor = licenseColors[license] || 'lightgrey';
+              const licenseBadge = `![License](https://img.shields.io/badge/license-${licenseDisplay.replace(/ /g, '%20')}-${licenseColor})`;
+
+              const githubBadge = github_url ? `[![GitHub last commit](https://img.shields.io/github/last-commit/${github_url.replace('https://github.com/', '')}?label=GitHub&logo=github)](${github_url})` : '';
+              const demoBadge = demo_link ? `[![Demo](https://img.shields.io/badge/DEMO-black?logo=awwwards)](${demo_link})` : '';
+
+              let formattedOutput = `### [${name}](${url || github_url})
+              ${githubBadge}
+              ${licenseBadge}
+              ${demoBadge}
+
+              **Primary Language:** ${primary_language || 'N/A'}
+              **License:** ${licenseDisplay}
+              ${pipeline_description ? `\n**Description:** ${pipeline_description}\n` : ''}`;
+
+              if (benchmark_results) {
+                formattedOutput += `\n**Benchmark Results:** ${benchmark_results}\n`;
+              }
+
+              if (api_available === "Yes") {
+                formattedOutput += `\n**API Details:**\n`;
+                if (api_url) formattedOutput += `- **API URL:** ${api_url}\n`;
+                if (api_pricing) formattedOutput += `- **Pricing:** ${api_pricing}\n`;
+                if (api_average_price) formattedOutput += `- **Average Price per 1000 Pages:** ${api_average_price}\n`;
+              }
+
+              if (additional_notes) {
+                formattedOutput += `\n**Additional Notes:** ${additional_notes}\n`;
+              }
+
+              console.log(`Updating issue #${issue.number}...`);
+              await github.rest.issues.createComment({
+                owner: githubContext.repo.owner,
+                repo: githubContext.repo.repo,
+                issue_number: issue.number,
+                body: formattedOutput
+              });
             }
 
-            const extractedData = {};
-            for (const [label, id] of Object.entries(fields)) {
-              extractedData[id] = extractField(label);
+            if (isManualRun) {
+              console.log("Manual run triggered: Processing all open pipeline issues...");
+              const issues = await github.paginate(github.rest.issues.listForRepo, {
+                owner: githubContext.repo.owner,
+                repo: githubContext.repo.repo,
+                state: 'open',  
+                per_page: 100
+              });
+
+              for (const issue of issues) {
+                await processIssue(issue);
+              }
+            } else {
+              console.log(`Triggered automatically on issue #${githubContext.issue.number}`);
+              const issue = githubContext.payload.issue;
+              await processIssue(issue);
             }
-
-            const { 
-              name, url, github_url, license, custom_license, 
-              primary_language, pipeline_description, demo_link, 
-              benchmark_results, api_available, api_url, api_pricing, 
-              api_average_price, additional_notes 
-            } = extractedData;
-
-            const licenseDisplay = license === 'Other (please specify below)' && custom_license ? custom_license : license;
-
-            // License color coding from Green (Best Open Source) to Red (Proprietary)
-            const licenseColors = {
-              'Apache-2.0': 'brightgreen',
-              'MIT': 'brightgreen',
-              'BSD-3-Clause': 'brightgreen',
-              'GPL-3.0': 'yellow',
-              'MPL-2.0': 'yellow',
-              'AGPL-3.0': 'orange',
-              'Proprietary': 'red',
-              'Other (please specify below)': 'gray'
-            };
-
-            const licenseColor = licenseColors[license] || 'lightgrey';
-            const licenseBadge = `![License](https://img.shields.io/badge/license-${licenseDisplay.replace(/ /g, '%20')}-${licenseColor})`;
-
-            const githubBadge = github_url ? `[![GitHub last commit](https://img.shields.io/github/last-commit/${github_url.replace('https://github.com/', '')}?label=GitHub&logo=github)](${github_url})` : '';
-            const demoBadge = demo_link ? `[![Demo](https://img.shields.io/badge/DEMO-black?logo=awwwards)](${demo_link})` : '';
-
-            let formattedOutput = `### [${name}](${url || github_url})
-            ${githubBadge}
-            ${licenseBadge}
-            ${demoBadge}
-
-            **Primary Language:** ${primary_language || 'N/A'}
-            **License:** ${licenseDisplay}
-            ${pipeline_description ? `\n**Description:** ${pipeline_description}\n` : ''}`;
-
-            if (benchmark_results) {
-              formattedOutput += `\n**Benchmark Results:** ${benchmark_results}\n`;
-            }
-
-            if (api_available === "Yes") {
-              formattedOutput += `\n**API Details:**\n`;
-              if (api_url) formattedOutput += `- **API URL:** ${api_url}\n`;
-              if (api_pricing) formattedOutput += `- **Pricing:** ${api_pricing}\n`;
-              if (api_average_price) formattedOutput += `- **Average Price per 1000 Pages:** ${api_average_price}\n`;
-            }
-
-            if (additional_notes) {
-              formattedOutput += `\n**Additional Notes:** ${additional_notes}\n`;
-            }
-
-            console.log(formattedOutput);
-
-            const { owner, repo, number } = context.issue;
-            await github.rest.issues.createComment({
-              owner,
-              repo,
-              issue_number: number,
-              body: formattedOutput
-            });
