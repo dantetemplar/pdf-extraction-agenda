@@ -20,7 +20,7 @@ jobs:
         with:
           script: |
             const githubContext = context;
-            const isManualRun = githubContext.event_name === "workflow_dispatch";
+            const isManualRun = process.env.GITHUB_EVENT_NAME === "workflow_dispatch";  // Correct detection!
 
             async function processIssue(issue) {
               if (!issue.body) {
