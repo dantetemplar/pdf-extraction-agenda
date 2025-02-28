@@ -131,8 +131,9 @@ jobs:
               }
               
               if (licenseDisplay) {
-                  formattedOutput += `\n**License:** ${licenseDisplay}`;
+                  formattedOutput += `\n\n**License:** ${licenseDisplay}`;
               }
+
               
               if (pipeline_description) {
                   formattedOutput += `\n\n**Description:** ${pipeline_description}`;
