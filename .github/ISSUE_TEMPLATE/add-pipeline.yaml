@@ -1,0 +1,62 @@
+name: "New Pipeline Submission"
+description: "Submit a new pipeline to be added to the README."
+labels: ["pipeline", "enhancement"]
+body:
+  - type: input
+    id: name
+    attributes:
+      label: "Pipeline Name"
+      placeholder: "Example: MinerU"
+    validations:
+      required: true
+  
+  - type: input
+    id: github_url
+    attributes:
+      label: "GitHub URL"
+      placeholder: "Example: https://github.com/opendatalab/MinerU"
+  
+  - type: input
+    id: license
+    attributes:
+      label: "License"
+      placeholder: "Example: AGPL-3.0"
+  
+  - type: input
+    id: primary_language
+    attributes:
+      label: "Primary Language"
+      placeholder: "Example: Python"
+  
+  - type: textarea
+    id: pipeline_description
+    attributes:
+      label: "Pipeline Description"
+      description: "Provide a brief description of the pipeline and its key functionalities."
+      placeholder: "Example: 'A high-quality tool for converting PDFs to Markdown and JSON.'"
+  
+  - type: input
+    id: demo_link
+    attributes:
+      label: "Demo (if available)"
+      placeholder: "Example: https://huggingface.co/spaces/opendatalab/MinerU"
+  
+  - type: checkboxes
+    id: benchmarked
+    attributes:
+      label: "Has the pipeline been benchmarked?"
+      options:
+        - label: "Yes"
+        - label: "No"
+  
+  - type: input
+    id: benchmark_results
+    attributes:
+      label: "If yes, provide benchmark results or a link to evaluation metrics."
+      
+  - type: textarea
+    id: additional_notes
+    attributes:
+      label: "Additional Notes"
+      description: "Include any other relevant details or context for the submission."
+  
