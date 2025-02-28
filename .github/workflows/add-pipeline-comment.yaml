@@ -146,7 +146,8 @@ jobs:
               }
             
               if (additional_notes && additional_notes.trim()) {
-                const formattedNotes = additional_notes.trim().replace(/`{3}markdown\n/g, '```markdown\n\n').replace(/\n`{3}/g, '\n\n```');
+                // remove ```markdown from the beginning and end
+                const formattedNotes = additional_notes.replace(/```markdown/g, '').replace(/```/g, '').trim();
                 if (formattedNotes) {
                   formattedOutput += `\n\n**Additional Notes:**\n${formattedNotes}`;
                 }
