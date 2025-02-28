@@ -142,7 +142,7 @@ jobs:
                 formattedOutput += `\n\n**API Details:**`;
                 if (api_url) formattedOutput += `\n- **API URL:** ${api_url}`;
                 if (api_pricing) formattedOutput += `\n- **Pricing:** ${api_pricing}`;
-                if (api_average_price) formattedOutput += `\n- **Average Price per 1000 Pages:** ${api_average_price}`;
+                if (api_average_price) formattedOutput += `\n- **Average Price:** ${api_average_price}`;
               }
             
               if (additional_notes && additional_notes.trim()) {
