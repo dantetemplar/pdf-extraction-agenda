@@ -38,7 +38,8 @@ jobs:
             for (const [label, id] of Object.entries(fields)) {
               const regex = new RegExp(`### ${label}\\n\\n(.*?)\\n\\n`, 's');
               const match = body.match(regex);
-              extractedData[id] = match ? match[1].trim() !== "_No response_" ? match[1].trim() : '';
+            
+              extractedData[id] = (match && match[1].trim() !== "_No response_") ? match[1].trim() : '';
             }
 
             const { name, github_url, license, primary_language, pipeline_description, demo_link, benchmarked, benchmark_results, additional_notes } = extractedData;
