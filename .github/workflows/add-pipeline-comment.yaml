@@ -81,33 +81,43 @@ jobs:
 
               const licenseDisplay = license === 'Other (please specify below)' && custom_license ? custom_license : license;
               const licenseColor = licenseColors[license] || 'lightgrey';
-              const licenseBadge = `![License](https://img.shields.io/badge/license-${licenseDisplay.replace(/ /g, '%20')}-${licenseColor})`;
+              const licenseBadge = `![License](https://img.shields.io/badge/License-${encodeURIComponent(licenseDisplay)}-${licenseColor})`;
 
               const githubBadge = github_url ? `[![GitHub last commit](https://img.shields.io/github/last-commit/${github_url.replace('https://github.com/', '')}?label=GitHub&logo=github)](${github_url})` : '';
               const demoBadge = demo_link ? `[![Demo](https://img.shields.io/badge/DEMO-black?logo=awwwards)](${demo_link})` : '';
 
-              let formattedOutput = `### [${name}](${url || github_url})
+              const displayURL = url || github_url || '';
+
+              let formattedOutput = `### ${name}${displayURL ? ` [🔗](${displayURL})` : ''}
               ${githubBadge}
               ${licenseBadge}
-              ${demoBadge}
+              ${demoBadge}`;
 
-              **Primary Language:** ${primary_language || 'N/A'}
-              **License:** ${licenseDisplay}
-              ${pipeline_description ? `\n**Description:** ${pipeline_description}\n` : ''}`;
+              if (primary_language) {
+                formattedOutput += `\n\n**Primary Language:** ${primary_language}`;
+              }
+
+              if (licenseDisplay) {
+                formattedOutput += `\n**License:** ${licenseDisplay}`;
+              }
+
+              if (pipeline_description) {
+                formattedOutput += `\n\n**Description:** ${pipeline_description}`;
+              }
 
               if (benchmark_results) {
-                formattedOutput += `\n**Benchmark Results:** ${benchmark_results}\n`;
+                formattedOutput += `\n\n**Benchmark Results:** ${benchmark_results}`;
               }
 
               if (api_available === "Yes") {
-                formattedOutput += `\n**API Details:**\n`;
-                if (api_url) formattedOutput += `- **API URL:** ${api_url}\n`;
-                if (api_pricing) formattedOutput += `- **Pricing:** ${api_pricing}\n`;
-                if (api_average_price) formattedOutput += `- **Average Price per 1000 Pages:** ${api_average_price}\n`;
+                formattedOutput += `\n\n**API Details:**`;
+                if (api_url) formattedOutput += `\n- **API URL:** ${api_url}`;
+                if (api_pricing) formattedOutput += `\n- **Pricing:** ${api_pricing}`;
+                if (api_average_price) formattedOutput += `\n- **Average Price per 1000 Pages:** ${api_average_price}`;
               }
 
-              if (additional_notes) {
-                formattedOutput += `\n**Additional Notes:** ${additional_notes}\n`;
+              if (additional_notes && additional_notes.trim()) {
+                formattedOutput += `\n\n**Additional Notes:** ${additional_notes}`;
               }
 
               console.log(`Updating issue #${issue.number}...`);
