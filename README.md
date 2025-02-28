@@ -32,7 +32,7 @@ Marker *“converts PDFs and images to markdown, JSON, and HTML quickly and accu
 
 **Notable features:** Marker supports complex document elements: it properly formats tables, forms, equations, inline math, links, references, and code blocks. It also extracts and saves images and removes common artifacts (headers, footers, etc.). The tool is extensible with user-defined formatting logic, and it offers an optional hybrid mode that uses LLM assistance (`--use_llm`) to boost accuracy (e.g. merging tables across pages, handling complex math). Marker is flexible in execution, working on GPU, CPU, or Apple’s MPS, and provides high throughput in batch processing scenarios.
 
-### markitdown
+### markitdown by Microsoft
 [![GitHub last commit](https://img.shields.io/github/last-commit/microsoft/markitdown?label=GitHub&logo=github)](https://github.com/microsoft/markitdown)
 ![GitHub License](https://img.shields.io/github/license/microsoft/markitdown)
 <!--- 
@@ -59,7 +59,7 @@ olmOCR is a **toolkit for linearizing PDFs for LLM datasets/training**. In other
 **Notable features:** This toolkit includes multiple components for high-quality PDF-to-text conversion. Key features outlined by the project include a prompting strategy for superior natural text extraction using ChatGPT-4, a **side-by-side evaluation toolkit** to compare different pipeline versions, language filtering and spam removal, and fine-tuning code for vision-language models. It supports large-scale processing, capable of converting millions of PDFs in parallel using a distributed pipeline (with integration of *sglang* for efficient GPU inference). Additionally, olmOCR provides a viewer to inspect extracted results in context (Dolma JSONL outputs with an HTML preview), facilitating easier validation of the conversion results.
 
 ## Benchmarks
-### OmniDocBench
+### OmniDocBench by MinerU devs
 [![GitHub last commit](https://img.shields.io/github/last-commit/opendatalab/OmniDocBench?label=GitHub&logo=github)](https://github.com/opendatalab/OmniDocBench)
 ![GitHub License](https://img.shields.io/github/license/opendatalab/OmniDocBench)
 <!--- 
