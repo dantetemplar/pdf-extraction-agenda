@@ -23,6 +23,7 @@ contents [by default](https://github.blog/changelog/2021-04-13-table-of-contents
 | [GOT-OCR](#GOT-OCR)       | 0.289                                          | 1212.7                                      | -                                                   |
 | [olmOCR](#olmOCR)         | -                                              | **1813.0**   ⚠️                             | -                                                   |
 | [LlamaParse](#LlamaParse) | -                                              | -                                           | 3.97619                                             |
+| [MarkItDown](#MarkItDown) | -                                              | -                                           | -                                                   |
 
 - **Bold** indicates the best result for a given metric.
 - "-" means the pipeline was not evaluated in that benchmark.
@@ -82,7 +83,7 @@ handle a wide range of document types in all languages and produce structured ou
 **Additional Notes:**
 **Demo available after registration on https://www.datalab.to/**
 
-### [MarkItDown by Microsoft](https://github.com/microsoft/markitdown)
+### [MarkItDown](https://github.com/microsoft/markitdown)
 
 [✏️](https://github.com/dantetemplar/pdf-extraction-agenda/issues/9)
 [![GitHub last commit](https://img.shields.io/github/last-commit/microsoft/markitdown?label=GitHub&logo=github)](https://github.com/microsoft/markitdown)
