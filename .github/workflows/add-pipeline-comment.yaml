@@ -38,6 +38,7 @@ jobs:
             for (const [label, id] of Object.entries(fields)) {
               const regex = new RegExp(`### ${label}\n\n(.*?)\n\n`, 's');
               const match = body.match(regex);
+              console.log(match);
               extractedData[id] = match ? match[1].trim() : 'N/A';
             }
 
