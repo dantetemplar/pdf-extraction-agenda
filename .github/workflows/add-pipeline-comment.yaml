@@ -135,7 +135,7 @@ jobs:
               const issue = githubContext.payload.issue;
               if (!issue) {
                 console.log("No issue found in context. Exiting.");
-                return;
+                return 1;
               }
               console.log(`Triggered automatically on issue #${issue.number}`);
               await processIssue(issue);
