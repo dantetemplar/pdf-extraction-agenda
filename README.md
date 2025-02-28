@@ -20,12 +20,15 @@ MinerU is described as *“a high-quality tool for convert PDF to Markdown and J
 ### Marker
 [![GitHub last commit](https://img.shields.io/github/last-commit/VikParuchuri/marker?label=GitHub&logo=github)](https://github.com/VikParuchuri/marker)
 ![GitHub License](https://img.shields.io/github/license/VikParuchuri/marker)
+[![Static Badge](https://img.shields.io/badge/DEMO%20after%20registration-black?logo=awwwards)](https://olmocr.allenai.org/)
 <!--- 
 License: GPL 3.0
 Primary language: Python
 -->
 
 Marker *“converts PDFs and images to markdown, JSON, and HTML quickly and accurately.”* It is designed to handle a wide range of document types in all languages and produce structured outputs.
+
+**Demo available after registration on https://www.datalab.to/**
 
 **Notable features:** Marker supports complex document elements: it properly formats tables, forms, equations, inline math, links, references, and code blocks. It also extracts and saves images and removes common artifacts (headers, footers, etc.). The tool is extensible with user-defined formatting logic, and it offers an optional hybrid mode that uses LLM assistance (`--use_llm`) to boost accuracy (e.g. merging tables across pages, handling complex math). Marker is flexible in execution, working on GPU, CPU, or Apple’s MPS, and provides high throughput in batch processing scenarios.
 
