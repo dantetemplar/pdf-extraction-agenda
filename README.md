@@ -12,59 +12,145 @@ contents [by default](https://github.blog/changelog/2021-04-13-table-of-contents
 
 ## Pipelines
 
-### [MinerU](https://github.com/opendatalab/MinerU)
+### [MinerU](https://github.com/opendatalab/MinerU) [✏️](https://github.com/dantetemplar/pdf-extraction-agenda/issues/7)
 [![GitHub last commit](https://img.shields.io/github/last-commit/opendatalab/MinerU?label=GitHub&logo=github)](https://github.com/opendatalab/MinerU)
-![GitHub License](https://img.shields.io/github/license/opendatalab/MinerU)
-[![Demo](https://img.shields.io/badge/DEMO-black?logo=huggingface)](https://huggingface.co/spaces/opendatalab/MinerU)
-<!--- 
-License: AGPL-3.0 
-Primary language: Python
--->
+![License](https://img.shields.io/badge/License-AGPL--3.0-orange)
+[![Demo](https://img.shields.io/badge/DEMO-black?logo=awwwards)](https://huggingface.co/spaces/opendatalab/MinerU)
 
-MinerU is described as *“a high-quality tool for convert PDF to Markdown and JSON”*, serving as a one-stop open-source solution for high-quality data extraction from PDFs. It supports conversion of PDFs into machine-readable formats (Markdown, JSON) for easy data extraction.
+**Primary Language:** Python
 
-**Notable features:** Provides a new API with composable processing stages and a `Dataset` class supporting multiple document formats (images, PDFs, Word, PPT, etc.). It includes advanced capabilities like automatic language identification for OCR (selecting the appropriate model from 84 supported languages). MinerU has a focus on performance and compatibility (optimized for ARM Linux and integrated with Huawei Ascend NPU for acceleration) and implements robust layout analysis (e.g. reading order with `layoutreader`) and table recognition modules to improve parsing accuracy.
+**License:** AGPL-3.0
 
-### [Marker](https://github.com/VikParuchuri/marker)
+**Description:** MinerU is an open-source tool designed to convert PDFs into machine-readable formats, such as Markdown and JSON, facilitating seamless data extraction and further processing. Developed during the pre-training phase of InternLM, MinerU addresses symbol conversion challenges in scientific literature, making it invaluable for research and development in large language models. Key features include:
+
+- **Content Cleaning**: Removes headers, footers, footnotes, and page numbers to ensure semantic coherence.
+- **Structure Preservation**: Maintains the original document structure, including titles, paragraphs, and lists.
+- **Multimodal Extraction**: Accurately extracts images, image descriptions, tables, and table captions.
+- **Formula Recognition**: Converts recognized formulas into LaTeX format.
+- **Table Conversion**: Transforms tables into LaTeX or HTML formats.
+- **OCR Capabilities**: Detects scanned or corrupted PDFs and enables OCR functionality, supporting text recognition in 84 languages.
+- **Cross-Platform Compatibility**: Operates on Windows, Linux, and Mac platforms, supporting both CPU and GPU environments.
+
+### [Marker](https://github.com/VikParuchuri/marker) [✏️](https://github.com/dantetemplar/pdf-extraction-agenda/issues/8)
 [![GitHub last commit](https://img.shields.io/github/last-commit/VikParuchuri/marker?label=GitHub&logo=github)](https://github.com/VikParuchuri/marker)
-![GitHub License](https://img.shields.io/github/license/VikParuchuri/marker)
-[![Demo](https://img.shields.io/badge/DEMO%20after%20registration-black?logo=awwwards)](https://olmocr.allenai.org/)
-<!--- 
-License: GPL 3.0
-Primary language: Python
--->
+![License](https://img.shields.io/badge/License-GPL--3.0-yellow)
+[![Demo](https://img.shields.io/badge/DEMO-black?logo=awwwards)](https://www.datalab.to/)
+[![API](https://img.shields.io/badge/API-Available-blue?logo=swagger&logoColor=85EA2D)](https://www.datalab.to/)
+  
+**Primary Language:** Python
 
-Marker *“converts PDFs and images to markdown, JSON, and HTML quickly and accurately.”* It is designed to handle a wide range of document types in all languages and produce structured outputs.
+**License:** GPL-3.0
 
+**Description:** Marker “converts PDFs and images to markdown, JSON, and HTML quickly and accurately.” It is designed to handle a wide range of document types in all languages and produce structured outputs.
+
+**Benchmark Results:** https://github.com/VikParuchuri/marker?tab=readme-ov-file#performance
+
+**API Details:**
+- **API URL:** https://www.datalab.to/
+- **Pricing:** https://www.datalab.to/plans
+- **Average Price:** $3 per 1000 pages, at least $25 per month
+
+**Additional Notes:**
 **Demo available after registration on https://www.datalab.to/**
 
-**Notable features:** Marker supports complex document elements: it properly formats tables, forms, equations, inline math, links, references, and code blocks. It also extracts and saves images and removes common artifacts (headers, footers, etc.). The tool is extensible with user-defined formatting logic, and it offers an optional hybrid mode that uses LLM assistance (`--use_llm`) to boost accuracy (e.g. merging tables across pages, handling complex math). Marker is flexible in execution, working on GPU, CPU, or Apple’s MPS, and provides high throughput in batch processing scenarios.
-
-### [markitdown by Microsoft](https://github.com/microsoft/markitdown)
+### [MarkItDown by Microsoft](https://github.com/microsoft/markitdown) [✏️](https://github.com/dantetemplar/pdf-extraction-agenda/issues/9)
 [![GitHub last commit](https://img.shields.io/github/last-commit/microsoft/markitdown?label=GitHub&logo=github)](https://github.com/microsoft/markitdown)
-![GitHub License](https://img.shields.io/github/license/microsoft/markitdown)
-<!--- 
-License: MIT
-Primary language: Python
--->
+![License](https://img.shields.io/badge/License-MIT-brightgreen)
 
-MarkItDown is a Python-based utility for converting various files to Markdown. *“It supports: PDF, PowerPoint, Word, Excel, images (with EXIF metadata and OCR), audio (with speech transcription), HTML, text formats (CSV, JSON, XML), ZIP archives, YouTube URLs, ... and more!”*. This breadth makes it useful for indexing and text analysis across diverse content types.
+**Primary Language:** Python
 
-**Notable features:** The tool is currently in alpha (v0.0.2a1) and recently introduced a plugin-based architecture for extensibility. Despite its early stage, MarkItDown emphasizes broad format coverage, allowing conversion of Office documents, PDFs, images, and even audio to Markdown in a single workflow. It supports third-party plugins (disabled by default) which can be enabled via command-line (`--use-plugins`), and it provides a mechanism to discover plugins (search by `#markitdown-plugin`) for extending its capabilities.
+**License:** MIT
 
-### [olmoOCR](https://github.com/allenai/olmocr)
+**Description:** MarkItDown is a Python-based utility developed by Microsoft for converting various file formats into Markdown. It supports a wide range of file types, including:
+
+- **Office Documents**: Word (.docx), PowerPoint (.pptx), Excel (.xlsx)
+- **Media Files**: Images (with EXIF metadata and OCR capabilities), Audio (with speech transcription)
+- **Web and Data Formats**: HTML, CSV, JSON, XML
+- **Archives**: ZIP files (with recursive content parsing)
+- **URLs**: YouTube links
+
+This versatility makes MarkItDown a valuable tool for tasks such as indexing, text analysis, and preparing content for Large Language Model (LLM) training. The utility offers both command-line and Python API interfaces, providing flexibility for various use cases. Additionally, MarkItDown features a plugin-based architecture, allowing for easy integration of third-party extensions to enhance its functionality.
+
+### [olmOCR](https://olmocr.allenai.org/) [✏️](https://github.com/dantetemplar/pdf-extraction-agenda/issues/10)
 [![GitHub last commit](https://img.shields.io/github/last-commit/allenai/olmocr?label=GitHub&logo=github)](https://github.com/allenai/olmocr)
-![GitHub License](https://img.shields.io/github/license/allenai/olmocr)
+![License](https://img.shields.io/badge/License-Apache--2.0-brightgreen)
 [![Demo](https://img.shields.io/badge/DEMO-black?logo=awwwards)](https://olmocr.allenai.org/)
 
-<!--- 
-License: Apache 2.0 
-Primary language: Python
--->
+**Primary Language:** Python
 
-olmOCR is a **toolkit for linearizing PDFs for LLM datasets/training**. In other words, it streamlines PDFs into text to facilitate large language model training on document data.
+**License:** Apache-2.0
 
-**Notable features:** This toolkit includes multiple components for high-quality PDF-to-text conversion. Key features outlined by the project include a prompting strategy for superior natural text extraction using ChatGPT-4, a **side-by-side evaluation toolkit** to compare different pipeline versions, language filtering and spam removal, and fine-tuning code for vision-language models. It supports large-scale processing, capable of converting millions of PDFs in parallel using a distributed pipeline (with integration of *sglang* for efficient GPU inference). Additionally, olmOCR provides a viewer to inspect extracted results in context (Dolma JSONL outputs with an HTML preview), facilitating easier validation of the conversion results.
+**Description:** olmOCR is an open-source toolkit developed by the Allen Institute for AI, designed to convert PDFs and document images into clean, plain text suitable for large language model (LLM) training and other applications. Key features include:
+
+- **High Accuracy**: Preserves reading order and supports complex elements such as tables, equations, and handwriting.
+- **Document Anchoring**: Combines text and visual information to enhance extraction accuracy.
+- **Structured Content Representation**: Utilizes Markdown to represent structured content, including sections, lists, equations, and tables.
+- **Optimized Pipeline**: Compatible with SGLang and vLLM inference engines, enabling efficient scaling from single to multiple GPUs.
+
+
+### [LlamaParse](https://www.llamaindex.ai/llamaparse) [✏️](https://github.com/dantetemplar/pdf-extraction-agenda/issues/6)
+[![GitHub last commit](https://img.shields.io/github/last-commit/run-llama/llama_parse?label=GitHub&logo=github)](https://github.com/run-llama/llama_parse)
+![License](https://img.shields.io/badge/License-Proprietary-red)
+[![API](https://img.shields.io/badge/API-Available-blue?logo=swagger&logoColor=85EA2D)](https://api.cloud.llamaindex.ai/api/parsing/upload)
+  
+**Primary Language:** Python
+
+**License:** Proprietary
+
+**Description:** LlamaParse is a GenAI-native document parsing platform developed by LlamaIndex. It transforms complex documents—including PDFs, PowerPoint presentations, Word documents, and spreadsheets—into structured, LLM-ready formats. LlamaParse excels in accurately extracting and formatting tables, images, and other non-standard layouts, ensuring high-quality data for downstream applications such as Retrieval-Augmented Generation (RAG) and data processing. The platform supports over 10 file types and offers features like natural language parsing instructions, JSON output, and multilingual support.
+
+**API Details:**
+- **API URL:** https://api.cloud.llamaindex.ai/api/parsing/upload
+- **Pricing:** https://docs.cloud.llamaindex.ai/llamaparse/usage_data
+- **Average Price:** **Free Plan**: 1,000 pages per day; **Paid Plan**: 7,000 pages per week, with additional pages at $3 per 1,000 pages
+
+### [Mathpix](https://mathpix.com/) [✏️](https://github.com/dantetemplar/pdf-extraction-agenda/issues/5)
+![License](https://img.shields.io/badge/License-Proprietary-red)
+[![API](https://img.shields.io/badge/API-Available-blue?logo=swagger&logoColor=85EA2D)](https://docs.mathpix.com/) 
+
+**Primary Language:** Not publicly available
+
+**License:** Proprietary
+
+**Description:** Mathpix offers advanced Optical Character Recognition (OCR) technology tailored for STEM content. Their services include the Convert API, which accurately digitizes images and PDFs containing complex elements such as mathematical equations, chemical diagrams, tables, and handwritten notes. The platform supports multiple output formats, including LaTeX, MathML, HTML, and Markdown, facilitating seamless integration into various applications and workflows. Additionally, Mathpix provides the Snipping Tool, a desktop application that allows users to capture and convert content from their screens into editable formats with a single keyboard shortcut.
+
+**API Details:**
+- **API URL:** https://docs.mathpix.com/
+- **Pricing:** https://mathpix.com/pricing
+- **Average Price:** $5 per 1000 pages
+
+### [Nougat](https://facebookresearch.github.io/nougat/) [✏️](https://github.com/dantetemplar/pdf-extraction-agenda/issues/4)
+[![GitHub last commit](https://img.shields.io/github/last-commit/facebookresearch/nougat?label=GitHub&logo=github)](https://github.com/facebookresearch/nougat)
+![License](https://img.shields.io/badge/License-MIT-brightgreen)
+
+**Primary Language:** Python
+
+**License:** MIT
+
+**Description:** Nougat (Neural Optical Understanding for Academic Documents) is an open-source Visual Transformer model developed by Meta AI Research. It is designed to perform Optical Character Recognition (OCR) on scientific documents, converting PDFs into a machine-readable markup language. Nougat simplifies the extraction of complex elements such as mathematical expressions and tables, enhancing the accessibility of scientific knowledge. The model processes raw pixel data from document images and outputs structured markdown text, bridging the gap between human-readable content and machine-readable formats.
+
+### [GOT-OCR](https://github.com/Ucas-HaoranWei/GOT-OCR2.0) [✏️](https://github.com/dantetemplar/pdf-extraction-agenda/issues/3)
+[![GitHub last commit](https://img.shields.io/github/last-commit/Ucas-HaoranWei/GOT-OCR2.0?label=GitHub&logo=github)](https://github.com/Ucas-HaoranWei/GOT-OCR2.0)
+![License](https://img.shields.io/badge/License-Apache--2.0-brightgreen)
+[![Demo](https://img.shields.io/badge/DEMO-black?logo=awwwards)](https://huggingface.co/spaces/ucaslcl/GOT_online)
+
+**Primary Language:** Python
+
+**License:** Apache-2.0
+
+**Description:** GOT-OCR (General OCR Theory) is an open-source, unified end-to-end model designed to advance OCR to version 2.0. It supports a wide range of tasks, including plain document OCR, scene text OCR, formatted document OCR, and OCR for tables, charts, mathematical formulas, geometric shapes, molecular formulas, and sheet music. The model is highly versatile, supporting various input types and producing structured outputs, making it well-suited for complex OCR tasks.
+
+**Benchmark Results:** https://github.com/Ucas-HaoranWei/GOT-OCR2.0#benchmarks
+
+### [DocLing](https://github.com/DS4SD/docling) [✏️](https://github.com/dantetemplar/pdf-extraction-agenda/issues/2)
+[![GitHub last commit](https://img.shields.io/github/last-commit/DS4SD/docling?label=GitHub&logo=github)](https://github.com/DS4SD/docling)
+![License](https://img.shields.io/badge/License-MIT-brightgreen)
+
+**Primary Language:** Python
+
+**License:** MIT
+
+**Description:** DocLing is an open-source document processing pipeline developed by IBM Research. It simplifies the parsing of diverse document formats—including PDF, DOCX, PPTX, HTML, and images—and provides seamless integrations with the generative AI ecosystem. Key features include advanced PDF understanding, optical character recognition (OCR) support, and plug-and-play integrations with frameworks like LangChain and LlamaIndex.
 
 ## Benchmarks
 ### [OmniDocBench by MinerU devs](https://github.com/opendatalab/OmniDocBench)
