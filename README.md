@@ -44,8 +44,6 @@ MarkItDown is a Python-based utility for converting various files to Markdown. *
 
 **Notable features:** The tool is currently in alpha (v0.0.2a1) and recently introduced a plugin-based architecture for extensibility. Despite its early stage, MarkItDown emphasizes broad format coverage, allowing conversion of Office documents, PDFs, images, and even audio to Markdown in a single workflow. It supports third-party plugins (disabled by default) which can be enabled via command-line (`--use-plugins`), and it provides a mechanism to discover plugins (search by `#markitdown-plugin`) for extending its capabilities.
 
-[![YouTube Video](https://img.youtube.com/vi/Ghkyr_irQHE/0.jpg)](https://www.youtube.com/watch?v=Ghkyr_irQHE)
-
 ### olmoOCR
 [![GitHub last commit](https://img.shields.io/github/last-commit/allenai/olmocr?label=GitHub&logo=github)](https://github.com/allenai/olmocr)
 ![GitHub License](https://img.shields.io/github/license/allenai/olmocr)
