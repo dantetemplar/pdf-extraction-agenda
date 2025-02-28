@@ -15,3 +15,4 @@ jobs:
         uses: actions/github-script@v7
         with:
           script: file://.github/workflows/add-pipeline-comment.js
+          debug: true
