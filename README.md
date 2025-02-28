@@ -474,7 +474,7 @@ When processing PDFs, embedded graphics such as vector diagrams, charts, and ima
   ```markdown
   ![Extracted Graphic](path/to/image.png)
   
-  <!-- OCR Extracted Text: "Figure 2 - Sales Growth Trends" -->
+  [comment]: # (OCR: "Figure 2 - Sales Growth Trends")
   ```
 
 #### Choosing the Right Option
