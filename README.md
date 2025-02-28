@@ -421,6 +421,7 @@ The Marker repository provides benchmark results comparing various PDF processin
 | mathpix    | 6.36223  | 86.4281         | 4.15626   |
 | docling    | 3.69949  | 86.7073         | 3.70429   |
 
+<!---
 ## Extraction Properties
 
 This section defines the properties available for configuring the extraction process. Each property governs a specific aspect of how PDFs are processed.
@@ -481,3 +482,4 @@ When processing PDFs, embedded graphics such as vector diagrams, charts, and ima
 - When working with scanned documents containing important visual text, **Replace with OCR** ensures that no information is lost.
 - For preserving visual elements while keeping Markdown structured, **Extract to Folder with Markdown Link** is recommended.
 - If both graphics and extracted text are needed, **Extract to Folder with Markdown Link and OCR Comment** provides the most comprehensive output.
+-->
