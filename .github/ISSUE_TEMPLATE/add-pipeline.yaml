@@ -1,6 +1,6 @@
 name: "New Pipeline Submission"
 description: "Submit a new pipeline to be added to the README."
-labels: ["pipeline", "enhancement"]
+labels: [ "pipeline", "enhancement" ]
 body:
   - type: input
     id: name
@@ -15,54 +15,104 @@ body:
     attributes:
       label: "URL"
       placeholder: "Example: https://github.com/opendatalab/MinerU or https://mathpix.com/"
+    validations:
+      required: true
 
   - type: input
     id: github_url
     attributes:
       label: "GitHub URL"
       placeholder: "Example: https://github.com/opendatalab/MinerU"
-  
-  - type: input
+    validations:
+      required: true
+
+  - type: dropdown
     id: license
     attributes:
       label: "License"
-      placeholder: "Example: AGPL-3.0"
-  
+      options:
+        - "Apache-2.0"
+        - "MIT"
+        - "GPL-3.0"
+        - "AGPL-3.0"
+        - "BSD-3-Clause"
+        - "MPL-2.0"
+        - "Proprietary"
+        - "Other (please specify below)"
+    validations:
+      required: true
+
   - type: input
-    id: primary_language
+    id: custom_license
     attributes:
-      label: "Primary Language"
-      placeholder: "Example: Python"
-  
+      label: "Custom License"
+      description: "If 'Other (please specify below)' is selected above, please specify the license here."
+      placeholder: "Enter the license name or URL"
+
   - type: textarea
     id: pipeline_description
     attributes:
       label: "Pipeline Description"
       description: "Provide a brief description of the pipeline and its key functionalities."
       placeholder: "Example: 'A high-quality tool for converting PDFs to Markdown and JSON.'"
-  
+    validations:
+      required: true
+
+  - type: input
+    id: primary_language
+    attributes:
+      label: "Primary Language"
+      placeholder: "Example: Python"
+    validations:
+      required: true
+
   - type: input
     id: demo_link
     attributes:
       label: "Demo (if available)"
       placeholder: "Example: https://huggingface.co/spaces/opendatalab/MinerU"
-  
-  - type: checkboxes
-    id: benchmarked
-    attributes:
-      label: "Has the pipeline been benchmarked?"
-      options:
-        - label: "Yes"
-        - label: "No"
-  
+
   - type: input
     id: benchmark_results
     attributes:
-      label: "If yes, provide benchmark results or a link to evaluation metrics."
-      
+      label: "Has the pipeline been benchmarked? If yes, provide benchmark results or a link to evaluation metrics."
+
+  # <!--- API Fields Start -->
+  - type: dropdown
+    id: api_available
+    attributes:
+      label: "Does it have an API?"
+      options:
+        - "Yes"
+        - "No"
+    validations:
+      required: true
+
+  - type: input
+    id: api_url
+    attributes:
+      label: "API URL (if applicable)"
+      description: "If the pipeline has an API, provide the API endpoint or base URL."
+      placeholder: "Example: https://www.datalab.to/"
+
+  - type: input
+    id: api_pricing
+    attributes:
+      label: "API Pricing Page (if applicable)"
+      description: "Provide a link to the API pricing page, if available."
+      placeholder: "Example: https://www.datalab.to/plans"
+
+  - type: input
+    id: api_average_price
+    attributes:
+      label: "API Average Price per 1000 Page (if applicable)"
+      description: "Enter the average cost per 1000 page (in USD) if applicable."
+      placeholder: "Example: $3 per 100 pages, at least $25 per month"
+  # <!--- API Fields End -->
+
   - type: textarea
     id: additional_notes
     attributes:
       label: "Additional Notes"
       description: "Include any other relevant details or context for the submission."
-  
+      render: markdown
