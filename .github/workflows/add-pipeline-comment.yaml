@@ -2,7 +2,7 @@ name: Parse New Pipeline Submission
 
 on:
   issues:
-    types: [opened, edited]  # Runs automatically on new and edited issues
+    types: [opened, edited]  # Runs automatically when an issue is opened or edited
   workflow_dispatch:  # Allows manual execution on all existing issues
 
 permissions:
@@ -23,8 +23,11 @@ jobs:
             const isManualRun = githubContext.event_name === "workflow_dispatch";
 
             async function processIssue(issue) {
-              const body = issue.body || '';
-
+              if (!issue.body) {
+                console.log(`Skipping issue #${issue.number} due to empty body.`);
+                return;
+              }
+              
               if (!issue.labels.some(label => label.name === 'pipeline')) {
                 console.log(`Skipping issue #${issue.number}, no "pipeline" label.`);
                 return;
@@ -49,7 +52,7 @@ jobs:
 
               function extractField(label) {
                 const regex = new RegExp(`### ${label}\\n\\n(.*?)(?=\\n### |$)`, 's');
-                const match = body.match(regex);
+                const match = issue.body.match(regex);
                 return match && match[1].trim() !== "_No response_" ? match[1].trim() : '';
               }
 
@@ -129,7 +132,11 @@ jobs:
                 await processIssue(issue);
               }
             } else {
-              console.log(`Triggered automatically on issue #${githubContext.issue.number}`);
               const issue = githubContext.payload.issue;
+              if (!issue) {
+                console.log("No issue found in context. Exiting.");
+                return;
+              }
+              console.log(`Triggered automatically on issue #${issue.number}`);
               await processIssue(issue);
             }
