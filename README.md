@@ -292,30 +292,29 @@ The olmOCR project provides an **evaluation toolkit** (`runeval.py`) for side-by
 engineers at Ai2 to assess which output was the higher quality representation of the original PDF, focusing on
 reading order, comprehensiveness of content and representation of structured information. The user interface
 used is similar to that in Figure 5. Exact participant instructions are listed in Appendix B.
-> 
-> Figure 6 ELO ranking of olmOCR vs other popular PDF content extraction tools.
 
-| OCR Tool  | Median Score | Interquartile Range |
-|-----------|--------------|---------------------|
-| olmOCR    | **~1850**    | **~1750 - 1900**    |
-| MinerU    | ~1550        | ~1400 - 1650        |
-| Marker    | ~1400        | ~1300 - 1500        |
-| GOTOCOR   | ~1250        | ~1150 - 1350        |
+**Bootstrapped Elo Ratings (95% CI)**
+
+| Model         | Elo Rating ± CI  | 95% CI Range           |
+|---------------|------------------|------------------------|
+| olmoOCR       | 1813.0 ± 84.9    | [1605.9, 1930.0]       |
+| MinerU        | 1545.2 ± 99.7    | [1336.7, 1714.1]       |
+| Marker        | 1429.1 ± 100.7   | [1267.6, 1645.5]       |
+| GOTOCOR       | 1212.7 ± 82.0    | [1097.3, 1408.3]       |
 
 <br/>
 
 > Table 7: Pairwise Win/Loss Statistics Between Models
 
-| Model Pair              | Wins   | Win Rate (%) |
-|-------------------------|--------|-------------|
-| olmOCR vs. Marker      | 49/31  | **61.3**    |
-| olmOCR vs. GOTOCOR     | 41/29  | **58.6**    |
-| olmOCR vs. MinerU      | 55/22  | **71.4**    |
-| Marker vs. MinerU      | 53/26  | 67.1        |
-| Marker vs. GOTOCOR     | 45/26  | 63.4        |
-| GOTOCOR vs. MinerU     | 38/37  | 50.7        |
-| **Total**              | **452** |             |
-
+| Model Pair              | Wins    | Win Rate (%) |
+|-------------------------|---------|--------------|
+| olmOCR vs. Marker       | 49/31   | **61.3**     |
+| olmOCR vs. GOTOCOR      | 41/29   | **58.6**     |
+| olmOCR vs. MinerU       | 55/22   | **71.4**     |
+| Marker vs. MinerU       | 53/26   | 67.1         |
+| Marker vs. GOTOCOR      | 45/26   | 63.4         |
+| GOTOCOR vs. MinerU      | 38/37   | 50.7         |
+| **Total**               | **452** |              |
 
 
 
