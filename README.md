@@ -83,3 +83,31 @@ The olmOCR project provides an **evaluation toolkit** (`runeval.py`) for side-by
 
 **Notable features:** This evaluation script generates a set of accuracy scores by comparing OCR outputs to ground-truth data. It is designed for easy **side-by-side evaluation**, producing metrics and even visual HTML reports for qualitative review of differences. By providing a standardized way to assess OCR pipeline performance, *olmOCR eval* helps validate improvements and ensures fair comparisons between different OCR approaches. (Note: *olmOCR eval* is part of the `allenai/olmocr` repository, not a standalone project.)
 
+# Properties
+### Property: Embedded Graphics Handling
+
+When processing PDFs, embedded graphics such as vector diagrams, charts, and images can be handled in different ways depending on the extraction strategy. This property determines how these graphics are treated during extraction and whether additional processing, such as OCR, is applied.
+- **Ignore**  
+  The extraction process does not process embedded graphics, and no additional files or links are generated.
+- **Replace with OCR**  
+  Embedded graphics are removed from the output, and OCR is applied to any raster images within the PDF. The extracted text replaces the original graphic content where possible.
+- **Extract to Folder with Markdown Link**  
+  Vector-based graphics and embedded images are extracted to a separate folder. In the Markdown output, a reference is added using a standard image link format:  
+  ```markdown
+  ![Extracted Graphic](path/to/image.png)
+  ```
+- **Extract to Folder with Markdown Link and OCR Comment**  
+  This mode extracts graphics to a folder, inserts a Markdown link to the extracted image, and appends any OCR-extracted text as a comment below the reference. Example:
+  ```markdown
+  ![Extracted Graphic](path/to/image.png)
+  
+  <!-- OCR Extracted Text: "Figure 2 - Sales Growth Trends" -->
+  ```
+
+**Choosing the Right Option**
+- If the PDF contains machine-readable text and graphics are not required, **Ignore** is the most efficient choice.
+- When working with scanned documents containing important visual text, **Replace with OCR** ensures that no information is lost.
+- For preserving visual elements while keeping Markdown structured, **Extract to Folder with Markdown Link** is recommended.
+- If both graphics and extracted text are needed, **Extract to Folder with Markdown Link and OCR Comment** provides the most comprehensive output.
+
+
