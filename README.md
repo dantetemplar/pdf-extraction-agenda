@@ -7,6 +7,7 @@ This repository provides an overview of selected **pipeline** and **benchmark** 
 ### MinerU
 [![GitHub last commit](https://img.shields.io/github/last-commit/opendatalab/MinerU?label=GitHub&logo=github)](https://github.com/opendatalab/MinerU)
 ![GitHub License](https://img.shields.io/github/license/opendatalab/MinerU)
+[![Static Badge](https://img.shields.io/badge/DEMO-black?logo=huggingface)](https://huggingface.co/spaces/opendatalab/MinerU)
 <!--- 
 License: AGPL-3.0 
 Primary language: Python
@@ -43,6 +44,8 @@ MarkItDown is a Python-based utility for converting various files to Markdown. *
 ### olmoOCR
 [![GitHub last commit](https://img.shields.io/github/last-commit/allenai/olmocr?label=GitHub&logo=github)](https://github.com/allenai/olmocr)
 ![GitHub License](https://img.shields.io/github/license/allenai/olmocr)
+[![Static Badge](https://img.shields.io/badge/DEMO-black?logo=awwwards)](https://olmocr.allenai.org/)
+
 <!--- 
 License: Apache 2.0 
 Primary language: Python
