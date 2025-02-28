@@ -91,9 +91,14 @@ License: GPL 3.0
 Primary language: Python
 -->
 
-The Marker repository provides benchmark results comparing various PDF processing methods based on structured data extraction accuracy, processing time, and layout preservation.
+The Marker repository provides benchmark results comparing various PDF processing methods, scored based on a heuristic that aligns text with ground truth text segments, and an LLM as a judge scoring method.
 
-**Notable features:** Benchmarks include comparison against open-source OCR solutions (Tesseract, EasyOCR, Adobe Extract API) and proprietary tools. Evaluates document type coverage, layout reconstruction accuracy, and OCR text correctness. Uses standardized metrics such as BLEU score, METEOR, and Levenshtein distance to assess output quality. Includes dataset-based testing to track improvements in text extraction accuracy over time.
+| Method     | Avg Time | Heuristic Score | LLM Score |
+|------------|----------|-----------------|-----------|
+| marker     | 2.83837  | 95.6709         | 4.23916   |
+| llamaparse | 23.348   | 84.2442         | 3.97619   |
+| mathpix    | 6.36223  | 86.4281         | 4.15626   |
+| docling    | 3.69949  | 86.7073         | 3.70429   |
 
 ## Extraction Properties
 
