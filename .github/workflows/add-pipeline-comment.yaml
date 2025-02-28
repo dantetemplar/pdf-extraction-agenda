@@ -81,14 +81,15 @@ jobs:
 
               const licenseDisplay = license === 'Other (please specify below)' && custom_license ? custom_license : license;
               const licenseColor = licenseColors[license] || 'lightgrey';
-              const licenseBadge = `![License](https://img.shields.io/badge/License-${encodeURIComponent(licenseDisplay)}-${licenseColor})`;
+              const licenseBadge = `![License](https://img.shields.io/badge/License-${licenseDisplay.replace(/-/g, '--')}-${licenseColor})`;
 
               const githubBadge = github_url ? `[![GitHub last commit](https://img.shields.io/github/last-commit/${github_url.replace('https://github.com/', '')}?label=GitHub&logo=github)](${github_url})` : '';
               const demoBadge = demo_link ? `[![Demo](https://img.shields.io/badge/DEMO-black?logo=awwwards)](${demo_link})` : '';
 
               const displayURL = url || github_url || '';
-
-              let formattedOutput = `### ${name}${displayURL ? ` [🔗](${displayURL})` : ''}
+              
+              const title = displayURL ? `[${name}](${displayURL})` : name;
+              let formattedOutput = `### ${title}
               ${githubBadge}
               ${licenseBadge}
               ${demoBadge}`;
@@ -117,7 +118,9 @@ jobs:
               }
 
               if (additional_notes && additional_notes.trim()) {
-                formattedOutput += `\n\n**Additional Notes:** ${additional_notes}`;
+                if (additional_notes.trim() !== '```markdown\n\n```') {
+                  formattedOutput += `\n\n**Additional Notes:**\n${additional_notes}`;
+                }
               }
 
               console.log(`Updating issue #${issue.number}...`);
