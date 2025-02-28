@@ -113,8 +113,10 @@ jobs:
               const demoBadge = demo_link ? `[![Demo](https://img.shields.io/badge/DEMO-black?logo=awwwards)](${demo_link})` : '';
             
               const displayURL = url || github_url || '';
-            
-              const title = displayURL ? `[${name}](${displayURL})` : name;
+              
+              const title = displayURL 
+                  ? `[${name}](${displayURL}) [✏️](${issue.html_url})` 
+                  : `${name} [✏️](${issue.html_url})`;
               let formattedOutput = `### ${title}
               ${githubBadge}
               ${licenseBadge}
