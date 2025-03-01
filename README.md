@@ -13,21 +13,21 @@ contents [by default](https://github.blog/changelog/2021-04-13-table-of-contents
 
 ## Comparison
 
-| Pipeline                  | [OmniDocBench](#omnidocbench) Overall Edit ↓ | [olmOCR Eval](#olmoocr-eval) ELO ↑ | [Marker Bench](#marker-benchmarks) Overall Edit ↓ | [READoc](#readoc) Overall Score ↑ | [Actualize.pro](#actualize-pro) Overall Score ↑ |
-|---------------------------|----------------------------------------------|------------------------------------|---------------------------------------------------|-----------------------------------|-------------------------------------------------|
-| [MinerU](#MinerU)         | **0.150**    ⚠️                              | 1545.2                             | -                                                 | 60.17                             | **8**                                           |
-| [Marker](#Marker)         | 0.336                                        | 1429.1                             | **4.23916**  ⚠️                                   | 63.57                             | 6.5                                             |
-| [Mathpix](#Mathpix)       | 0.189                                        | -                                  | 4.15626                                           | -                                 | -                                               |
-| [DocLing](#DocLing)       | 0.589                                        | -                                  | 3.70429                                           | -                                 | 7.3                                             |
-| [GOT-OCR](#GOT-OCR)       | 0.289                                        | 1212.7                             | -                                                 | -                                 | -                                               |
-| [olmOCR](#olmOCR)         | -                                            | **1813.0**   ⚠️                    | -                                                 | -                                 | -                                               |
-| [LlamaParse](#LlamaParse) | -                                            | -                                  | 3.97619                                           | -                                 | 7.1                                             |
-| [MarkItDown](#MarkItDown) | -                                            | -                                  | -                                                 | -                                 | 7.78                                            |
-| [Nougat](#Nougat)         | 0.453                                        | -                                  | -                                                 | **81.42**                         | -                                               |
-| Zerox                     | -                                            | -                                  | -                                                 | -                                 | 7.9                                             |
-| Unstructured              | -                                            | -                                  | -                                                 | -                                 | 6.2                                             |
-| Pix2Text                  | -                                            | -                                  | -                                                 | 64.39                             | -                                               |
-| open-parse                | -                                            | -                                  | -                                                 | -                                 | -                                               |
+| Pipeline                      | [OmniDocBench](#omnidocbench) Overall Edit ↓ | [olmOCR Eval](#olmoocr-eval) ELO ↑ | [Marker Bench](#marker-benchmarks) Overall Edit ↓ | [READoc](#readoc) Overall Score ↑ | [Actualize.pro](#actualize-pro) Overall Score ↑ |
+|-------------------------------|----------------------------------------------|------------------------------------|---------------------------------------------------|-----------------------------------|-------------------------------------------------|
+| [MinerU](#MinerU)             | **0.150**    ⚠️                              | 1545.2                             | -                                                 | 60.17                             | **8**                                           |
+| [Marker](#Marker)             | 0.336                                        | 1429.1                             | **4.23916**  ⚠️                                   | 63.57                             | 6.5                                             |
+| [Mathpix](#Mathpix)           | 0.189                                        | -                                  | 4.15626                                           | -                                 | -                                               |
+| [DocLing](#DocLing)           | 0.589                                        | -                                  | 3.70429                                           | -                                 | 7.3                                             |
+| [GOT-OCR](#GOT-OCR)           | 0.289                                        | 1212.7                             | -                                                 | -                                 | -                                               |
+| [olmOCR](#olmOCR)             | -                                            | **1813.0**   ⚠️                    | -                                                 | -                                 | -                                               |
+| [LlamaParse](#LlamaParse)     | -                                            | -                                  | 3.97619                                           | -                                 | 7.1                                             |
+| [MarkItDown](#MarkItDown)     | -                                            | -                                  | -                                                 | -                                 | 7.78                                            |
+| [Nougat](#Nougat)             | 0.453                                        | -                                  | -                                                 | **81.42**                         | -                                               |
+| [Zerox](#Zerox)               | -                                            | -                                  | -                                                 | -                                 | 7.9                                             |
+| [Unstructured](#Unstructured) | -                                            | -                                  | -                                                 | -                                 | 6.2                                             |
+| [Pix2Text](#Pix2Text)         | -                                            | -                                  | -                                                 | 64.39                             | -                                               |
+| [open-parse](#open-parse)     | -                                            | -                                  | -                                                 | -                                 | -                                               |
 
 - **Bold** indicates the best result for a given metric.
 - "-" means the pipeline was not evaluated in that benchmark.
@@ -232,6 +232,91 @@ tasks.
 parsing of diverse document formats—including PDF, DOCX, PPTX, HTML, and images—and provides seamless integrations with
 the generative AI ecosystem. Key features include advanced PDF understanding, optical character recognition (OCR)
 support, and plug-and-play integrations with frameworks like LangChain and LlamaIndex.
+
+### [Zerox](https://getomni.ai/)
+[✏️](https://github.com/dantetemplar/pdf-extraction-agenda/issues/12)
+[![GitHub last commit](https://img.shields.io/github/last-commit/getomni-ai/zerox?label=GitHub&logo=github)](https://github.com/getomni-ai/zerox)
+![License](https://img.shields.io/badge/License-MIT-brightgreen)
+[![Demo](https://img.shields.io/badge/DEMO-black?logo=awwwards)](https://getomni.ai/ocr-demo)
+[![API](https://img.shields.io/badge/API-Available-blue?logo=swagger&logoColor=85EA2D)](https://getomni.ai/)
+
+**Primary Language:** TypeScript
+
+**License:** MIT
+
+**Description:** Zerox is an OCR and document extraction tool that leverages vision models to convert PDFs and images into structured Markdown format. It excels in handling complex layouts, including tables and charts, making it ideal for AI ingestion and further text analysis.
+
+**Benchmark Results:** https://getomni.ai/ocr-benchmark
+
+**API Details:**
+- **API URL:** https://getomni.ai/
+- **Pricing:** https://getomni.ai/pricing
+- **Average Price:** Extract structured data: 'Startup' plan at $225 per month with 5000 pages included, after that $2 per 1000 pages
+
+### [Unstructured](https://unstructured.io/)
+[✏️](https://github.com/dantetemplar/pdf-extraction-agenda/issues/13)
+[![GitHub last commit](https://img.shields.io/github/last-commit/Unstructured-IO/unstructured?label=GitHub&logo=github)](https://github.com/Unstructured-IO/unstructured)
+![License](https://img.shields.io/badge/License-Apache--2.0-brightgreen)
+[![Demo](https://img.shields.io/badge/DEMO-black?logo=awwwards)](https://demo.unstructured.io/)
+[![API](https://img.shields.io/badge/API-Available-blue?logo=swagger&logoColor=85EA2D)](https://docs.unstructured.io/platform-api/overview)
+
+**Primary Language:** Python
+
+**License:** Apache-2.0
+
+**Description:** Unstructured is an open-source library that provides components for ingesting and pre-processing unstructured data, including images and text documents such as PDFs, HTML, and Word documents. It transforms complex data into structured formats suitable for large language models and AI applications. The platform offers enterprise-grade connectors to seamlessly integrate various data sources, making it easier to extract and transform data for analysis and processing.
+
+**API Details:**
+- **API URL:** https://docs.unstructured.io/platform-api/overview
+- **Pricing:** https://unstructured.io/developers
+- **Average Price:** **Basic Strategy**: $2 per 1,000 pages, suitable for simple, text-only documents. **Advanced Strategy**: $20 per 1,000 pages, ideal for PDFs, images, and complex file types. **Platinum/VLM Strategy**: $30 per 1,000 pages, designed for challenging documents, including scanned and handwritten content with VLM API integration.
+
+### [Pix2Text](https://p2t.breezedeus.com/)
+[✏️](https://github.com/dantetemplar/pdf-extraction-agenda/issues/14)
+[![GitHub last commit](https://img.shields.io/github/last-commit/breezedeus/Pix2Text?label=GitHub&logo=github)](https://github.com/breezedeus/Pix2Text)
+![License](https://img.shields.io/badge/License-MIT-brightgreen)
+[![Demo](https://img.shields.io/badge/DEMO-black?logo=awwwards)](https://p2t.breezedeus.com/)
+
+**Primary Language:** Python
+
+**License:** MIT
+
+**Description:** Pix2Text (P2T) is an open-source Python3 tool designed to recognize layouts, tables, mathematical formulas (LaTeX), and text in images, converting them into Markdown format. It serves as a free alternative to Mathpix, supporting over 80 languages, including English, Simplified Chinese, Traditional Chinese, and Vietnamese. P2T can also process entire PDF files, extracting content into structured Markdown, facilitating seamless conversion of visual content into text-based representations.
+
+### [Open-Parse](https://filimoa.github.io/open-parse/)
+[✏️](https://github.com/dantetemplar/pdf-extraction-agenda/issues/15)
+[![GitHub last commit](https://img.shields.io/github/last-commit/Filimoa/open-parse?label=GitHub&logo=github)](https://github.com/Filimoa/open-parse)
+![License](https://img.shields.io/badge/License-MIT-brightgreen)
+
+**Primary Language:** Python
+
+**License:** MIT
+
+**Description:** Open Parse is a flexible, open-source library designed to enhance document chunking for Retrieval-Augmented Generation (RAG) systems. It visually analyzes document layouts to effectively group related content, surpassing traditional text-splitting methods. Key features include:
+- **Visually-Driven Analysis**: Understands complex layouts for superior chunking.
+- **Markdown Support**: Extracts headings, bold, and italic text into Markdown format.
+- **High-Precision Table Extraction**: Converts tables into clean Markdown with high accuracy.
+- **Extensibility**: Allows implementation of custom post-processing steps.
+- **Intuitive Design**: Offers robust editor support for seamless integration.
+
+### [Extractous](https://github.com/yobix-ai/extractous)
+[✏️](https://github.com/dantetemplar/pdf-extraction-agenda/issues/16)
+[![GitHub last commit](https://img.shields.io/github/last-commit/yobix-ai/extractous?label=GitHub&logo=github)](https://github.com/yobix-ai/extractous)
+![License](https://img.shields.io/badge/License-Apache--2.0-brightgreen)
+
+**Primary Language:** Rust
+
+**License:** Apache-2.0
+
+**Description:** Extractous is a high-performance, open-source library designed for efficient extraction of content and metadata from various document types, including PDF, Word, HTML, and more. Developed in Rust, it offers bindings for multiple programming languages, starting with Python. Extractous aims to provide a comprehensive solution for unstructured data extraction, enabling local and efficient processing without relying on external services or APIs. Key features include:
+
+- **High Performance**: Leveraging Rust's capabilities, Extractous achieves faster processing speeds and lower memory utilization compared to traditional extraction libraries.
+- **Multi-Language Support**: While the core is written in Rust, bindings are available for Python, with plans to support additional languages like JavaScript/TypeScript.
+- **Extensive Format Support**: Through integration with Apache Tika, Extractous supports a wide range of file formats, ensuring versatility in data extraction tasks.
+- **OCR Integration**: Incorporates Tesseract OCR to extract text from images and scanned documents, enhancing its ability to handle diverse content types.
+
+**Benchmark Results:** https://github.com/yobix-ai/extractous-benchmarks
+
 
 ## Benchmarks
 
