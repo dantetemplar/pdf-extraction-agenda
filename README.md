@@ -13,18 +13,19 @@ contents [by default](https://github.blog/changelog/2021-04-13-table-of-contents
 
 ## Comparison
 
-| Pipeline                  | [OmniDocBench](#omnidocbench) - Overall Edit ↓ | [olmOCR Eval](#olmoocr-eval) - Elo Rating ↑ | [Marker Bench](#marker-benchmarks) - Overall Edit ↓ | [Actualize.pro](#actualize-pro) Score ↑ |
-|---------------------------|------------------------------------------------|---------------------------------------------|-----------------------------------------------------|-----------------------------------------|
-| [MinerU](#MinerU)         | **0.150**    ⚠️                                | 1545.2                                      | -                                                   | **8**                                   |
-| [Marker](#Marker)         | 0.336                                          | 1429.1                                      | **4.23916**  ⚠️                                     | 6.5                                     |
-| [Mathpix](#Mathpix)       | 0.189                                          | -                                           | 4.15626                                             | -                                       |
-| [DocLing](#DocLing)       | 0.589                                          | -                                           | 3.70429                                             | 7.3                                     |
-| [GOT-OCR](#GOT-OCR)       | 0.289                                          | 1212.7                                      | -                                                   | -                                       |
-| [olmOCR](#olmOCR)         | -                                              | **1813.0**   ⚠️                             | -                                                   | -                                       |
-| [LlamaParse](#LlamaParse) | -                                              | -                                           | 3.97619                                             | 7.1                                     |
-| [MarkItDown](#MarkItDown) | -                                              | -                                           | -                                                   | 7.78                                    |
-| Xerox                     | -                                              | -                                           | -                                                   | 7.9                                     |
-| Unstructured              | -                                              | -                                           | -                                                   | 6.2                                     |
+| Pipeline                  | [OmniDocBench](#omnidocbench) - Overall Edit ↓ | [olmOCR Eval](#olmoocr-eval) - Elo Rating ↑ | [Marker Bench](#marker-benchmarks) - Overall Edit ↓ | [READoc](#readoc) | [Actualize.pro](#actualize-pro) Score ↑ |
+|---------------------------|------------------------------------------------|---------------------------------------------|-----------------------------------------------------|-------------------|-----------------------------------------|
+| [MinerU](#MinerU)         | **0.150**    ⚠️                                | 1545.2                                      | -                                                   | 60.17             | **8**                                   |
+| [Marker](#Marker)         | 0.336                                          | 1429.1                                      | **4.23916**  ⚠️                                     | 63.57             | 6.5                                     |
+| [Mathpix](#Mathpix)       | 0.189                                          | -                                           | 4.15626                                             | -                 | -                                       |
+| [DocLing](#DocLing)       | 0.589                                          | -                                           | 3.70429                                             | -                 | 7.3                                     |
+| [GOT-OCR](#GOT-OCR)       | 0.289                                          | 1212.7                                      | -                                                   | -                 | -                                       |
+| [olmOCR](#olmOCR)         | -                                              | **1813.0**   ⚠️                             | -                                                   | -                 | -                                       |
+| [LlamaParse](#LlamaParse) | -                                              | -                                           | 3.97619                                             | -                 | 7.1                                     |
+| [MarkItDown](#MarkItDown) | -                                              | -                                           | -                                                   | -                 | 7.78                                    |
+| Xerox                     | -                                              | -                                           | -                                                   | -                 | 7.9                                     |
+| Unstructured              | -                                              | -                                           | -                                                   | -                 | 6.2                                     |
+| Pix2Text                  | -                                              | -                                           | -                                                   | **64.39**         | -                                       |
 
 - **Bold** indicates the best result for a given metric.
 - "-" means the pipeline was not evaluated in that benchmark.
@@ -516,6 +517,7 @@ that aligns text with ground truth text segments, and an LLM as a judge scoring 
 | docling    | 3.69949  | 86.7073         | 3.70429   |
 
 ### [READoc](https://arxiv.org/abs/2409.05137)
+
 [![GitHub last commit](https://img.shields.io/github/last-commit/icip-cas/READoc?label=GitHub&logo=github)](https://github.com/icip-cas/READoc)
 [![arXiv](https://img.shields.io/badge/arXiv-2409.05137-b31b1b)](https://arxiv.org/abs/2409.05137)
 
