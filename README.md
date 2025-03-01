@@ -515,6 +515,31 @@ that aligns text with ground truth text segments, and an LLM as a judge scoring 
 | mathpix    | 6.36223  | 86.4281         | 4.15626   |
 | docling    | 3.69949  | 86.7073         | 3.70429   |
 
+### [READoc](https://arxiv.org/abs/2409.05137)
+[![GitHub last commit](https://img.shields.io/github/last-commit/icip-cas/READoc?label=GitHub&logo=github)](https://github.com/icip-cas/READoc)
+[![arXiv](https://img.shields.io/badge/arXiv-2409.05137-b31b1b)](https://arxiv.org/abs/2409.05137)
+
+| Methods                    | Text (Concat) | Text (Vocab) | Heading (Concat) | Heading (Tree) | Formula (Embed) | Formula (Isolate) | Table (Concat) | Table (Tree) | Reading Order (Block) | Reading Order (Token) | Average |
+|----------------------------|---------------|--------------|------------------|----------------|-----------------|-------------------|----------------|--------------|-----------------------|-----------------------|---------|
+| **Baselines**              |               |              |                  |                |                 |                   |                |              |                       |                       |         |
+| PyMuPDF4LLM                | 66.66         | 74.27        | 27.86            | 20.77          | 0.07            | 0.02              | 23.27          | 15.83        | 87.70                 | 89.09                 | 40.55   |
+| Tesseract OCR              | 78.85         | 76.51        | 1.26             | 0.30           | 0.12            | 0.00              | 0.00           | 0.00         | 96.70                 | 97.59                 | 35.13   |
+| **Pipeline Tools**         |               |              |                  |                |                 |                   |                |              |                       |                       |         |
+| MinerU                     | 84.15         | 84.76        | 62.89            | 39.15          | 62.97           | 71.02             | 0.00           | 0.00         | 98.64                 | 97.72                 | 60.17   |
+| Pix2Text                   | 85.85         | 83.72        | 63.23            | 34.53          | 43.18           | 37.45             | 54.08          | 47.35        | 97.68                 | 96.78                 | 64.39   |
+| Marker                     | 83.58         | 81.36        | 68.78            | 54.82          | 5.07            | 56.26             | 47.12          | 43.35        | 98.08                 | 97.26                 | 63.57   |
+| **Expert Visual Models**   |               |              |                  |                |                 |                   |                |              |                       |                       |         |
+| Nougat-small               | 87.35         | 92.00        | 86.40            | 87.88          | 76.52           | 79.39             | 55.63          | 52.35        | 97.97                 | 98.36                 | 81.38   |
+| Nougat-base                | 88.03         | 92.29        | 86.60            | 88.50          | 76.19           | 79.47             | 54.40          | 52.30        | 97.98                 | 98.41                 | 81.42   |
+| **Vision-Language Models** |               |              |                  |                |                 |                   |                |              |                       |                       |         |
+| DeepSeek-VL-7B-Chat        | 31.89         | 39.96        | 23.66            | 12.53          | 17.01           | 16.94             | 22.96          | 16.47        | 88.76                 | 66.75                 | 33.69   |
+| MiniCPM-Llama3-V2.5        | 58.91         | 70.87        | 26.33            | 7.68           | 16.70           | 17.90             | 27.89          | 24.91        | 95.26                 | 93.02                 | 43.95   |
+| LLaVa-1.6-Vicuna-13B       | 27.51         | 37.09        | 8.92             | 6.27           | 17.80           | 11.68             | 23.78          | 16.23        | 76.63                 | 51.68                 | 27.76   |
+| InternVL-Chat-V1.5         | 53.06         | 68.44        | 25.03            | 13.57          | 33.13           | 24.37             | 40.44          | 34.35        | 94.61                 | 91.31                 | 47.83   |
+| GPT-4o-mini                | 79.44         | 84.37        | 31.77            | 18.65          | 42.23           | 41.67             | 47.81          | 39.85        | 97.69                 | 96.35                 | 57.98   |
+
+**Table 3:** Evaluation of various Document Structured Extraction systems on READOC-arXiv.
+
 ### [Actualize pro](https://www.actualize.pro/recourses/unlocking-insights-from-pdfs-a-comparative-study-of-extraction-tools)
 
 [![GitHub last commit](https://img.shields.io/github/last-commit/actualize-ae/pdf-benchmarking?label=GitHub&logo=github)](https://github.com/actualize-ae/pdf-benchmarking)
@@ -534,6 +559,22 @@ that aligns text with ground truth text segments, and an LLM as a judge scoring 
 | Llama parse  | 7.1                       | 7.3                                        | 7.7                                         | 8.7                                      | 7.3                                            | 6                                                    | 5.3                                         |
 | Marker       | 6.5                       | 7.3                                        | 5.7                                         | 7.3                                      | 6.7                                            | 4.5                                                  | 6.7                                         |
 | Unstructured | 6.2                       | 7.3                                        | 5                                           | 8.3                                      | 6.7                                            | 5                                                    | 4.7                                         |
+
+### [liduos.com](https://liduos.com/en/ai-develope-tools-series-2-open-source-doucment-parsing.html)
+
+| Function                                          | MinerU | PaddleOCR | Marker | Unstructured | gptpdf | Zerox | Chunkr | pdf-extract-api | Sparrow | LlamaParse | DeepDoc | MegaParse |
+|---------------------------------------------------|--------|-----------|--------|--------------|--------|-------|--------|-----------------|---------|------------|---------|-----------|
+| PDF and Image Parsing                             | ✓      | ✓         | ✓      | ✓            | ✓      | ✓     | ✓      | ✓               | ✓       | ✓          | ✓       | ✓         |
+| Parsing of Other Formats (PPT, Excel, DOCX, etc.) | ✓      | -         | -      | ✓            | -      | ✓     | ✓      | -               | ✓       | ✓          | ✓       | ✓         |
+| Layout Analysis                                   | ✓      | ✓         | ✓      | -            | ✓      | -     | ✓      | -               | -       | ✓          | ✓       | -         |
+| Text Recognition                                  | ✓      | ✓         | ✓      | ✓            | ✓      | ✓     | ✓      | ✓               | ✓       | ✓          | ✓       | ✓         |
+| Image Recognition                                 | ✓      | ✓         | ✓      | ✓            | ✓      | ✓     | ✓      | ✓               | ✓       | ✓          | ✓       | ✓         |
+| Simple (Vertical/Horizontal/Hierarchical) Tables  | ✓      | ✓         | ✓      | ✓            | ✓      | ✓     | ✓      | ✓               | ✓       | ✓          | ✓       | ✓         |
+| Complex Tables                                    | -      | -         | -      | -            | -      | -     | -      | -               | -       | -          | -       | -         |
+| Formula Recognition                               | -      | -         | -      | -            | -      | -     | -      | -               | -       | -          | -       | -         |
+| HTML Output                                       | ✓      | -         | ✓      | ✓            | -      | -     | ✓      | -               | -       | -          | ✓       | -         |
+| Markdown Output                                   | ✓      | ✓         | ✓      | -            | ✓      | ✓     | ✓      | ✓               | ✓       | ✓          | -       | ✓         |
+| JSON Output                                       | ✓      | -         | ✓      | ✓            | -      | -     | ✓      | ✓               | -       | ✓          | ✓       | -         |
 
 <!---
 ## Extraction Properties
