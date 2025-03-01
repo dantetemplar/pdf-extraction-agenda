@@ -580,6 +580,71 @@ that aligns text with ground truth text segments, and an LLM as a judge scoring 
 | Markdown Output                                   | ✓      | ✓         | ✓      | -            | ✓      | ✓     | ✓      | ✓               | ✓       | ✓          | -       | ✓         |
 | JSON Output                                       | ✓      | -         | ✓      | ✓            | -      | -     | ✓      | ✓               | -       | ✓          | ✓       | -         |
 
+
+### [Omni OCR Benchmark](https://getomni.ai/ocr-benchmark)
+
+[![GitHub last commit](https://img.shields.io/github/last-commit/yobix-ai/extractous-benchmarks?label=GitHub&logo=github)](https://github.com/getomni-ai/benchmark)
+![GitHub License](https://img.shields.io/github/license/getomni-ai/benchmark)
+
+**JSON Accuracy**
+
+| Model Provider         | JSON Accuracy (%) |
+|------------------------|-------------------|
+| OmniAI                 | 91.7%             |
+| Gemini 2.0 Flash       | 86.1%             |
+| Azure                  | 85.1%             |
+| GPT-4o                 | 75.5%             |
+| AWS Textract           | 74.3%             |
+| Claude Sonnet 3.5      | 69.3%             |
+| Google Document AI     | 67.8%             |
+| GPT-4o Mini            | 64.8%             |
+| Unstructured           | 50.8%             |
+
+**Cost per 1,000 Pages**
+
+| Model Provider         | Cost per 1,000 Pages ($) |
+|------------------------|--------------------------|
+| GPT-4o Mini            | 0.97                     |
+| Gemini 2.0 Flash       | 1.12                     |
+| Google Document AI     | 1.50                     |
+| AWS Textract           | 4.00                     |
+| OmniAI                 | 10.00                    |
+| Azure                  | 10.00                    |
+| GPT-4o                 | 18.37                    |
+| Claude Sonnet 3.5      | 19.93                    |
+| Unstructured           | 20.00                    |
+
+**Processing Time per Page**
+
+| Model Provider         | Average Latency (seconds) |
+|------------------------|---------------------------|
+| Google Document AI     | 3.19                      |
+| Azure                  | 4.40                      |
+| AWS Textract           | 4.86                      |
+| Unstructured           | 7.99                      |
+| OmniAI                 | 9.69                      |
+| Gemini 2.0 Flash       | 10.71                     |
+| Claude Sonnet 3.5      | 18.42                     |
+| GPT-4o Mini            | 22.73                     |
+| GPT-4o                 | 24.85                     |
+
+
+### [Extractous benchmarks](https://github.com/yobix-ai/extractous-benchmarks/tree/main/docs)
+
+[![GitHub last commit](https://img.shields.io/github/last-commit/yobix-ai/extractous-benchmarks?label=GitHub&logo=github)](https://github.com/yobix-ai/extractous-benchmarks/tree/main/docs)
+![GitHub License](https://img.shields.io/github/license/yobix-ai/extractous-benchmarks)
+
+
+[`extractous`](https://github.com/yobix-ai/extractous) speedup relative to [`unstructured-io`](https://github.com/Unstructured-IO/unstructured)
+
+![image](https://github.com/user-attachments/assets/6d9bc6ba-8e1a-4083-9d6f-864adf854e2f)
+
+
+[`extractous`](https://github.com/yobix-ai/extractous) memory efficiency relative to [`unstructured-io`](https://github.com/Unstructured-IO/unstructured)
+
+![image](https://github.com/user-attachments/assets/e6236232-4fa3-4cd0-8cfa-0bfcd5bc18e3)
+
+
 <!---
 ## Extraction Properties
 
