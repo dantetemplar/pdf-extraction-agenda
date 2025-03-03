@@ -28,6 +28,8 @@ contents [by default](https://github.blog/changelog/2021-04-13-table-of-contents
 | [Unstructured](#Unstructured) | -                                            | -                                  | -                                                 | -                                 | 6.2                                             |
 | [Pix2Text](#Pix2Text)         | -                                            | -                                  | -                                                 | 64.39                             | -                                               |
 | [open-parse](#open-parse)     | -                                            | -                                  | -                                                 | -                                 | -                                               |
+| [Markdrop](#markdrop)         | -                                            | -                                  | -                                                 | -                                 | -                                               |
+
 
 - **Bold** indicates the best result for a given metric.
 - "-" means the pipeline was not evaluated in that benchmark.
@@ -317,6 +319,16 @@ support, and plug-and-play integrations with frameworks like LangChain and Llama
 
 **Benchmark Results:** https://github.com/yobix-ai/extractous-benchmarks
 
+### [Markdrop](https://github.com/shoryasethia/markdrop)
+[✏️](https://github.com/dantetemplar/pdf-extraction-agenda/issues/18)
+[![GitHub last commit](https://img.shields.io/github/last-commit/shoryasethia/markdrop?label=GitHub&logo=github)](https://github.com/shoryasethia/markdrop)
+![License](https://img.shields.io/badge/License-GPL--3.0-yellow)
+
+**Primary Language:** Python
+
+**License:** GPL-3.0
+
+**Description:** A Python package for converting PDFs to markdown while extracting images and tables, generate descriptive text descriptions for extracted tables/images using several LLM clients. And many more functionalities. Markdrop is available on PyPI.
 
 ## Benchmarks
 
