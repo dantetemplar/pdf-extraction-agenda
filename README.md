@@ -13,26 +13,32 @@ contents [by default](https://github.blog/changelog/2021-04-13-table-of-contents
 
 ## Comparison
 
-| Pipeline                      | [OmniDocBench](#omnidocbench) Overall Edit ↓ | [olmOCR Eval](#olmoocr-eval) ELO ↑ | [Marker Bench](#marker-benchmarks) Overall Edit ↓ | [READoc](#readoc) Overall Score ↑ | [Actualize.pro](#actualize-pro) Overall Score ↑ |
-|-------------------------------|----------------------------------------------|------------------------------------|---------------------------------------------------|-----------------------------------|-------------------------------------------------|
-| [MinerU](#MinerU)             | **0.150**    ⚠️                              | 1545.2                             | -                                                 | 60.17                             | **8**                                           |
-| [Marker](#Marker)             | 0.336                                        | 1429.1                             | **4.23916**  ⚠️                                   | 63.57                             | 6.5                                             |
-| [Mathpix](#Mathpix)           | 0.189                                        | -                                  | 4.15626                                           | -                                 | -                                               |
-| [DocLing](#DocLing)           | 0.589                                        | -                                  | 3.70429                                           | -                                 | 7.3                                             |
-| [GOT-OCR](#GOT-OCR)           | 0.289                                        | 1212.7                             | -                                                 | -                                 | -                                               |
-| [olmOCR](#olmOCR)             | -                                            | **1813.0**   ⚠️                    | -                                                 | -                                 | -                                               |
-| [LlamaParse](#LlamaParse)     | -                                            | -                                  | 3.97619                                           | -                                 | 7.1                                             |
-| [MarkItDown](#MarkItDown)     | -                                            | -                                  | -                                                 | -                                 | 7.78                                            |
-| [Nougat](#Nougat)             | 0.453                                        | -                                  | -                                                 | **81.42**                         | -                                               |
-| [Zerox](#Zerox)               | -                                            | -                                  | -                                                 | -                                 | 7.9                                             |
-| [Unstructured](#Unstructured) | -                                            | -                                  | -                                                 | -                                 | 6.2                                             |
-| [Pix2Text](#Pix2Text)         | -                                            | -                                  | -                                                 | 64.39                             | -                                               |
-| [open-parse](#open-parse)     | -                                            | -                                  | -                                                 | -                                 | -                                               |
-| [Markdrop](#markdrop)         | -                                            | -                                  | -                                                 | -                                 | -                                               |
-
+| Pipeline                      | [OmniDocBench](#omnidocbench) Overall ↓ | [olmOCR](#olmoocreval) ELO ↑ | [Marker](#marker-benchmarks) Overall Edit ↓ | [Mistral](#mistral-ocr-benchmarks) Overall ↑ | [READoc](#readoc) Overall ↑ | [Actualize.pro](#actualize-pro) Overall ↑ |
+|-------------------------------|-----------------------------------------|------------------------------|---------------------------------------------|:---------------------------------------------|-----------------------------|-------------------------------------------|
+| [MinerU](#MinerU)             | **0.150** ⚠️                            | 1545.2                       |                                             |                                              | 60.17                       | **8**                                     |
+| [Marker](#Marker)             | 0.336                                   | 1429.1                       | **4.23916** ⚠️                              |                                              | 63.57                       | 6.5                                       |
+| [Mathpix](#Mathpix)           | 0.189                                   |                              | 4.15626                                     |                                              |                             |                                           |
+| [DocLing](#DocLing)           | 0.589                                   |                              | 3.70429                                     |                                              |                             | 7.3                                       |
+| [GOT-OCR](#GOT-OCR)           | 0.289                                   | 1212.7                       |                                             |                                              |                             |                                           |
+| [olmOCR](#olmOCR)             |                                         | **1813.0** ⚠️                |                                             |                                              |                             |                                           |
+| [LlamaParse](#LlamaParse)     |                                         |                              | 3.97619                                     |                                              |                             | 7.1                                       |
+| [MarkItDown](#MarkItDown)     |                                         |                              |                                             |                                              |                             | 7.78                                      |
+| [Nougat](#Nougat)             | 0.453                                   |                              |                                             |                                              | **81.42**                   |                                           |
+| [Zerox](#Zerox)               |                                         |                              |                                             |                                              |                             | 7.9                                       |
+| [Unstructured](#Unstructured) |                                         |                              |                                             |                                              |                             | 6.2                                       |
+| [Pix2Text](#Pix2Text)         |                                         |                              |                                             |                                              | 64.39                       |                                           |
+| [open-parse](#open-parse)     |                                         |                              |                                             |                                              |                             |                                           |
+| [Markdrop](#markdrop)         |                                         |                              |                                             |                                              |                             |                                           |
+| Mistral OCR 2503              |                                         |                              |                                             | **94.89**  ⚠️                                |                             |                                           |
+| Google Document AI            |                                         |                              |                                             | 83.42                                        |                             |                                           |
+| Azure OCR                     |                                         |                              |                                             | 89.52                                        |                             |                                           |
+| Gemini-1.5-Flash-002          |                                         |                              |                                             | 90.23                                        |                             |                                           |
+| Gemini-1.5-Pro-002            |                                         |                              |                                             | 89.92                                        |                             |                                           |
+| Gemini-2.0-Flash-001          |                                         |                              |                                             | 88.69                                        |                             |                                           |
+| GPT-4o-2024-11-20             |                                         |                              |                                             | 89.77                                        |                             |                                           |
 
 - **Bold** indicates the best result for a given metric.
-- "-" means the pipeline was not evaluated in that benchmark.
+- " " means the pipeline was not evaluated in that benchmark.
 - ⚠️ means the pipeline authors are the ones who did the benchmark.
 
 ## Pipelines
@@ -236,6 +242,7 @@ the generative AI ecosystem. Key features include advanced PDF understanding, op
 support, and plug-and-play integrations with frameworks like LangChain and LlamaIndex.
 
 ### [Zerox](https://getomni.ai/)
+
 [✏️](https://github.com/dantetemplar/pdf-extraction-agenda/issues/12)
 [![GitHub last commit](https://img.shields.io/github/last-commit/getomni-ai/zerox?label=GitHub&logo=github)](https://github.com/getomni-ai/zerox)
 ![License](https://img.shields.io/badge/License-MIT-brightgreen)
@@ -246,16 +253,21 @@ support, and plug-and-play integrations with frameworks like LangChain and Llama
 
 **License:** MIT
 
-**Description:** Zerox is an OCR and document extraction tool that leverages vision models to convert PDFs and images into structured Markdown format. It excels in handling complex layouts, including tables and charts, making it ideal for AI ingestion and further text analysis.
+**Description:** Zerox is an OCR and document extraction tool that leverages vision models to convert PDFs and images
+into structured Markdown format. It excels in handling complex layouts, including tables and charts, making it ideal for
+AI ingestion and further text analysis.
 
 **Benchmark Results:** https://getomni.ai/ocr-benchmark
 
 **API Details:**
+
 - **API URL:** https://getomni.ai/
 - **Pricing:** https://getomni.ai/pricing
-- **Average Price:** Extract structured data: 'Startup' plan at $225 per month with 5000 pages included, after that $2 per 1000 pages
+- **Average Price:** Extract structured data: 'Startup' plan at $225 per month with 5000 pages included, after that $2
+  per 1000 pages
 
 ### [Unstructured](https://unstructured.io/)
+
 [✏️](https://github.com/dantetemplar/pdf-extraction-agenda/issues/13)
 [![GitHub last commit](https://img.shields.io/github/last-commit/Unstructured-IO/unstructured?label=GitHub&logo=github)](https://github.com/Unstructured-IO/unstructured)
 ![License](https://img.shields.io/badge/License-Apache--2.0-brightgreen)
@@ -266,14 +278,23 @@ support, and plug-and-play integrations with frameworks like LangChain and Llama
 
 **License:** Apache-2.0
 
-**Description:** Unstructured is an open-source library that provides components for ingesting and pre-processing unstructured data, including images and text documents such as PDFs, HTML, and Word documents. It transforms complex data into structured formats suitable for large language models and AI applications. The platform offers enterprise-grade connectors to seamlessly integrate various data sources, making it easier to extract and transform data for analysis and processing.
+**Description:** Unstructured is an open-source library that provides components for ingesting and pre-processing
+unstructured data, including images and text documents such as PDFs, HTML, and Word documents. It transforms complex
+data into structured formats suitable for large language models and AI applications. The platform offers
+enterprise-grade connectors to seamlessly integrate various data sources, making it easier to extract and transform data
+for analysis and processing.
 
 **API Details:**
+
 - **API URL:** https://docs.unstructured.io/platform-api/overview
 - **Pricing:** https://unstructured.io/developers
-- **Average Price:** **Basic Strategy**: $2 per 1,000 pages, suitable for simple, text-only documents. **Advanced Strategy**: $20 per 1,000 pages, ideal for PDFs, images, and complex file types. **Platinum/VLM Strategy**: $30 per 1,000 pages, designed for challenging documents, including scanned and handwritten content with VLM API integration.
+- **Average Price:** **Basic Strategy
+  **: $2 per 1,000 pages, suitable for simple, text-only documents. **Advanced Strategy**: $20 per 1,000 pages, ideal
+  for PDFs, images, and complex file types. **Platinum/VLM Strategy**: $30 per 1,000 pages, designed for challenging
+  documents, including scanned and handwritten content with VLM API integration.
 
 ### [Pix2Text](https://p2t.breezedeus.com/)
+
 [✏️](https://github.com/dantetemplar/pdf-extraction-agenda/issues/14)
 [![GitHub last commit](https://img.shields.io/github/last-commit/breezedeus/Pix2Text?label=GitHub&logo=github)](https://github.com/breezedeus/Pix2Text)
 ![License](https://img.shields.io/badge/License-MIT-brightgreen)
@@ -283,9 +304,14 @@ support, and plug-and-play integrations with frameworks like LangChain and Llama
 
 **License:** MIT
 
-**Description:** Pix2Text (P2T) is an open-source Python3 tool designed to recognize layouts, tables, mathematical formulas (LaTeX), and text in images, converting them into Markdown format. It serves as a free alternative to Mathpix, supporting over 80 languages, including English, Simplified Chinese, Traditional Chinese, and Vietnamese. P2T can also process entire PDF files, extracting content into structured Markdown, facilitating seamless conversion of visual content into text-based representations.
+**Description:** Pix2Text (P2T) is an open-source Python3 tool designed to recognize layouts, tables, mathematical
+formulas (LaTeX), and text in images, converting them into Markdown format. It serves as a free alternative to Mathpix,
+supporting over 80 languages, including English, Simplified Chinese, Traditional Chinese, and Vietnamese. P2T can also
+process entire PDF files, extracting content into structured Markdown, facilitating seamless conversion of visual
+content into text-based representations.
 
 ### [Open-Parse](https://filimoa.github.io/open-parse/)
+
 [✏️](https://github.com/dantetemplar/pdf-extraction-agenda/issues/15)
 [![GitHub last commit](https://img.shields.io/github/last-commit/Filimoa/open-parse?label=GitHub&logo=github)](https://github.com/Filimoa/open-parse)
 ![License](https://img.shields.io/badge/License-MIT-brightgreen)
@@ -294,7 +320,10 @@ support, and plug-and-play integrations with frameworks like LangChain and Llama
 
 **License:** MIT
 
-**Description:** Open Parse is a flexible, open-source library designed to enhance document chunking for Retrieval-Augmented Generation (RAG) systems. It visually analyzes document layouts to effectively group related content, surpassing traditional text-splitting methods. Key features include:
+**Description:** Open Parse is a flexible, open-source library designed to enhance document chunking for
+Retrieval-Augmented Generation (RAG) systems. It visually analyzes document layouts to effectively group related
+content, surpassing traditional text-splitting methods. Key features include:
+
 - **Visually-Driven Analysis**: Understands complex layouts for superior chunking.
 - **Markdown Support**: Extracts headings, bold, and italic text into Markdown format.
 - **High-Precision Table Extraction**: Converts tables into clean Markdown with high accuracy.
@@ -302,6 +331,7 @@ support, and plug-and-play integrations with frameworks like LangChain and Llama
 - **Intuitive Design**: Offers robust editor support for seamless integration.
 
 ### [Extractous](https://github.com/yobix-ai/extractous)
+
 [✏️](https://github.com/dantetemplar/pdf-extraction-agenda/issues/16)
 [![GitHub last commit](https://img.shields.io/github/last-commit/yobix-ai/extractous?label=GitHub&logo=github)](https://github.com/yobix-ai/extractous)
 ![License](https://img.shields.io/badge/License-Apache--2.0-brightgreen)
@@ -310,16 +340,25 @@ support, and plug-and-play integrations with frameworks like LangChain and Llama
 
 **License:** Apache-2.0
 
-**Description:** Extractous is a high-performance, open-source library designed for efficient extraction of content and metadata from various document types, including PDF, Word, HTML, and more. Developed in Rust, it offers bindings for multiple programming languages, starting with Python. Extractous aims to provide a comprehensive solution for unstructured data extraction, enabling local and efficient processing without relying on external services or APIs. Key features include:
+**Description:** Extractous is a high-performance, open-source library designed for efficient extraction of content and
+metadata from various document types, including PDF, Word, HTML, and more. Developed in Rust, it offers bindings for
+multiple programming languages, starting with Python. Extractous aims to provide a comprehensive solution for
+unstructured data extraction, enabling local and efficient processing without relying on external services or APIs. Key
+features include:
 
-- **High Performance**: Leveraging Rust's capabilities, Extractous achieves faster processing speeds and lower memory utilization compared to traditional extraction libraries.
-- **Multi-Language Support**: While the core is written in Rust, bindings are available for Python, with plans to support additional languages like JavaScript/TypeScript.
-- **Extensive Format Support**: Through integration with Apache Tika, Extractous supports a wide range of file formats, ensuring versatility in data extraction tasks.
-- **OCR Integration**: Incorporates Tesseract OCR to extract text from images and scanned documents, enhancing its ability to handle diverse content types.
+- **High Performance**: Leveraging Rust's capabilities, Extractous achieves faster processing speeds and lower memory
+  utilization compared to traditional extraction libraries.
+- **Multi-Language Support**: While the core is written in Rust, bindings are available for Python, with plans to
+  support additional languages like JavaScript/TypeScript.
+- **Extensive Format Support**: Through integration with Apache Tika, Extractous supports a wide range of file formats,
+  ensuring versatility in data extraction tasks.
+- **OCR Integration**: Incorporates Tesseract OCR to extract text from images and scanned documents, enhancing its
+  ability to handle diverse content types.
 
 **Benchmark Results:** https://github.com/yobix-ai/extractous-benchmarks
 
 ### [Markdrop](https://github.com/shoryasethia/markdrop)
+
 [✏️](https://github.com/dantetemplar/pdf-extraction-agenda/issues/18)
 [![GitHub last commit](https://img.shields.io/github/last-commit/shoryasethia/markdrop?label=GitHub&logo=github)](https://github.com/shoryasethia/markdrop)
 ![License](https://img.shields.io/badge/License-GPL--3.0-yellow)
@@ -328,7 +367,9 @@ support, and plug-and-play integrations with frameworks like LangChain and Llama
 
 **License:** GPL-3.0
 
-**Description:** A Python package for converting PDFs to markdown while extracting images and tables, generate descriptive text descriptions for extracted tables/images using several LLM clients. And many more functionalities. Markdrop is available on PyPI.
+**Description:** A Python package for converting PDFs to markdown while extracting images and tables, generate
+descriptive text descriptions for extracted tables/images using several LLM clients. And many more functionalities.
+Markdrop is available on PyPI.
 
 ## Benchmarks
 
@@ -641,6 +682,18 @@ that aligns text with ground truth text segments, and an LLM as a judge scoring 
 
 **Table 3:** Evaluation of various Document Structured Extraction systems on READOC-arXiv.
 
+### [Mistral-OCR benchmarks](https://mistral.ai/news/mistral-ocr)
+
+| Model                | Overall   | Math      | Multilingual | Scanned   | Tables    |
+|----------------------|-----------|-----------|--------------|-----------|-----------|
+| Google Document AI   | 83.42     | 80.29     | 86.42        | 92.77     | 78.16     |
+| Azure OCR            | 89.52     | 85.72     | 87.52        | 94.65     | 89.52     |
+| Gemini-1.5-Flash-002 | 90.23     | 89.11     | 86.76        | 94.87     | 90.48     |
+| Gemini-1.5-Pro-002   | 89.92     | 88.48     | 86.33        | 96.15     | 89.71     |
+| Gemini-2.0-Flash-001 | 88.69     | 84.18     | 85.80        | 95.11     | 91.46     |
+| GPT-4o-2024-11-20    | 89.77     | 87.55     | 86.00        | 94.58     | 91.70     |
+| Mistral OCR 2503     | **94.89** | **94.29** | **89.55**    | **98.96** | **96.12** |
+
 ### [Actualize pro](https://www.actualize.pro/recourses/unlocking-insights-from-pdfs-a-comparative-study-of-extraction-tools)
 
 [![GitHub last commit](https://img.shields.io/github/last-commit/actualize-ae/pdf-benchmarking?label=GitHub&logo=github)](https://github.com/actualize-ae/pdf-benchmarking)
@@ -677,7 +730,6 @@ that aligns text with ground truth text segments, and an LLM as a judge scoring 
 | Markdown Output                                   | ✓      | ✓         | ✓      | -            | ✓      | ✓     | ✓      | ✓               | ✓       | ✓          | -       | ✓         |
 | JSON Output                                       | ✓      | -         | ✓      | ✓            | -      | -     | ✓      | ✓               | -       | ✓          | ✓       | -         |
 
-
 ### [Omni OCR Benchmark](https://getomni.ai/ocr-benchmark)
 
 [![GitHub last commit](https://img.shields.io/github/last-commit/yobix-ai/extractous-benchmarks?label=GitHub&logo=github)](https://github.com/getomni-ai/benchmark)
@@ -685,122 +737,58 @@ that aligns text with ground truth text segments, and an LLM as a judge scoring 
 
 **JSON Accuracy**
 
-| Model Provider         | JSON Accuracy (%) |
-|------------------------|-------------------|
-| OmniAI                 | 91.7%             |
-| Gemini 2.0 Flash       | 86.1%             |
-| Azure                  | 85.1%             |
-| GPT-4o                 | 75.5%             |
-| AWS Textract           | 74.3%             |
-| Claude Sonnet 3.5      | 69.3%             |
-| Google Document AI     | 67.8%             |
-| GPT-4o Mini            | 64.8%             |
-| Unstructured           | 50.8%             |
+| Model Provider     | JSON Accuracy (%) |
+|--------------------|-------------------|
+| OmniAI             | 91.7%             |
+| Gemini 2.0 Flash   | 86.1%             |
+| Azure              | 85.1%             |
+| GPT-4o             | 75.5%             |
+| AWS Textract       | 74.3%             |
+| Claude Sonnet 3.5  | 69.3%             |
+| Google Document AI | 67.8%             |
+| GPT-4o Mini        | 64.8%             |
+| Unstructured       | 50.8%             |
 
 **Cost per 1,000 Pages**
 
-| Model Provider         | Cost per 1,000 Pages ($) |
-|------------------------|--------------------------|
-| GPT-4o Mini            | 0.97                     |
-| Gemini 2.0 Flash       | 1.12                     |
-| Google Document AI     | 1.50                     |
-| AWS Textract           | 4.00                     |
-| OmniAI                 | 10.00                    |
-| Azure                  | 10.00                    |
-| GPT-4o                 | 18.37                    |
-| Claude Sonnet 3.5      | 19.93                    |
-| Unstructured           | 20.00                    |
+| Model Provider     | Cost per 1,000 Pages ($) |
+|--------------------|--------------------------|
+| GPT-4o Mini        | 0.97                     |
+| Gemini 2.0 Flash   | 1.12                     |
+| Google Document AI | 1.50                     |
+| AWS Textract       | 4.00                     |
+| OmniAI             | 10.00                    |
+| Azure              | 10.00                    |
+| GPT-4o             | 18.37                    |
+| Claude Sonnet 3.5  | 19.93                    |
+| Unstructured       | 20.00                    |
 
 **Processing Time per Page**
 
-| Model Provider         | Average Latency (seconds) |
-|------------------------|---------------------------|
-| Google Document AI     | 3.19                      |
-| Azure                  | 4.40                      |
-| AWS Textract           | 4.86                      |
-| Unstructured           | 7.99                      |
-| OmniAI                 | 9.69                      |
-| Gemini 2.0 Flash       | 10.71                     |
-| Claude Sonnet 3.5      | 18.42                     |
-| GPT-4o Mini            | 22.73                     |
-| GPT-4o                 | 24.85                     |
-
+| Model Provider     | Average Latency (seconds) |
+|--------------------|---------------------------|
+| Google Document AI | 3.19                      |
+| Azure              | 4.40                      |
+| AWS Textract       | 4.86                      |
+| Unstructured       | 7.99                      |
+| OmniAI             | 9.69                      |
+| Gemini 2.0 Flash   | 10.71                     |
+| Claude Sonnet 3.5  | 18.42                     |
+| GPT-4o Mini        | 22.73                     |
+| GPT-4o             | 24.85                     |
 
 ### [Extractous benchmarks](https://github.com/yobix-ai/extractous-benchmarks/tree/main/docs)
 
 [![GitHub last commit](https://img.shields.io/github/last-commit/yobix-ai/extractous-benchmarks?label=GitHub&logo=github)](https://github.com/yobix-ai/extractous-benchmarks/tree/main/docs)
 ![GitHub License](https://img.shields.io/github/license/yobix-ai/extractous-benchmarks)
 
-
-[`extractous`](https://github.com/yobix-ai/extractous) speedup relative to [`unstructured-io`](https://github.com/Unstructured-IO/unstructured)
+[`extractous`](https://github.com/yobix-ai/extractous) speedup relative to [
+`unstructured-io`](https://github.com/Unstructured-IO/unstructured)
 
 ![image](https://github.com/user-attachments/assets/6d9bc6ba-8e1a-4083-9d6f-864adf854e2f)
 
-
-[`extractous`](https://github.com/yobix-ai/extractous) memory efficiency relative to [`unstructured-io`](https://github.com/Unstructured-IO/unstructured)
+[`extractous`](https://github.com/yobix-ai/extractous) memory efficiency relative to [
+`unstructured-io`](https://github.com/Unstructured-IO/unstructured)
 
 ![image](https://github.com/user-attachments/assets/e6236232-4fa3-4cd0-8cfa-0bfcd5bc18e3)
 
-
-<!---
-## Extraction Properties
-
-This section defines the properties available for configuring the extraction process. Each property governs a specific aspect of how PDFs are processed.
-
-
-### PDF Processing Type
-
-This property determines how the PDF content is processed based on its format and structure.
-
-#### Available Options
-
-- **Native PDF**  
-  Extracts text directly from machine-readable PDFs without any conversion. This method is the fastest and retains the highest accuracy for structured content.
-
-- **Converting to Image**  
-  Converts PDF pages into images before applying OCR. This method is used for scanned or image-based PDFs but may introduce OCR-related errors.
-
-- **Virtually Hybrid**  
-  Routes direct text extraction and image conversion with OCR. If a page contains selectable text, it is extracted natively; otherwise, the page is converted to an image and processed with OCR.
-
-- **Hybrid**  
-  Processes both text and visual elements in PDFs simultaneously (f.e. sending anchored text and page image to VLLM), leveraging both native extraction and OCR-based or VLLM image analysis in a unified approach.
-
-#### Choosing the Right Option
-- If working with digital PDFs that contain selectable text and no images of figures, **Native PDF** provides the best results.
-- For scanned documents, at least **Converting to Image** is required to retrieve text using OCR.
-- If PDFs contain a mix of text-based pages and image-based pages, **Virtually Hybrid** ensures maximum text extraction accuracy.
-- If both text and visual data are crucial for analysis, **Hybrid** is the most comprehensive option, and actually it is rare approach.
-
-### Embedded Graphics Handling
-
-When processing PDFs, embedded graphics such as vector diagrams, charts, and images can be handled in different ways depending on the extraction strategy. This property determines how these graphics are treated during extraction and whether additional processing, such as OCR, is applied.
-
-#### Available Options
-
-- **Ignore**  
-  The extraction process does not process embedded graphics. They remain in the PDF, and no additional files or links are generated.
-
-- **Replace with OCR**  
-  Embedded graphics are removed from the output, and OCR is applied to any raster images within the PDF. The extracted text replaces the original graphic content where possible.
-
-- **Extract to Folder with Markdown Link**  
-  Vector-based graphics and embedded images are extracted to a separate folder. In the Markdown output, a reference is added using a standard image link format:  
-  ```markdown
-  ![Extracted Graphic](path/to/image.png)
-  ```
-
-- **Extract to Folder with Markdown Link and OCR Comment**  
-  This mode extracts graphics to a folder, inserts a Markdown link to the extracted image, and appends any OCR-extracted text as a comment below the reference. Example:
-  ```markdown
-  ![Extracted Graphic](path/to/image.png)
-  
-  [comment]: # (OCR: "Figure 2 - Sales Growth Trends")
-  ```
-
-#### Choosing the Right Option
-- If the PDF contains machine-readable text and graphics are not required, **Ignore** is the most efficient choice.
-- When working with scanned documents containing important visual text, **Replace with OCR** ensures that no information is lost.
-- For preserving visual elements while keeping Markdown structured, **Extract to Folder with Markdown Link** is recommended.
-- If both graphics and extracted text are needed, **Extract to Folder with Markdown Link and OCR Comment** provides the most comprehensive output.
--->
