@@ -35,7 +35,7 @@ contents [by default](https://github.blog/changelog/2021-04-13-table-of-contents
 | Gemini-1.5-Flash-002          |                                         |                              |                                        | 90.23                                        |                             |                                           |
 | Gemini-1.5-Pro-002            |                                         |                              |                                        | 89.92                                        |                             |                                           |
 | Gemini-2.0-Flash-001          |                                         |                              |                                        | 88.69                                        |                             |                                           |
-| GPT-4o-2024-11-20             |                                         |                              |                                        | 89.77                                        |                             |                                           |
+| GPT4o                         | 0.233                                   |                              |                                        | 89.77                                        |                             |                                           |
 
 - **Bold** indicates the best result for a given metric.
 - " " means the pipeline was not evaluated in that benchmark.
