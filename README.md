@@ -42,8 +42,6 @@ contents [by default](https://github.blog/changelog/2021-04-13-table-of-contents
 | GPT4o                         | 0.233                                   | 75.5                                       |                               |                                        | 89.77                                        |                             |                             |                                           |
 | Claude Sonnet 3.5             |                                         | 69.3                                       |                               |                                        |                                              |                             |                             |                                           |
 
-### [dp-bench](https://huggingface.co/datasets/upstage/dp-bench)
-
 - **Bold** indicates the best result for a given metric.
 - " " means the pipeline was not evaluated in that benchmark.
 - ⚠️ means the pipeline authors are the ones who did the benchmark.
