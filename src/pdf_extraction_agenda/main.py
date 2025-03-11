@@ -2,7 +2,7 @@ from os import PathLike
 from typing import Literal, NewType, Protocol, assert_never
 
 import pandas as pd
-from tqdm import tqdm
+from tqdm.auto import tqdm
 
 from .datasets_ import parse_response, prepare_olmocr_dataset
 from .metrics import calc_nid
