@@ -5,14 +5,14 @@ description = "Overview of pipelines related to PDF document processing"
 readme = "README.md"
 requires-python = ">=3.11"
 dependencies = [
-    "colorlog>=6.9,<7",
-    "datasets>=3.3,<4",
+    "colorlog>=6.0,<7",
+    "datasets>=3.0,<4",
     "huggingface-hub[hf-transfer]>=0.29,<1",
-    "pandas>=2.2,<3",
-    "pydantic>=2.10,<3",
-    "rapidfuzz>=3.12,<4",
+    "pandas>=2.0,<3",
+    "pydantic>=2.0,<3",
+    "rapidfuzz>=3.0,<4",
     "tabulate>=0.9,<1",
-    "tqdm>=4.67,<5",
+    "tqdm>=4.0,<5",
 ]
 
 [tool.ruff]

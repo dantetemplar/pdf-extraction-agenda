@@ -1207,14 +1207,14 @@ docling = [
 
 [package.metadata]
 requires-dist = [
-    { name = "colorlog", specifier = ">=6.9,<7" },
-    { name = "datasets", specifier = ">=3.3,<4" },
+    { name = "colorlog", specifier = ">=6.0,<7" },
+    { name = "datasets", specifier = ">=3.0,<4" },
     { name = "huggingface-hub", extras = ["hf-transfer"], specifier = ">=0.29,<1" },
-    { name = "pandas", specifier = ">=2.2,<3" },
-    { name = "pydantic", specifier = ">=2.10,<3" },
-    { name = "rapidfuzz", specifier = ">=3.12,<4" },
+    { name = "pandas", specifier = ">=2.0,<3" },
+    { name = "pydantic", specifier = ">=2.0,<3" },
+    { name = "rapidfuzz", specifier = ">=3.0,<4" },
     { name = "tabulate", specifier = ">=0.9,<1" },
-    { name = "tqdm", specifier = ">=4.67,<5" },
+    { name = "tqdm", specifier = ">=4.0,<5" },
 ]
 
 [package.metadata.requires-dev]
