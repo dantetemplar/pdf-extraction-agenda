@@ -38,7 +38,7 @@ def evaluate_pipeline(run_pipeline: PipelineProto) -> EvaluationResult:
 
 def main(pipeline: Literal["docling"]):
     if pipeline == "docling":
-        from pipeline_docling import run_docling_pipeline
+        from .pipeline_docling import run_docling_pipeline
 
         run_pipeline = run_docling_pipeline
     else:
