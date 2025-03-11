@@ -2,9 +2,10 @@ from os import PathLike
 from typing import Literal, NewType, Protocol, assert_never
 
 import pandas as pd
-from datasets_ import parse_response, prepare_olmocr_dataset
-from metrics import calc_nid
 from tqdm import tqdm
+
+from .datasets_ import parse_response, prepare_olmocr_dataset
+from .metrics import calc_nid
 
 
 class PipelineProto(Protocol):

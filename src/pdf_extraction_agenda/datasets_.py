@@ -6,8 +6,9 @@ from typing import Protocol
 
 from datasets import Dataset, load_dataset
 from huggingface_hub import snapshot_download
-from logging_ import logger
 from pydantic import BaseModel, ValidationError
+
+from .logging_ import logger
 
 
 class OlmoOCRResponse(BaseModel):
