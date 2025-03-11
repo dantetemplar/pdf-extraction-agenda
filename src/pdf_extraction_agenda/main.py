@@ -40,12 +40,14 @@ def evaluate_pipeline(
     metrics_raw = []
     if mode == "all":
         paths = [id_to_path(s["id"], warn=True) for s in dataset]
-        with tqdm(total=len(paths), desc="Processing files") as pbar:
+        with tqdm(total=len(paths), desc="Processing files", unit="file") as pbar:
             run_pipeline: PipelineBatchedProto
             md_results = run_pipeline(paths, pbar)
     elif mode == "single":
         paths = [id_to_path(s["id"], warn=True) for s in dataset]
-        md_results = [run_pipeline(path) for path in paths]
+        md_results = []
+        for path in tqdm(paths, total=len(paths), desc="Processing files", unit="file"):
+            md_results.append(run_pipeline(path))
     else:
         assert_never(mode)
 
