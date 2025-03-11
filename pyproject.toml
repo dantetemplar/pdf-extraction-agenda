@@ -3,7 +3,7 @@ name = "pdf-extraction-agenda"
 version = "0.1.0"
 description = "Overview of pipelines related to PDF document processing"
 readme = "README.md"
-requires-python = ">=3.12"
+requires-python = ">=3.11"
 dependencies = [
     "colorlog>=6.9.0",
     "datasets>=3.3.2",
