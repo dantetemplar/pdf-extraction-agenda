@@ -31,7 +31,7 @@ def evaluate_pipeline(run_pipeline: PipelineBatchedProto, mode: Literal["all"]) 
 
 
 def evaluate_pipeline(
-    run_pipeline: PipelineProto | PipelineBatchedProto, mode: Literal["singe", "all"]
+    run_pipeline: PipelineProto | PipelineBatchedProto, mode: Literal["single", "all"]
 ) -> EvaluationResult:
     from tqdm.auto import tqdm
 
