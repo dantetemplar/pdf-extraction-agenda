@@ -1,4 +1,5 @@
 import glob
+import json
 import os
 import tarfile
 from pathlib import Path
@@ -14,16 +15,18 @@ from .logging_ import logger
 class OlmoOCRResponse(BaseModel):
     """OCRed Page Information"""
 
-    primary_language: str
+    primary_language: str | None
     is_rotation_valid: bool
     rotation_correction: int
     is_table: bool
     is_diagram: bool
-    natural_text: str  # Extracted text from PDF
+    natural_text: str | None  # Extracted text from PDF
 
 
 def parse_response(example: dict, warn: bool = True) -> tuple[bool, OlmoOCRResponse | None]:
     try:
+        if not example.get("response"):
+            return True, None
         return False, OlmoOCRResponse.model_validate_json(example["response"])
     except ValidationError as e:
         if warn:
@@ -50,8 +53,19 @@ class IdToPathProto(Protocol):
         pass
 
 
+def is_jsonable_response(example: dict):
+    try:
+        if not example.get("response"):
+            return False
+        json.loads(example["response"])
+    except ValueError:
+        return False
+    return True
+
+
 def prepare_olmocr_dataset() -> tuple[Dataset, IdToPathProto]:
     dataset = load_dataset("allenai/olmOCR-mix-0225", "00_documents", split="eval_s2pdf")
+    dataset = dataset.filter(is_jsonable_response)
     path_to_snaphot = snapshot_download(
         repo_id="dantetemplar/pdf-extraction-agenda", repo_type="dataset", allow_patterns=["*.tar.gz"]
     )
