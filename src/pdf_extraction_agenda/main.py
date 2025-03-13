@@ -46,8 +46,13 @@ def evaluate_pipeline(
     elif mode == "single":
         paths = [id_to_path(s["id"], warn=True) for s in dataset]
         md_results = []
-        for path in tqdm(paths, total=len(paths), desc="Processing files", unit="file"):
-            md_results.append(run_pipeline(path))
+        with tqdm(total=len(paths), desc="Processing files", unit="file") as pbar:
+            run_pipeline: PipelineProto
+            for path in paths:
+                pbar.set_postfix_str(path.name)
+                md_result = run_pipeline(path)
+                md_results.append(md_result)
+                pbar.update(1)
     else:
         assert_never(mode)
 
