@@ -18,29 +18,36 @@ contents [by default](https://github.blog/changelog/2021-04-13-table-of-contents
 | [MinerU](#MinerU)             | **0.150** ⚠️                            |                                            | 1545.2                        |                                        |                                              |                             | 60.17                       | **8**                                     |
 | [Marker](#Marker)             | 0.336                                   |                                            | 1429.1                        | **4.23916** ⚠️                         |                                              |                             | 63.57                       | 6.5                                       |
 | [DocLing](#DocLing)           | 0.589                                   |                                            |                               | 3.70429                                |                                              |                             |                             | 7.3                                       |
-| [GOT-OCR](#GOT-OCR)           | 0.289                                   |                                            | 1212.7                        |                                        |                                              |                             |                             |                                           |
-| [olmOCR](#olmOCR)             |                                         |                                            | **1813.0** ⚠️                 |                                        |                                              |                             |                             |                                           |
 | [MarkItDown](#MarkItDown)     |                                         |                                            |                               |                                        |                                              |                             |                             | 7.78                                      |
-| [Nougat](#Nougat)             | 0.453                                   |                                            |                               |                                        |                                              |                             | **81.42**                   |                                           |
 | [Zerox (OmniAI)](#Zerox)      |                                         | **91.7**    ⚠️                             |                               |                                        |                                              |                             |                             | 7.9                                       |
-| [Unstructured](#Unstructured) |                                         | 50.8                                       |                               |                                        |                                              | 91.18                       |                             | 6.2                                       |
-| [Pix2Text](#Pix2Text)         |                                         |                                            |                               |                                        |                                              |                             | 64.39                       |                                           |
-| [open-parse](#open-parse)     |                                         |                                            |                               |                                        |                                              |                             |                             |                                           |
+| [Unstructured](#Unstructured) | 0.586                                   | 50.8                                       |                               |                                        |                                              | 91.18                       |                             | 6.2                                       |
+| [Pix2Text](#Pix2Text)         | 0.32                                    |                                            |                               |                                        |                                              |                             | 64.39                       |                                           |
+| [open-parse](#open-parse)     | 0.646                                   |                                            |                               |                                        |                                              |                             |                             |                                           |
 | [Markdrop](#markdrop)         |                                         |                                            |                               |                                        |                                              |                             |                             |                                           |
-|                               |                                         |                                            |                               |                                        |                                              |                             |                             |                                           |
-| Mistral OCR 2503              |                                         |                                            |                               |                                        | **94.89**  ⚠️                                |                             |                             |                                           |
+| [Vision Parse](#Vision-Parse) |                                         |                                            |                               |                                        |                                              |                             |                             |                                           |
+| _↓ Expert VLMs ↓_             |                                         |                                            |                               |                                        |                                              |                             |                             |                                           |
+| [olmOCR](#olmOCR)             | 0.326                                   |                                            | **1813.0** ⚠️                 |                                        |                                              |                             |                             |                                           |
+| [Nougat](#Nougat)             | 0.452                                   |                                            |                               |                                        |                                              |                             | **81.42**                   |                                           |
+| [GOT-OCR](#GOT-OCR)           | 0.287                                   |                                            | 1212.7                        |                                        |                                              |                             |                             |                                           |
+| [SmolDocling](#SmolDocling)   | 0.493                                   |                                            |                               |                                        |                                              |                             |                             |                                           |
+| _↓ Proprietary pipelines ↓_   |                                         |                                            |                               |                                        |                                              |                             |                             |                                           |
+| [Mistral OCR](#MistralOCR)    | 0.268                                   |                                            |                               |                                        | **94.89**  ⚠️                                |                             |                             |                                           |
 | Google Document AI            |                                         | 67.8                                       |                               |                                        | 83.42                                        | 90.86                       |                             |                                           |
 | Azure OCR                     |                                         | 85.1                                       |                               |                                        | 89.52                                        | 87.69                       |                             |                                           |
 | AWS Textract                  |                                         | 74.3                                       |                               |                                        |                                              | 96.71                       |                             |                                           |
 | [LlamaParse](#LlamaParse)     |                                         |                                            |                               | 3.97619                                |                                              | 92.82                       |                             | 7.1                                       |
-| [Mathpix](#Mathpix)           | 0.189                                   |                                            |                               | 4.15626                                |                                              |                             |                             |                                           |
-| upstage                       |                                         |                                            |                               |                                        |                                              | **97.02**  ⚠️               |                             |                                           |
-|                               |                                         |                                            |                               |                                        |                                              |                             |                             |                                           |
-| Gemini-1.5-Flash-002          |                                         |                                            |                               |                                        | 90.23                                        |                             |                             |                                           |
-| Gemini-1.5-Pro-002            |                                         |                                            |                               |                                        | 89.92                                        |                             |                             |                                           |
-| Gemini-2.0-Flash-001          |                                         | 86.1                                       |                               |                                        | 88.69                                        |                             |                             |                                           |
+| [Mathpix](#Mathpix)           | 0.191                                   |                                            |                               | 4.15626                                |                                              |                             |                             |                                           |
+| [upstage](#upstage-ai)        |                                         |                                            |                               |                                        |                                              | **97.02**  ⚠️               |                             |                                           |
+| _↓ General VLMs ↓_            |                                         |                                            |                               |                                        |                                              |                             |                             |                                           |
+| Gemini-1.5 Flash              |                                         |                                            |                               |                                        | 90.23                                        |                             |                             |                                           |
+| Gemini-1.5 Pro                |                                         |                                            |                               |                                        | 89.92                                        |                             |                             |                                           |
+| Gemini-2.0 Flash              | 0.191                                   | 86.1                                       |                               |                                        | 88.69                                        |                             |                             |                                           |
+| Gemini-2.5 Pro                | 0.148                                   |                                            |                               |                                        |                                              |                             |                             |                                           |
 | GPT4o                         | 0.233                                   | 75.5                                       |                               |                                        | 89.77                                        |                             |                             |                                           |
 | Claude Sonnet 3.5             |                                         | 69.3                                       |                               |                                        |                                              |                             |                             |                                           |
+| Qwen2-VL-72B                  | 0.252                                   |                                            |                               |                                        |                                              |                             |                             |                                           |
+| Qwen2.5-VL-72B                | 0.214                                   |                                            |                               |                                        |                                              |                             |                             |                                           |
+| InternVL2-76B                 | 0.44                                    |                                            |                               |                                        |                                              |                             |                             |                                           |
 
 - **Bold** indicates the best result for a given metric.
 - " " means the pipeline was not evaluated in that benchmark.
@@ -147,6 +154,21 @@ features include:
 - **Optimized Pipeline**: Compatible with SGLang and vLLM inference engines, enabling efficient scaling from single to
   multiple GPUs.
 
+### [MistralOCR](https://mistral.ai/news/mistral-ocr)
+
+[✏️](https://github.com/dantetemplar/pdf-extraction-agenda/issues/20)
+![License](https://img.shields.io/badge/License-Proprietary-red)
+[![Demo](https://img.shields.io/badge/DEMO-black?logo=awwwards)](https://colab.research.google.com/github/mistralai/cookbook/blob/main/mistral/ocr/structured_ocr.ipynb)
+[![API](https://img.shields.io/badge/API-Available-blue?logo=swagger&logoColor=85EA2D)](https://docs.mistral.ai/capabilities/document/)
+
+**License:** Proprietary
+
+**API Details:**
+
+- **API URL:** https://docs.mistral.ai/capabilities/document/
+- **Pricing:** https://mistral.ai/products/la-plateforme#pricing
+- **Average Price:** 1$ per 1000 pages
+
 ### [LlamaParse](https://www.llamaindex.ai/llamaparse)
 
 [✏️](https://github.com/dantetemplar/pdf-extraction-agenda/issues/6)
@@ -194,6 +216,27 @@ from their screens into editable formats with a single keyboard shortcut.
 - **API URL:** https://docs.mathpix.com/
 - **Pricing:** https://mathpix.com/pricing
 - **Average Price:** $5 per 1000 pages
+
+### [Upstage AI](https://upstage.ai/)
+
+[✏️](https://github.com/dantetemplar/pdf-extraction-agenda/issues/22)
+[![GitHub last commit](https://img.shields.io/github/last-commit/UpstageAI/cookbook?label=GitHub&logo=github)](https://github.com/UpstageAI/cookbook)
+![License](https://img.shields.io/badge/License-Proprietary-red)
+[![API](https://img.shields.io/badge/API-Available-blue?logo=swagger&logoColor=85EA2D)](https://console.upstage.ai/docs/getting-started)
+
+**License:** Proprietary
+
+**Description:** The Upstage AI is a comprehensive suite of artificial intelligence solutions designed to enhance
+business operations across various industries. It encompasses advanced large language models (LLMs) and document
+processing engines to streamline workflows and improve efficiency.
+
+**Benchmark Results:** https://www.upstage.ai/blog/en/icdar-win-interview
+
+**API Details:**
+
+- **API URL:** https://console.upstage.ai/docs/getting-started
+- **Pricing:** https://upstage.ai/pricing
+- **Average Price:** $10 per 1000 pages
 
 ### [Nougat](https://facebookresearch.github.io/nougat/)
 
@@ -245,6 +288,18 @@ tasks.
 parsing of diverse document formats—including PDF, DOCX, PPTX, HTML, and images—and provides seamless integrations with
 the generative AI ecosystem. Key features include advanced PDF understanding, optical character recognition (OCR)
 support, and plug-and-play integrations with frameworks like LangChain and LlamaIndex.
+
+### [SmolDocling](https://huggingface.co/ds4sd/SmolDocling-256M-preview)
+
+[✏️](https://github.com/dantetemplar/pdf-extraction-agenda/issues/21)
+![License](https://img.shields.io/badge/License-Apache--2.0-brightgreen)
+[![Demo](https://img.shields.io/badge/DEMO-black?logo=awwwards)](https://huggingface.co/spaces/ds4sd/SmolDocling-256M-Demo)
+
+**License:** Apache-2.0
+
+**Description:** SmolDocling is a multimodal Image-Text-to-Text model designed for efficient document conversion,
+developed by Docling team. It retains Docling's most popular features while ensuring full compatibility with Docling
+through seamless support for DoclingDocuments.
 
 ### [Zerox](https://getomni.ai/)
 
@@ -376,6 +431,18 @@ features include:
 descriptive text descriptions for extracted tables/images using several LLM clients. And many more functionalities.
 Markdrop is available on PyPI.
 
+### [Vision Parse](https://github.com/iamarunbrahma/vision-parse)
+
+[✏️](https://github.com/dantetemplar/pdf-extraction-agenda/issues/19)
+[![GitHub last commit](https://img.shields.io/github/last-commit/iamarunbrahma/vision-parse?label=GitHub&logo=github)](https://github.com/iamarunbrahma/vision-parse)
+![License](https://img.shields.io/badge/License-MIT-brightgreen)
+
+**Primary Language:** Python
+
+**License:** MIT
+
+**Description:** Parse PDFs into markdown using Vision LLMs
+
 ## Benchmarks
 
 ### [OmniDocBench](https://github.com/opendatalab/OmniDocBench)
@@ -411,13 +478,13 @@ Markdown output of the entire PDF page parsing results as the prediction.
     <tr>
       <th rowspan="2">Method Type</th>
       <th rowspan="2">Methods</th>
+      <th colspan="2">Overall<sup>Edit</sup>↓</th>
       <th colspan="2">Text<sup>Edit</sup>↓</th>
       <th colspan="2">Formula<sup>Edit</sup>↓</th>
       <th colspan="2">Formula<sup>CDM</sup>↑</th>
       <th colspan="2">Table<sup>TEDS</sup>↑</th>
       <th colspan="2">Table<sup>Edit</sup>↓</th>
       <th colspan="2">Read Order<sup>Edit</sup>↓</th>
-      <th colspan="2">Overall<sup>Edit</sup>↓</th>
     </tr>
     <tr>
       <th>EN</th>
@@ -438,163 +505,663 @@ Markdown output of the entire PDF page parsing results as the prediction.
   </thead>
   <tbody>
     <tr>
-      <td rowspan="4">Pipeline Tools</td>
+      <td rowspan="7">Pipeline Tools</td>
       <td>MinerU-0.9.3</td>
-      <td><strong>0.061</strong></td>
-      <td><strong>0.211</strong></td>
-      <td><strong>0.278</strong></td>
+      <td>0.15</td>
+      <td>0.357</td>
+      <td>0.061</td>
+      <td>0.215</td>
+      <td>0.278</td>
       <td>0.577</td>
-      <td>66.9</td>
-      <td>49.5</td>
-      <td><strong>78.6</strong></td>
+      <td>57.3</td>
+      <td>42.9</td>
+      <td>78.6</td>
       <td>62.1</td>
-      <td><strong>0.180</strong></td>
+      <td>0.18</td>
       <td>0.344</td>
-      <td><strong>0.079</strong></td>
-      <td>0.288</td>
-      <td><strong>0.150</strong></td>
-      <td><u>0.355</u></td>
+      <td>0.079</td>
+      <td>0.292</td>
     </tr>
     <tr>
       <td>Marker-1.2.3</td>
-      <td><u>0.080</u></td>
+      <td>0.336</td>
+      <td>0.556</td>
+      <td>0.08</td>
       <td>0.315</td>
-      <td>0.530</td>
+      <td>0.53</td>
       <td>0.883</td>
-      <td>20.1</td>
-      <td>16.8</td>
+      <td>17.6</td>
+      <td>11.7</td>
       <td>67.6</td>
       <td>49.2</td>
       <td>0.619</td>
       <td>0.685</td>
       <td>0.114</td>
-      <td>0.340</td>
-      <td>0.336</td>
-      <td>0.556</td>
+      <td>0.34</td>
     </tr>
     <tr>
       <td>Mathpix</td>
-      <td>0.101</td>
-      <td>0.358</td>
-      <td><u>0.306</u></td>
-      <td><strong>0.454</strong></td>
-      <td>71.4</td>
-      <td><strong>72.7</strong></td>
-      <td><u>77.0</u></td>
-      <td><strong>67.1</strong></td>
+      <td>0.191</td>
+      <td>0.365</td>
+      <td>0.105</td>
+      <td>0.384</td>
+      <td>0.306</td>
+      <td>0.454</td>
+      <td>62.7</td>
+      <td>62.1</td>
+      <td>77.0</td>
+      <td>67.1</td>
       <td>0.243</td>
-      <td><strong>0.320</strong></td>
-      <td><u>0.105</u></td>
-      <td>0.275</td>
-      <td><u>0.189</u></td>
-      <td><strong>0.352</strong></td>
+      <td>0.32</td>
+      <td>0.108</td>
+      <td>0.304</td>
     </tr>
     <tr>
-      <td>Docling</td>
+      <td>Docling-2.14.0</td>
+      <td>0.589</td>
+      <td>0.909</td>
       <td>0.416</td>
       <td>0.987</td>
       <td>0.999</td>
       <td>1</td>
-      <td>0</td>
-      <td>0</td>
+      <td>-</td>
+      <td>-</td>
       <td>61.3</td>
       <td>25.0</td>
       <td>0.627</td>
       <td>0.810</td>
       <td>0.313</td>
       <td>0.837</td>
-      <td>0.589</td>
-      <td>0.909</td>
     </tr>
     <tr>
-      <td rowspan="2">Expert VLMs</td>
+      <td>Pix2Text-1.1.2.3</td>
+      <td>0.32</td>
+      <td>0.528</td>
+      <td>0.138</td>
+      <td>0.356</td>
+      <td><strong>0.276</strong></td>
+      <td>0.611</td>
+      <td>78.4</td>
+      <td>39.6</td>
+      <td>73.6</td>
+      <td>66.2</td>
+      <td>0.584</td>
+      <td>0.645</td>
+      <td>0.281</td>
+      <td>0.499</td>
+    </tr>
+    <tr>
+      <td>Unstructured-0.17.2</td>
+      <td>0.586</td>
+      <td>0.716</td>
+      <td>0.198</td>
+      <td>0.481</td>
+      <td>0.999</td>
+      <td>1</td>
+      <td>-</td>
+      <td>-</td>
+      <td>0</td>
+      <td>0.064</td>
+      <td>1</td>
+      <td>0.998</td>
+      <td>0.145</td>
+      <td>0.387</td>
+    </tr>
+    <tr>
+      <td>OpenParse-0.7.0</td>
+      <td>0.646</td>
+      <td>0.814</td>
+      <td>0.681</td>
+      <td>0.974</td>
+      <td>0.996</td>
+      <td>1</td>
+      <td>0.106</td>
+      <td>0</td>
+      <td>64.8</td>
+      <td>27.5</td>
+      <td>0.284</td>
+      <td>0.639</td>
+      <td>0.595</td>
+      <td>0.641</td>
+    </tr>
+    <tr>
+      <td rowspan="5">Expert VLMs</td>
       <td>GOT-OCR</td>
-      <td>0.191</td>
+      <td>0.287</td>
+      <td>0.411</td>
+      <td>0.189</td>
       <td>0.315</td>
       <td>0.360</td>
-      <td><u>0.528</u></td>
-      <td><strong>81.8</strong></td>
-      <td>51.4</td>
+      <td>0.528</td>
+      <td>74.3</td>
+      <td>45.3</td>
       <td>53.2</td>
       <td>47.2</td>
       <td>0.459</td>
-      <td>0.520</td>
-      <td>0.143</td>
-      <td>0.280</td>
-      <td>0.289</td>
-      <td>0.411</td>
+      <td>0.52</td>
+      <td>0.141</td>
+      <td>0.28</td>
     </tr>
     <tr>
       <td>Nougat</td>
-      <td>0.367</td>
+      <td>0.452</td>
+      <td>0.973</td>
+      <td>0.365</td>
       <td>0.998</td>
       <td>0.488</td>
       <td>0.941</td>
-      <td>17.4</td>
-      <td>16.9</td>
+      <td>15.1</td>
+      <td>16.8</td>
       <td>39.9</td>
-      <td>0</td>
+      <td>0.0</td>
       <td>0.572</td>
-      <td>1</td>
-      <td>0.384</td>
+      <td>1.000</td>
+      <td>0.382</td>
       <td>0.954</td>
-      <td>0.453</td>
-      <td>0.973</td>
     </tr>
     <tr>
-      <td rowspan="3">General VLMs</td>
+      <td>Mistral OCR</td>
+      <td>0.268</td>
+      <td>0.439</td>
+      <td>0.072</td>
+      <td>0.325</td>
+      <td>0.318</td>
+      <td>0.495</td>
+      <td>64.6</td>
+      <td>45.9</td>
+      <td>75.8</td>
+      <td>63.6</td>
+      <td>0.6</td>
+      <td>0.65</td>
+      <td>0.083</td>
+      <td>0.284</td>
+    </tr>
+    <tr>
+      <td>OLMOCR-sglang</td>
+      <td>0.326</td>
+      <td>0.469</td>
+      <td>0.097</td>
+      <td>0.293</td>
+      <td>0.455</td>
+      <td>0.655</td>
+      <td>74.3</td>
+      <td>43.2</td>
+      <td>68.1</td>
+      <td>61.3</td>
+      <td>0.608</td>
+      <td>0.652</td>
+      <td>0.145</td>
+      <td>0.277</td>
+    </tr>
+    <tr>
+      <td>SmolDocling-256M_transformer</td>
+      <td>0.493</td>
+      <td>0.816</td>
+      <td>0.262</td>
+      <td>0.838</td>
+      <td>0.753</td>
+      <td>0.997</td>
+      <td>32.1</td>
+      <td>0.551</td>
+      <td>44.9</td>
+      <td>16.5</td>
+      <td>0.729</td>
+      <td>0.907</td>
+      <td>0.227</td>
+      <td>0.522</td>
+    </tr>
+    <tr>
+      <td rowspan="8">General VLMs</td>
+    <tr>
+      <td>Gemini2.0-flash</td>
+      <td>0.191</td>
+      <td>0.264</td>
+      <td>0.091</td>
+      <td>0.139</td>
+      <td>0.389</td>
+      <td>0.584</td>
+      <td>77.6</td>
+      <td>43.6</td>
+      <td>79.7</td>
+      <td>78.9</td>
+      <td>0.193</td>
+      <td>0.206</td>
+      <td>0.092</td>
+      <td>0.128</td>
+    </tr>
+    <tr>
+      <td>Gemini2.5-Pro</td>
+      <td><strong>0.148</strong></td>
+      <td><strong>0.212</strong></td>
+      <td><strong>0.055</strong></td>
+      <td><strong>0.168</strong></td>
+      <td>0.356</td>
+      <td>0.439</td>
+      <td>80.0</td>
+      <td><strong>69.4</strong></td>
+      <td><strong>85.8</strong></td>
+      <td><strong>86.4</strong></td>
+      <td><strong>0.13</strong></td>
+      <td><strong>0.119</strong></td>
+      <td><strong>0.049</strong></td>
+      <td><strong>0.121</strong></td>
+    </tr>
+    <tr>
       <td>GPT4o</td>
-      <td>0.146</td>
+      <td>0.233</td>
+      <td>0.399</td>
+      <td>0.144</td>
       <td>0.409</td>
       <td>0.425</td>
       <td>0.606</td>
-      <td><u>76.4</u></td>
-      <td>48.2</td>
+      <td>72.8</td>
+      <td>42.8</td>
       <td>72.0</td>
       <td>62.9</td>
-      <td><u>0.234</u></td>
-      <td><u>0.329</u></td>
+      <td>0.234</td>
+      <td>0.329</td>
       <td>0.128</td>
       <td>0.251</td>
-      <td>0.233</td>
-      <td>0.399</td>
     </tr>
     <tr>
       <td>Qwen2-VL-72B</td>
-      <td>0.253</td>
-      <td><u>0.251</u></td>
-      <td>0.468</td>
-      <td>0.572</td>
-      <td>54.9</td>
-      <td><u>60.9</u></td>
-      <td>59.5</td>
-      <td><u>66.4</u></td>
-      <td>0.551</td>
-      <td>0.518</td>
-      <td>0.254</td>
-      <td><strong>0.223</strong></td>
-      <td>0.381</td>
-      <td>0.391</td>
+      <td>0.252</td>
+      <td>0.327</td>
+      <td>0.096</td>
+      <td>0.218</td>
+      <td>0.404</td>
+      <td>0.487</td>
+      <td><strong>82.2</strong></td>
+      <td>61.2</td>
+      <td>76.8</td>
+      <td>76.4</td>
+      <td>0.387</td>
+      <td>0.408</td>
+      <td>0.119</td>
+      <td>0.193</td>
+    </tr>
+    <tr>
+      <td>Qwen2.5-VL-72B</td>
+      <td>0.214</td>
+      <td>0.261</td>
+      <td>0.092</td>
+      <td>0.18</td>
+      <td>0.315</td>
+      <td><strong>0.434</strong></td>
+      <td>68.8</td>
+      <td>62.5</td>
+      <td>82.9</td>
+      <td>83.9</td>
+      <td>0.341</td>
+      <td>0.262</td>
+      <td>0.106</td>
+      <td>0.168</td>
     </tr>
     <tr>
       <td>InternVL2-76B</td>
+      <td>0.44</td>
+      <td>0.443</td>
       <td>0.353</td>
-      <td>0.29</td>
+      <td>0.290</td>
       <td>0.543</td>
       <td>0.701</td>
-      <td>69.8</td>
-      <td>49.6</td>
+      <td>67.4</td>
+      <td>44.1</td>
       <td>63.0</td>
       <td>60.2</td>
       <td>0.547</td>
       <td>0.555</td>
       <td>0.317</td>
-      <td><u>0.228</u></td>
-      <td>0.440</td>
-      <td>0.443</td>
+      <td>0.228</td>
     </tr>
   </tbody>
 </table>
+
+
+<table style="width: 92%; margin: auto; border-collapse: collapse;">
+  <thead>
+    <tr>
+      <th rowspan="2">Method Type</th>
+      <th rowspan="2">Methods</th>
+      <th colspan="2">Overall<sup>Edit</sup>↓</th>
+      <th colspan="2">Text<sup>Edit</sup>↓</th>
+      <th colspan="2">Formula<sup>Edit</sup>↓</th>
+      <th colspan="2">Formula<sup>CDM</sup>↑</th>
+      <th colspan="2">Table<sup>TEDS</sup>↑</th>
+      <th colspan="2">Table<sup>Edit</sup>↓</th>
+      <th colspan="2">Read Order<sup>Edit</sup>↓</th>
+    </tr>
+    <tr>
+      <th>EN</th>
+      <th>ZH</th>
+      <th>EN</th>
+      <th>ZH</th>
+      <th>EN</th>
+      <th>ZH</th>
+      <th>EN</th>
+      <th>ZH</th>
+      <th>EN</th>
+      <th>ZH</th>
+      <th>EN</th>
+      <th>ZH</th>
+      <th>EN</th>
+      <th>ZH</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td rowspan="7">Pipeline Tools</td>
+      <td>MinerU-0.9.3</td>
+      <td>0.15</td>
+      <td>0.357</td>
+      <td>0.061</td>
+      <td>0.215</td>
+      <td>0.278</td>
+      <td>0.577</td>
+      <td>57.3</td>
+      <td>42.9</td>
+      <td>78.6</td>
+      <td>62.1</td>
+      <td>0.18</td>
+      <td>0.344</td>
+      <td>0.079</td>
+      <td>0.292</td>
+    </tr>
+    <tr>
+      <td>Marker-1.2.3</td>
+      <td>0.336</td>
+      <td>0.556</td>
+      <td>0.08</td>
+      <td>0.315</td>
+      <td>0.53</td>
+      <td>0.883</td>
+      <td>17.6</td>
+      <td>11.7</td>
+      <td>67.6</td>
+      <td>49.2</td>
+      <td>0.619</td>
+      <td>0.685</td>
+      <td>0.114</td>
+      <td>0.34</td>
+    </tr>
+    <tr>
+      <td>Mathpix</td>
+      <td>0.191</td>
+      <td>0.365</td>
+      <td>0.105</td>
+      <td>0.384</td>
+      <td>0.306</td>
+      <td>0.454</td>
+      <td>62.7</td>
+      <td>62.1</td>
+      <td>77.0</td>
+      <td>67.1</td>
+      <td>0.243</td>
+      <td>0.32</td>
+      <td>0.108</td>
+      <td>0.304</td>
+    </tr>
+    <tr>
+      <td>Docling-2.14.0</td>
+      <td>0.589</td>
+      <td>0.909</td>
+      <td>0.416</td>
+      <td>0.987</td>
+      <td>0.999</td>
+      <td>1</td>
+      <td>-</td>
+      <td>-</td>
+      <td>61.3</td>
+      <td>25.0</td>
+      <td>0.627</td>
+      <td>0.810</td>
+      <td>0.313</td>
+      <td>0.837</td>
+    </tr>
+    <tr>
+      <td>Pix2Text-1.1.2.3</td>
+      <td>0.32</td>
+      <td>0.528</td>
+      <td>0.138</td>
+      <td>0.356</td>
+      <td><strong>0.276</strong></td>
+      <td>0.611</td>
+      <td>78.4</td>
+      <td>39.6</td>
+      <td>73.6</td>
+      <td>66.2</td>
+      <td>0.584</td>
+      <td>0.645</td>
+      <td>0.281</td>
+      <td>0.499</td>
+    </tr>
+    <tr>
+      <td>Unstructured-0.17.2</td>
+      <td>0.586</td>
+      <td>0.716</td>
+      <td>0.198</td>
+      <td>0.481</td>
+      <td>0.999</td>
+      <td>1</td>
+      <td>-</td>
+      <td>-</td>
+      <td>0</td>
+      <td>0.064</td>
+      <td>1</td>
+      <td>0.998</td>
+      <td>0.145</td>
+      <td>0.387</td>
+    </tr>
+    <tr>
+      <td>OpenParse-0.7.0</td>
+      <td>0.646</td>
+      <td>0.814</td>
+      <td>0.681</td>
+      <td>0.974</td>
+      <td>0.996</td>
+      <td>1</td>
+      <td>0.106</td>
+      <td>0</td>
+      <td>64.8</td>
+      <td>27.5</td>
+      <td>0.284</td>
+      <td>0.639</td>
+      <td>0.595</td>
+      <td>0.641</td>
+    </tr>
+    <tr>
+      <td rowspan="5">Expert VLMs</td>
+      <td>GOT-OCR</td>
+      <td>0.287</td>
+      <td>0.411</td>
+      <td>0.189</td>
+      <td>0.315</td>
+      <td>0.360</td>
+      <td>0.528</td>
+      <td>74.3</td>
+      <td>45.3</td>
+      <td>53.2</td>
+      <td>47.2</td>
+      <td>0.459</td>
+      <td>0.52</td>
+      <td>0.141</td>
+      <td>0.28</td>
+    </tr>
+    <tr>
+      <td>Nougat</td>
+      <td>0.452</td>
+      <td>0.973</td>
+      <td>0.365</td>
+      <td>0.998</td>
+      <td>0.488</td>
+      <td>0.941</td>
+      <td>15.1</td>
+      <td>16.8</td>
+      <td>39.9</td>
+      <td>0.0</td>
+      <td>0.572</td>
+      <td>1.000</td>
+      <td>0.382</td>
+      <td>0.954</td>
+    </tr>
+    <tr>
+      <td>Mistral OCR</td>
+      <td>0.268</td>
+      <td>0.439</td>
+      <td>0.072</td>
+      <td>0.325</td>
+      <td>0.318</td>
+      <td>0.495</td>
+      <td>64.6</td>
+      <td>45.9</td>
+      <td>75.8</td>
+      <td>63.6</td>
+      <td>0.6</td>
+      <td>0.65</td>
+      <td>0.083</td>
+      <td>0.284</td>
+    </tr>
+    <tr>
+      <td>OLMOCR-sglang</td>
+      <td>0.326</td>
+      <td>0.469</td>
+      <td>0.097</td>
+      <td>0.293</td>
+      <td>0.455</td>
+      <td>0.655</td>
+      <td>74.3</td>
+      <td>43.2</td>
+      <td>68.1</td>
+      <td>61.3</td>
+      <td>0.608</td>
+      <td>0.652</td>
+      <td>0.145</td>
+      <td>0.277</td>
+    </tr>
+    <tr>
+      <td>SmolDocling-256M_transformer</td>
+      <td>0.493</td>
+      <td>0.816</td>
+      <td>0.262</td>
+      <td>0.838</td>
+      <td>0.753</td>
+      <td>0.997</td>
+      <td>32.1</td>
+      <td>0.551</td>
+      <td>44.9</td>
+      <td>16.5</td>
+      <td>0.729</td>
+      <td>0.907</td>
+      <td>0.227</td>
+      <td>0.522</td>
+    </tr>
+    <tr>
+      <td rowspan="8">General VLMs</td>
+    <tr>
+      <td>Gemini2.0-flash</td>
+      <td>0.191</td>
+      <td>0.264</td>
+      <td>0.091</td>
+      <td>0.139</td>
+      <td>0.389</td>
+      <td>0.584</td>
+      <td>77.6</td>
+      <td>43.6</td>
+      <td>79.7</td>
+      <td>78.9</td>
+      <td>0.193</td>
+      <td>0.206</td>
+      <td>0.092</td>
+      <td>0.128</td>
+    </tr>
+    <tr>
+      <td>Gemini2.5-Pro</td>
+      <td><strong>0.148</strong></td>
+      <td><strong>0.212</strong></td>
+      <td><strong>0.055</strong></td>
+      <td><strong>0.168</strong></td>
+      <td>0.356</td>
+      <td>0.439</td>
+      <td>80.0</td>
+      <td><strong>69.4</strong></td>
+      <td><strong>85.8</strong></td>
+      <td><strong>86.4</strong></td>
+      <td><strong>0.13</strong></td>
+      <td><strong>0.119</strong></td>
+      <td><strong>0.049</strong></td>
+      <td><strong>0.121</strong></td>
+    </tr>
+    <tr>
+      <td>GPT4o</td>
+      <td>0.233</td>
+      <td>0.399</td>
+      <td>0.144</td>
+      <td>0.409</td>
+      <td>0.425</td>
+      <td>0.606</td>
+      <td>72.8</td>
+      <td>42.8</td>
+      <td>72.0</td>
+      <td>62.9</td>
+      <td>0.234</td>
+      <td>0.329</td>
+      <td>0.128</td>
+      <td>0.251</td>
+    </tr>
+    <tr>
+      <td>Qwen2-VL-72B</td>
+      <td>0.252</td>
+      <td>0.327</td>
+      <td>0.096</td>
+      <td>0.218</td>
+      <td>0.404</td>
+      <td>0.487</td>
+      <td><strong>82.2</strong></td>
+      <td>61.2</td>
+      <td>76.8</td>
+      <td>76.4</td>
+      <td>0.387</td>
+      <td>0.408</td>
+      <td>0.119</td>
+      <td>0.193</td>
+    </tr>
+    <tr>
+      <td>Qwen2.5-VL-72B</td>
+      <td>0.214</td>
+      <td>0.261</td>
+      <td>0.092</td>
+      <td>0.18</td>
+      <td>0.315</td>
+      <td><strong>0.434</strong></td>
+      <td>68.8</td>
+      <td>62.5</td>
+      <td>82.9</td>
+      <td>83.9</td>
+      <td>0.341</td>
+      <td>0.262</td>
+      <td>0.106</td>
+      <td>0.168</td>
+    </tr>
+    <tr>
+      <td>InternVL2-76B</td>
+      <td>0.44</td>
+      <td>0.443</td>
+      <td>0.353</td>
+      <td>0.290</td>
+      <td>0.543</td>
+      <td>0.701</td>
+      <td>67.4</td>
+      <td>44.1</td>
+      <td>63.0</td>
+      <td>60.2</td>
+      <td>0.547</td>
+      <td>0.555</td>
+      <td>0.317</td>
+      <td>0.228</td>
+    </tr>
+  </tbody>
+</table>
+
 <p style="text-align: center; margin-top: -4pt;">
   Comprehensive evaluation of document parsing algorithms on OmniDocBench: performance metrics for text, formula, table, and reading order extraction, with overall scores derived from ground truth comparisons.
 </p>
