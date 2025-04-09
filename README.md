@@ -53,6 +53,10 @@ contents [by default](https://github.blog/changelog/2021-04-13-table-of-contents
 - " " means the pipeline was not evaluated in that benchmark.
 - ⚠️ means the pipeline authors are the ones who did the benchmark.
 
+> [!INFO]
+> I'm working on implementing an easy-to-repeat benchmarking (just run notebook on colab to repeat results, or extend
+> them), but for now I'm struggling with finding suitable dataset.
+
 ## Pipelines
 
 ### [MinerU](https://github.com/opendatalab/MinerU)
