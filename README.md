@@ -13,41 +13,41 @@ contents [by default](https://github.blog/changelog/2021-04-13-table-of-contents
 
 ## Comparison
 
-| Pipeline                      | [OmniDocBench](#omnidocbench) Overall ↓ | [Omni OCR](#omni-ocr-benchmark) Accuracy ↑ | [olmOCR](#olmoocr-eval) ELO ↑ | [Marker](#marker-benchmarks) Overall ↓ | [Mistral](#mistral-ocr-benchmarks) Overall ↑ | [dp-bench](#dp-bench) NID ↑ | [READoc](#readoc) Overall ↑ | [Actualize.pro](#actualize-pro) Overall ↑ |
-|-------------------------------|-----------------------------------------|:-------------------------------------------|-------------------------------|----------------------------------------|:---------------------------------------------|-----------------------------|-----------------------------|-------------------------------------------|
-| [MinerU](#MinerU)             | 0.150 ⚠️                                |                                            | 1545.2                        |                                        |                                              |                             | 60.17                       | **8**                                     |
-| [Marker](#Marker)             | 0.336                                   |                                            | 1429.1                        | **4.23916** ⚠️                         |                                              |                             | 63.57                       | 6.5                                       |
-| [DocLing](#DocLing)           | 0.589                                   |                                            |                               | 3.70429                                |                                              |                             |                             | 7.3                                       |
-| [MarkItDown](#MarkItDown)     |                                         |                                            |                               |                                        |                                              |                             |                             | 7.78                                      |
-| [Zerox (OmniAI)](#Zerox)      |                                         | **91.7**    ⚠️                             |                               |                                        |                                              |                             |                             | 7.9                                       |
-| [Unstructured](#Unstructured) | 0.586                                   | 50.8                                       |                               |                                        |                                              | 91.18                       |                             | 6.2                                       |
-| [Pix2Text](#Pix2Text)         | 0.32                                    |                                            |                               |                                        |                                              |                             | 64.39                       |                                           |
-| [open-parse](#open-parse)     | 0.646                                   |                                            |                               |                                        |                                              |                             |                             |                                           |
-| [Markdrop](#markdrop)         |                                         |                                            |                               |                                        |                                              |                             |                             |                                           |
-| [Vision Parse](#Vision-Parse) |                                         |                                            |                               |                                        |                                              |                             |                             |                                           |
-| [olmOCR](#olmOCR)             | 0.326                                   |                                            | **1813.0** ⚠️                 |                                        |                                              |                             |                             |                                           |
-| _↓ Expert VLMs_               |                                         |                                            |                               |                                        |                                              |                             |                             |                                           |
-| [Nougat](#Nougat)             | 0.452                                   |                                            |                               |                                        |                                              |                             | **81.42**                   |                                           |
-| [GOT-OCR](#GOT-OCR)           | 0.287                                   |                                            | 1212.7                        |                                        |                                              |                             |                             |                                           |
-| [SmolDocling](#SmolDocling)   | 0.493                                   |                                            |                               |                                        |                                              |                             |                             |                                           |
-| _↓ Proprietary pipelines_     |                                         |                                            |                               |                                        |                                              |                             |                             |                                           |
-| [Mistral OCR](#MistralOCR)    | 0.268                                   |                                            |                               |                                        | **94.89**  ⚠️                                |                             |                             |                                           |
-| Google Document AI            |                                         | 67.8                                       |                               |                                        | 83.42                                        | 90.86                       |                             |                                           |
-| Azure OCR                     |                                         | 85.1                                       |                               |                                        | 89.52                                        | 87.69                       |                             |                                           |
-| AWS Textract                  |                                         | 74.3                                       |                               |                                        |                                              | 96.71                       |                             |                                           |
-| [LlamaParse](#LlamaParse)     |                                         |                                            |                               | 3.97619                                |                                              | 92.82                       |                             | 7.1                                       |
-| [Mathpix](#Mathpix)           | 0.191                                   |                                            |                               | 4.15626                                |                                              |                             |                             |                                           |
-| [upstage](#upstage-ai)        |                                         |                                            |                               |                                        |                                              | **97.02**  ⚠️               |                             |                                           |
-| _↓ General VLMs_              |                                         |                                            |                               |                                        |                                              |                             |                             |                                           |
-| Gemini-1.5 Flash              |                                         |                                            |                               |                                        | 90.23                                        |                             |                             |                                           |
-| Gemini-1.5 Pro                |                                         |                                            |                               |                                        | 89.92                                        |                             |                             |                                           |
-| Gemini-2.0 Flash              | 0.191                                   | 86.1                                       |                               |                                        | 88.69                                        |                             |                             |                                           |
-| Gemini-2.5 Pro                | **0.148**                               |                                            |                               |                                        |                                              |                             |                             |                                           |
-| GPT4o                         | 0.233                                   | 75.5                                       |                               |                                        | 89.77                                        |                             |                             |                                           |
-| Claude Sonnet 3.5             |                                         | 69.3                                       |                               |                                        |                                              |                             |                             |                                           |
-| Qwen2-VL-72B                  | 0.252                                   |                                            |                               |                                        |                                              |                             |                             |                                           |
-| Qwen2.5-VL-72B                | 0.214                                   |                                            |                               |                                        |                                              |                             |                             |                                           |
-| InternVL2-76B                 | 0.44                                    |                                            |                               |                                        |                                              |                             |                             |                                           |
+| Pipeline                                  | [OmniDocBench](#omnidocbench) Overall ↓ | [Omni OCR](#omni-ocr-benchmark) Accuracy ↑ | [olmOCR](#olmoocr-eval) ELO ↑ | [Marker](#marker-benchmarks) Overall ↓ | [Mistral](#mistral-ocr-benchmarks) Overall ↑ | [dp-bench](#dp-bench) NID ↑ | [READoc](#readoc) Overall ↑ | [Actualize.pro](#actualize-pro) Overall ↑ |
+|-------------------------------------------|-----------------------------------------|:-------------------------------------------|-------------------------------|----------------------------------------|:---------------------------------------------|-----------------------------|-----------------------------|-------------------------------------------|
+| [MinerU](#MinerU)                         | 0.150 ⚠️                                |                                            | 1545.2                        |                                        |                                              |                             | 60.17                       | **8**                                     |
+| [Marker](#Marker)                         | 0.336                                   |                                            | 1429.1                        | **4.23916** ⚠️                         |                                              |                             | 63.57                       | 6.5                                       |
+| [DocLing](#DocLing)                       | 0.589                                   |                                            |                               | 3.70429                                |                                              |                             |                             | 7.3                                       |
+| [MarkItDown](#MarkItDown)                 |                                         |                                            |                               |                                        |                                              |                             |                             | 7.78                                      |
+| [Zerox (OmniAI)](#Zerox)                  |                                         | **91.7**    ⚠️                             |                               |                                        |                                              |                             |                             | 7.9                                       |
+| [Unstructured](#Unstructured)             | 0.586                                   | 50.8                                       |                               |                                        |                                              | 91.18                       |                             | 6.2                                       |
+| [Pix2Text](#Pix2Text)                     | 0.32                                    |                                            |                               |                                        |                                              |                             | 64.39                       |                                           |
+| [open-parse](#open-parse)                 | 0.646                                   |                                            |                               |                                        |                                              |                             |                             |                                           |
+| [Markdrop](#markdrop)                     |                                         |                                            |                               |                                        |                                              |                             |                             |                                           |
+| [Vision Parse](#Vision-Parse)             |                                         |                                            |                               |                                        |                                              |                             |                             |                                           |
+| [olmOCR](#olmOCR)                         | 0.326                                   |                                            | **1813.0** ⚠️                 |                                        |                                              |                             |                             |                                           |
+| _↓ Expert VLMs_                           |                                         |                                            |                               |                                        |                                              |                             |                             |                                           |
+| [Nougat](#Nougat)                         | 0.452                                   |                                            |                               |                                        |                                              |                             | **81.42**                   |                                           |
+| [GOT-OCR](#GOT-OCR)                       | 0.287                                   |                                            | 1212.7                        |                                        |                                              |                             |                             |                                           |
+| [SmolDocling](#SmolDocling)               | 0.493                                   |                                            |                               |                                        |                                              |                             |                             |                                           |
+| _↓ Proprietary pipelines_                 |                                         |                                            |                               |                                        |                                              |                             |                             |                                           |
+| [Mistral OCR](#MistralOCR)                | 0.268                                   |                                            |                               |                                        | **94.89**  ⚠️                                |                             |                             |                                           |
+| [Google Document AI](#Google-Document-AI) |                                         | 67.8                                       |                               |                                        | 83.42                                        | 90.86                       |                             |                                           |
+| [Azure OCR](#Azure-OCR)                   |                                         | 85.1                                       |                               |                                        | 89.52                                        | 87.69                       |                             |                                           |
+| [Amazon Textract](#Amazon-Textract)       |                                         | 74.3                                       |                               |                                        |                                              | 96.71                       |                             |                                           |
+| [LlamaParse](#LlamaParse)                 |                                         |                                            |                               | 3.97619                                |                                              | 92.82                       |                             | 7.1                                       |
+| [Mathpix](#Mathpix)                       | 0.191                                   |                                            |                               | 4.15626                                |                                              |                             |                             |                                           |
+| [upstage](#upstage-ai)                    |                                         |                                            |                               |                                        |                                              | **97.02**  ⚠️               |                             |                                           |
+| _↓ General VLMs_                          |                                         |                                            |                               |                                        |                                              |                             |                             |                                           |
+| Gemini-1.5 Flash                          |                                         |                                            |                               |                                        | 90.23                                        |                             |                             |                                           |
+| Gemini-1.5 Pro                            |                                         |                                            |                               |                                        | 89.92                                        |                             |                             |                                           |
+| Gemini-2.0 Flash                          | 0.191                                   | 86.1                                       |                               |                                        | 88.69                                        |                             |                             |                                           |
+| Gemini-2.5 Pro                            | **0.148**                               |                                            |                               |                                        |                                              |                             |                             |                                           |
+| GPT4o                                     | 0.233                                   | 75.5                                       |                               |                                        | 89.77                                        |                             |                             |                                           |
+| Claude Sonnet 3.5                         |                                         | 69.3                                       |                               |                                        |                                              |                             |                             |                                           |
+| Qwen2-VL-72B                              | 0.252                                   |                                            |                               |                                        |                                              |                             |                             |                                           |
+| Qwen2.5-VL-72B                            | 0.214                                   |                                            |                               |                                        |                                              |                             |                             |                                           |
+| InternVL2-76B                             | 0.44                                    |                                            |                               |                                        |                                              |                             |                             |                                           |
 
 - **Bold** indicates the best result for a given metric.
 - " " means the pipeline was not evaluated in that benchmark.
@@ -172,6 +172,71 @@ features include:
 - **API URL:** https://docs.mistral.ai/capabilities/document/
 - **Pricing:** https://mistral.ai/products/la-plateforme#pricing
 - **Average Price:** 1$ per 1000 pages
+
+### [Google Document AI](https://cloud.google.com/document-ai)
+
+[✏️](https://github.com/dantetemplar/pdf-extraction-agenda/issues/23)
+![License](https://img.shields.io/badge/License-Proprietary-red)
+[![Demo](https://img.shields.io/badge/DEMO-black?logo=awwwards)](https://console.cloud.google.com/ai/document-ai)
+[![API](https://img.shields.io/badge/API-Available-blue?logo=swagger&logoColor=85EA2D)](https://cloud.google.com/document-ai/docs/reference/rest)
+
+**License:** Proprietary
+
+**Description:** Google Document AI is a cloud-based document processing service that uses machine learning to
+automatically extract structured data from documents. It supports various document types, including invoices, receipts,
+forms, and identity documents. Key features include:
+
+- **Optical Character Recognition (OCR)**: Converts scanned images and PDFs into editable text.
+- **Data Extraction**: Identifies and extracts key-value pairs, tables, and other structured data.
+- **Document Understanding** Classifies and understands the content of documents.
+- **Customization**: Allows users to train custom models for specific document types.
+
+**API Details:**
+
+- **API URL:** https://cloud.google.com/document-ai/docs/reference/rest
+- **Pricing:** https://cloud.google.com/document-ai/pricing
+- **Average Price:** $1.50 per 1000 pages
+
+### [Azure OCR](https://azure.microsoft.com/en-us/products/ai-services/ai-vision)
+
+[✏️](https://github.com/dantetemplar/pdf-extraction-agenda/issues/24)
+[![GitHub last commit](https://img.shields.io/github/last-commit/Azure/azure-sdk-for-python?label=GitHub&logo=github)](https://github.com/Azure/azure-sdk-for-python)
+![License](https://img.shields.io/badge/License-Proprietary-red)
+[![API](https://img.shields.io/badge/API-Available-blue?logo=swagger&logoColor=85EA2D)](https://learn.microsoft.com/en-us/azure/cognitive-services/computer-vision/ocr)
+
+**License:** Proprietary
+
+**Description:** Azure AI Vision OCR is a cloud-based service that employs advanced machine-learning algorithms to
+extract printed and handwritten text from images and documents. It supports a wide array of languages and can process
+various content types, including posters, street signs, product labels, and business documents. The service is designed
+to detect text lines, words, and paragraphs, providing structured output suitable for integration into applications
+requiring text extraction capabilities.
+
+**API Details:**
+
+- **API URL:** https://learn.microsoft.com/en-us/azure/cognitive-services/computer-vision/ocr
+- **Pricing:** https://azure.microsoft.com/en-us/pricing/details/cognitive-services/computer-vision/
+- **Average Price:** $1 per 1,000 transactions
+
+### [Amazon Textract](https://aws.amazon.com/textract/)
+
+[✏️](https://github.com/dantetemplar/pdf-extraction-agenda/issues/25)
+![License](https://img.shields.io/badge/License-Proprietary-red)
+[![API](https://img.shields.io/badge/API-Available-blue?logo=swagger&logoColor=85EA2D)](https://docs.aws.amazon.com/textract/latest/dg/API_Reference.html)
+
+**License:** Proprietary
+
+**Description:** Amazon Textract is a machine learning service that automatically extracts text, handwriting, and data
+from scanned documents. It goes beyond simple optical character recognition (OCR) by also identifying the contents of
+fields in forms, information stored in tables, and the presence of selection elements such as checkboxes. This enables
+the conversion of unstructured content into structured data, facilitating integration into various applications and
+workflows.
+
+**API Details:**
+
+- **API URL:** https://docs.aws.amazon.com/textract/latest/dg/API_Reference.html
+- **Pricing:** https://aws.amazon.com/textract/pricing/
+- **Average Price:** $1.50 per 1000 pages
 
 ### [LlamaParse](https://www.llamaindex.ai/llamaparse)
 
