@@ -1235,7 +1235,7 @@ Markdown output of the entire PDF page parsing results as the prediction.
   Comprehensive evaluation of document parsing algorithms on OmniDocBench: performance metrics for text, formula, table, and reading order extraction, with overall scores derived from ground truth comparisons.
 </p>
 
-### [olmoOCR eval](https://github.com/allenai/olmocr)
+### [olmoOCR eval](https://huggingface.co/datasets/allenai/olmOCR-bench)
 
 [![GitHub last commit](https://img.shields.io/github/last-commit/allenai/olmocr?label=GitHub&logo=github)](https://github.com/allenai/olmocr)
 ![GitHub License](https://img.shields.io/github/license/allenai/olmocr)
@@ -1244,39 +1244,21 @@ License: Apache 2.0
 Primary language: Python
 -->
 
-The olmOCR project provides an **evaluation toolkit** (`runeval.py`) for side-by-side comparison of PDF conversion
-pipeline outputs. This tool allows researchers to directly compare text extraction results from different pipeline
-versions against a gold-standard reference. Also olmoOCR authors made some evalutions in
-their [technical report](https://olmocr.allenai.org/papers/olmocr.pdf).
+| **Model**                  | ArXiv | Base | Hdr/Ftr | TinyTxt | MultCol | OldScan | OldMath | Tables | Overall     |
+|---------------------------|:-----:|:----:|:-------:|:-------:|:-------:|:-------:|:-------:|:------:|:-----------:|
+| GOT OCR                   | 52.7  | 94.0 | 93.6    | 29.9    | 42.0    | 22.1    | 52.0    | 0.2    | 48.3 ± 1.1  |
+| Marker v1.6.2             | 24.3  | **99.5** | 87.1    | 76.9    | 71.0    | 24.3    | 22.1    | 69.8   | 59.4 ± 1.1  |
+| MinerU v1.3.10            | 75.4  | 96.6 | **96.6**| 39.1    | 59.0    | 17.3    | 47.4    | 60.9   | 61.5 ± 1.1  |
+| Mistral OCR API           | **77.2** | 99.4 | 93.6    | 77.1    | 71.3    | 29.3    | 67.5    | 60.6   | 72.0 ± 1.1  |
+| GPT-4o (Anchored)         | 53.5  | 96.8 | 93.8    | 60.6    | 69.3    | 40.7    | 74.5    | 70.0   | 69.9 ± 1.1  |
+| GPT-4o (No Anchor)        | 51.5  | 96.7 | 94.2    | 54.1    | 68.9    | 40.9    | **75.5**| 69.1   | 68.9 ± 1.1  |
+| Gemini Flash 2 (Anchored) | 54.5  | 95.6 | 64.7    | 71.5    | 61.5    | 34.2    | 56.1    | **72.1**| 63.8 ± 1.2  |
+| Gemini Flash 2 (No Anchor)| 32.1  | 94.0 | 48.0    | **84.4**| 58.7    | 27.8    | 56.3    | 61.4   | 57.8 ± 1.1  |
+| Qwen 2 VL (No Anchor)     | 19.7  | 55.5 | 88.9    | 6.8     | 8.3     | 17.1    | 31.7    | 24.2   | 31.5 ± 0.9  |
+| Qwen 2.5 VL (No Anchor)   | 63.1  | 98.3 | 73.6    | 49.1    | 68.3    | 38.6    | 65.7    | 67.3   | 65.5 ± 1.2  |
+| **Ours (No Anchor)**      | 72.1  | 98.1 | 91.6    | 80.5    | 78.5    | 43.7    | 74.7    | 71.5   | 76.3 ± 1.1  |
+| **Ours (Anchored)**       | 75.6  | 99.0 | 93.4    | 81.7    | **79.4**| **44.5**| 75.1    | 70.2   | **77.4 ± 1.0** |
 
-
-> We then sampled 2,000 comparison pairs (same PDF, different tool). We asked 11 data researchers and
-> engineers at Ai2 to assess which output was the higher quality representation of the original PDF, focusing on
-> reading order, comprehensiveness of content and representation of structured information. The user interface
-> used is similar to that in Figure 5. Exact participant instructions are listed in Appendix B.
-
-**Bootstrapped Elo Ratings (95% CI)**
-
-| Model   | Elo Rating ± CI | 95% CI Range     |
-|---------|-----------------|------------------|
-| olmoOCR | 1813.0 ± 84.9   | [1605.9, 1930.0] |
-| MinerU  | 1545.2 ± 99.7   | [1336.7, 1714.1] |
-| Marker  | 1429.1 ± 100.7  | [1267.6, 1645.5] |
-| GOTOCOR | 1212.7 ± 82.0   | [1097.3, 1408.3] |
-
-<br/>
-
-> Table 7: Pairwise Win/Loss Statistics Between Models
-
-| Model Pair         | Wins    | Win Rate (%) |
-|--------------------|---------|--------------|
-| olmOCR vs. Marker  | 49/31   | **61.3**     |
-| olmOCR vs. GOTOCOR | 41/29   | **58.6**     |
-| olmOCR vs. MinerU  | 55/22   | **71.4**     |
-| Marker vs. MinerU  | 53/26   | 67.1         |
-| Marker vs. GOTOCOR | 45/26   | 63.4         |
-| GOTOCOR vs. MinerU | 38/37   | 50.7         |
-| **Total**          | **452** |              |
 
 ### [Marker benchmarks](https://github.com/VikParuchuri/marker?tab=readme-ov-file#benchmarks)
 
