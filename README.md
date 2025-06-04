@@ -55,6 +55,7 @@ contents [by default](https://github.blog/changelog/2021-04-13-table-of-contents
 - **Bold** indicates the best result for a given metric, and <sup>[2]</sup> indicates 2nd place in that benchmark.
 - " " means the pipeline was not evaluated in that benchmark.
 - ⚠️ means the pipeline authors are the ones who did the benchmark.
+- `Overall ↑` in column name means higher value is better, when `Overall ↓` - lower value is better.
 
 > [!NOTE]
 > I'm working on implementing an easy-to-repeat benchmarking (just run notebook on colab to repeat results, or extend
