@@ -13,6 +13,9 @@ contents [by default](https://github.blog/changelog/2021-04-13-table-of-contents
 
 ## Comparison
 
+> [!IMPORTANT]
+> Open [README.md in separate page](https://github.com/dantetemplar/pdf-extraction-agenda/blob/main/README.md), not in repository preview! It will look better.
+
 | Pipeline                                  | [OmniDocBench](#omnidocbench) Overall ↓ | [olmOCR](#olmoocr-eval) Overall ↑ | [Omni OCR](#omni-ocr-benchmark) Accuracy ↑ | [Marker](#marker-benchmarks) Overall ↓ | [Mistral](#mistral-ocr-benchmarks) Overall ↑ | [dp-bench](#dp-bench) NID ↑ | [READoc](#readoc) Overall ↑ | [Actualize.pro](#actualize-pro) Overall ↑ |
 | ----------------------------------------- | --------------------------------------- | --------------------------------- | :----------------------------------------- | -------------------------------------- | :------------------------------------------- | --------------------------- | --------------------------- | ----------------------------------------- |
 | [MinerU](#MinerU)                         | 0.150 <sup>[2]</sup> ⚠️                  | 61.5                              |                                            |                                        |                                              |                             | 60.17                       | **8**                                     |
