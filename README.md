@@ -539,6 +539,22 @@ Markdrop is available on PyPI.
 
 **Description:** Parse PDFs into markdown using Vision LLMs
 
+
+### [doc2x](https://noedgeai.com/)
+[✏️](https://github.com/dantetemplar/pdf-extraction-agenda/issues/28)
+[![GitHub last commit](https://img.shields.io/github/last-commit/NoEdgeAI/pdfdeal?label=GitHub&logo=github)](https://github.com/NoEdgeAI/pdfdeal)
+![License](https://img.shields.io/badge/License-Proprietary-red)
+[![Demo](https://img.shields.io/badge/DEMO-black?logo=awwwards)](https://doc2x.noedgeai.com/)
+[![API](https://img.shields.io/badge/API-Available-blue?logo=swagger&logoColor=85EA2D)](https://noedgeai.github.io/pdfdeal-docs/)
+
+**License:** Proprietary
+
+**Description:** NoEdgeAI is an open‑source technology initiative focused on enhancing document processing in Retrieval-Augmented Generation (RAG) workflows. Their flagship library, pdfdeal, is a Python wrapper for the Doc2X API that facilitates high‑fidelity PDF-to-text conversion. It extends Doc2X’s capabilities by offering local text preprocessing, Markdown and LaTeX extraction, file splitting, image uploading, and enhancements for better recall when integrating PDFs into knowledge‑base tools like Graphrag, Dify, or FastGPT
+
+**API Details:**
+- **API URL:** https://noedgeai.github.io/pdfdeal-docs/
+
+
 ## Benchmarks
 
 ### [OmniDocBench](https://github.com/opendatalab/OmniDocBench)
