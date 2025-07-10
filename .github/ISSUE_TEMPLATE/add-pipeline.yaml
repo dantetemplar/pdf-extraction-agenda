@@ -1,6 +1,6 @@
 name: "New Pipeline Submission"
 description: "Submit a new pipeline to be added to the README."
-labels: [ "pipeline", "enhancement" ]
+labels: [ "pipeline" ]
 body:
   - type: input
     id: name
