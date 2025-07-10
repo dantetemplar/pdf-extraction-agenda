@@ -18,34 +18,36 @@ contents [by default](https://github.blog/changelog/2021-04-13-table-of-contents
 
 | Pipeline                                  | [OmniDocBench](#omnidocbench) Overall ↓ | [olmOCR](#olmoocr-eval) Overall ↑ | [Omni OCR](#omni-ocr-benchmark) Accuracy ↑ | [Marker](#marker-benchmarks) Overall ↓ | [Mistral](#mistral-ocr-benchmarks) Overall ↑ | [dp-bench](#dp-bench) NID ↑ | [READoc](#readoc) Overall ↑ | [Actualize.pro](#actualize-pro) Overall ↑ |
 | ----------------------------------------- | --------------------------------------- | --------------------------------- | :----------------------------------------- | -------------------------------------- | :------------------------------------------- | --------------------------- | --------------------------- | ----------------------------------------- |
-| [MinerU](#MinerU)                         | 0.150 <sup>[2]</sup> ⚠️                  | 61.5                              |                                            |                                        |                                              |                             | 60.17                       | **8**                                     |
-| [Marker](#Marker)                         | 0.336                                   | 59.4                              |                                            | **4.24** ⚠️                             |                                              |                             | 63.57                       | 6.5                                       |
+| [MinerU](#MinerU)                         | 0.150 <sup>[3]</sup> ⚠️                 | 61.5                              |                                            |                                        |                                              |                             | 60.17                       | **8**                                     |
+| [Marker](#Marker)                         | 0.336                                   | 70.1                              |                                            | **4.24** ⚠️                            |                                              |                             | 63.57                       | 6.5                                       |
 | [DocLing](#DocLing)                       | 0.589                                   |                                   |                                            | 3.70                                   |                                              |                             |                             | 7.3                                       |
+| [MonkeyOCR (pro-3B)](#MonkeyOCR)          | **0.138 <sup>[1]</sup>** ⚠️             | **75.8 <sup>[1]</sup>** ⚠️        |                                            |                                        |                                              |                             |                             |                                           |
 | [MarkItDown](#MarkItDown)                 |                                         |                                   |                                            |                                        |                                              |                             |                             | 7.78                                      |
-| [Zerox (OmniAI)](#Zerox)                  |                                         |                                   | **91.7 <sup>[1]</sup>** ⚠️                  |                                        |                                              |                             |                             | 7.9                                       |
+| [Zerox (OmniAI)](#Zerox)                  |                                         |                                   | **91.7 <sup>[1]</sup>** ⚠️                 |                                        |                                              |                             |                             | 7.9                                       |
 | [Unstructured](#Unstructured)             | 0.586                                   |                                   | 50.8                                       |                                        |                                              | 91.18                       |                             | 6.2                                       |
 | [Pix2Text](#Pix2Text)                     | 0.32                                    |                                   |                                            |                                        |                                              |                             | 64.39                       |                                           |
 | [open-parse](#open-parse)                 | 0.646                                   |                                   |                                            |                                        |                                              |                             |                             |                                           |
 | [Markdrop](#markdrop)                     |                                         |                                   |                                            |                                        |                                              |                             |                             |                                           |
 | [Vision Parse](#Vision-Parse)             |                                         |                                   |                                            |                                        |                                              |                             |                             |                                           |
-| [olmOCR](#olmOCR)                         | 0.326                                   | **77.4 <sup>[1]</sup>** ⚠️         |                                            |                                        |                                              |                             |                             |                                           |
+| [olmOCR](#olmOCR)                         | 0.326                                   | 75.5 <sup>[2]</sup> ⚠️            |                                            |                                        |                                              |                             |                             |                                           |
 | _↓ Proprietary pipelines_                 |                                         |                                   |                                            |                                        |                                              |                             |                             |                                           |
-| [Mistral OCR](#MistralOCR)                | 0.268                                   | 72.0 <sup>[2]</sup>               |                                            |                                        | **94.89 ⚠️**                                  |                             |                             |                                           |
+| [Mistral OCR](#MistralOCR)                | 0.268                                   | 72.0 <sup>[3]</sup>               |                                            |                                        | **94.89 ⚠️**                                 |                             |                             |                                           |
 | [Google Document AI](#Google-Document-AI) |                                         |                                   | 67.8                                       |                                        | 83.42                                        | 90.86                       |                             |                                           |
 | [Azure OCR](#Azure-OCR)                   |                                         |                                   | 85.1                                       |                                        | 89.52                                        | 87.69                       |                             |                                           |
 | [Amazon Textract](#Amazon-Textract)       |                                         |                                   | 74.3                                       |                                        |                                              | 96.71                       |                             |                                           |
 | [LlamaParse](#LlamaParse)                 |                                         |                                   |                                            | 3.98                                   |                                              | 92.82                       |                             | 7.1                                       |
 | [Mathpix](#Mathpix)                       | 0.191                                   |                                   |                                            | 4.16                                   |                                              |                             |                             |                                           |
-| [upstage](#upstage-ai)                    |                                         |                                   |                                            |                                        |                                              | **97.02**  ⚠️                |                             |                                           |
+| [upstage](#upstage-ai)                    |                                         |                                   |                                            |                                        |                                              | **97.02**  ⚠️               |                             |                                           |
 | _↓ Expert VLMs_                           |                                         |                                   |                                            |                                        |                                              |                             |                             |                                           |
 | [Nougat](#Nougat)                         | 0.452                                   |                                   |                                            |                                        |                                              |                             | **81.42**                   |                                           |
 | [GOT-OCR](#GOT-OCR)                       | 0.287                                   | 48.3                              |                                            |                                        |                                              |                             |                             |                                           |
 | [SmolDocling](#SmolDocling)               | 0.493                                   |                                   |                                            |                                        |                                              |                             |                             |                                           |
+| Nanonets-OCR                              |                                         | 64.5                              |                                            |                                        |                                              |                             |                             |                                           |
 | _↓ General VLMs_                          |                                         |                                   |                                            |                                        |                                              |                             |                             |                                           |
 | Gemini-1.5 Flash                          |                                         |                                   |                                            |                                        | 90.23                                        |                             |                             |                                           |
 | Gemini-1.5 Pro                            |                                         |                                   |                                            |                                        | 89.92                                        |                             |                             |                                           |
 | Gemini-2.0 Flash                          | 0.191                                   | 63.8                              | 86.1 <sup>[2]</sup>                        |                                        | 88.69                                        |                             |                             |                                           |
-| Gemini-2.5 Pro                            | **0.148 <sup>[1]</sup>**                |                                   |                                            |                                        |                                              |                             |                             |                                           |
+| Gemini-2.5 Pro                            | 0.148 <sup>[2]</sup>                    |                                   |                                            |                                        |                                              |                             |                             |                                           |
 | GPT4o                                     | 0.233                                   | 69.9                              | 75.5                                       |                                        | 89.77                                        |                             |                             |                                           |
 | Claude Sonnet 3.5                         |                                         |                                   | 69.3                                       |                                        |                                              |                             |                             |                                           |
 | Qwen2-VL-72B                              | 0.252                                   |                                   |                                            |                                        |                                              |                             |                             |                                           |
@@ -161,6 +163,27 @@ features include:
   equations, and tables.
 - **Optimized Pipeline**: Compatible with SGLang and vLLM inference engines, enabling efficient scaling from single to
   multiple GPUs.
+
+### [MonkeyOCR](https://github.com/Yuliang-Liu/MonkeyOCR)
+[✏️](https://github.com/dantetemplar/pdf-extraction-agenda/issues/27)
+[![GitHub last commit](https://img.shields.io/github/last-commit/Yuliang-Liu/MonkeyOCR?label=GitHub&logo=github)](https://github.com/Yuliang-Liu/MonkeyOCR)
+![License](https://img.shields.io/badge/License-Apache--2.0-brightgreen)
+[![Demo](https://img.shields.io/badge/DEMO-black?logo=awwwards)](http://vlrlabmonkey.xyz:7685)
+
+**License:** Apache-2.0
+
+**Description:** MonkeyOCR is an open‑source, **layout‑aware document parsing system** developed by Yuliang‑Liu and collaborators that implements a novel **Structure‑Recognition‑Relation (SRR)** 
+triplet paradigm. It decomposes document analysis into three phases—block structure detection (“Where is it?”), 
+content recognition (“What is it?”), and reading‑order relation modeling (“How is it organized?”)—delivering both high 
+accuracy and inference speed by avoiding heavy end‑to‑end models or brittle modular pipelines. 
+Trained on the extensive **MonkeyDoc dataset** (nearly 3.9 million instances across English and Chinese, 
+covering 10+ document types), MonkeyOCR achieves state‑of‑the‑art performance, including significant gains in table 
+(+8.6%) and formula (+15.0%) recognition, and outperforms much larger models like Qwen2.5‑VL (72B) and Gemini 2.5 Pro. 
+Remarkably, the 3B‑parameter variant runs efficiently—approximately 0.84 pages per second on multi‑page input using a single 
+NVIDIA 3090 GPU—making it practical for real‑world document workloads.
+
+
+**Benchmark Results:** https://github.com/Yuliang-Liu/MonkeyOCR?tab=readme-ov-file#benchmark-results
 
 ### [MistralOCR](https://mistral.ai/news/mistral-ocr)
 
@@ -1256,20 +1279,180 @@ unambiguous, and machine-checkable, similar to a unit test. For example, once yo
 Dataset Link: https://huggingface.co/datasets/allenai/olmOCR-bench
 
 
-| Model                      | ArXiv | Old Scans Math | Tables | Old Scans | Headers and Footers | Multi column | Long tiny text | Base | Overall    |
-| -------------------------- | ----- | -------------- | ------ | --------- | ------------------- | ------------ | -------------- | ---- | ---------- |
-| GOT OCR                    | 52.7  | 52             | 0.2    | 22.1      | 93.6                | 42           | 29.9           | 94   | 48.3 ± 1.1 |
-| Marker v1.6.2              | 24.3  | 22.1           | 69.8   | 24.3      | 87.1                | 71           | 76.9           | 99.5 | 59.4 ± 1.1 |
-| MinerU v1.3.10             | 75.4  | 47.4           | 60.9   | 17.3      | 96.6                | 59           | 39.1           | 96.6 | 61.5 ± 1.1 |
-| Mistral OCR API            | 77.2  | 67.5           | 60.6   | 29.3      | 93.6                | 71.3         | 77.1           | 99.4 | 72.0 ± 1.1 |
-| GPT-4o (No Anchor)         | 51.5  | 75.5           | 69.1   | 40.9      | 94.2                | 68.9         | 54.1           | 96.7 | 68.9 ± 1.1 |
-| GPT-4o (Anchored)          | 53.5  | 74.5           | 70     | 40.7      | 93.8                | 69.3         | 60.6           | 96.8 | 69.9 ± 1.1 |
-| Gemini Flash 2 (No Anchor) | 32.1  | 56.3           | 61.4   | 27.8      | 48                  | 58.7         | 84.4           | 94   | 57.8 ± 1.1 |
-| Gemini Flash 2 (Anchored)  | 54.5  | 56.1           | 72.1   | 34.2      | 64.7                | 61.5         | 71.5           | 95.6 | 63.8 ± 1.2 |
-| Qwen 2 VL (No Anchor)      | 19.7  | 31.7           | 24.2   | 17.1      | 88.9                | 8.3          | 6.8            | 55.5 | 31.5 ± 0.9 |
-| Qwen 2.5 VL (No Anchor)    | 63.1  | 65.7           | 67.3   | 38.6      | 73.6                | 68.3         | 49.1           | 98.3 | 65.5 ± 1.2 |
-| olmOCR v0.1.68 (No Anchor) | 72.1  | 74.7           | 71.5   | 43.7      | 91.6                | 78.5         | 80.5           | 98.1 | 76.3 ± 1.1 |
-| olmOCR v0.1.68 (Anchored)  | 75.6  | 75.1           | 70.2   | 44.5      | 93.4                | 79.4         | 81.7           | 99   | 77.4 ± 1.0 |
+<table>
+  <thead>
+    <tr>
+      <th align="left"><strong>Model</strong></th>
+      <th align="center">ArXiv</th>
+      <th align="center">Old Scans Math</th>
+      <th align="center">Tables</th>
+      <th align="center">Old Scans</th>
+      <th align="center">Headers and Footers</th>
+      <th align="center">Multi column</th>
+      <th align="center">Long tiny text</th>
+      <th align="center">Base</th>
+      <th align="center">Overall</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td align="left">GOT OCR</td>
+      <td align="center">52.7</td>
+      <td align="center">52.0</td>
+      <td align="center">0.20</td>
+      <td align="center">22.1</td>
+      <td align="center">93.6</td>
+      <td align="center">42.0</td>
+      <td align="center">29.9</td>
+      <td align="center">94.0</td>
+      <td align="center">48.3 ± 1.1</td>
+    </tr>
+    <tr>
+      <td align="left">Marker v1.7.5 (base, force_ocr)</td>
+      <td align="center">76.0</td>
+      <td align="center">57.9</td>
+      <td align="center">57.6</td>
+      <td align="center">27.8</td>
+      <td align="center">84.9</td>
+      <td align="center">72.9</td>
+      <td align="center">84.6</td>
+      <td align="center">99.1</td>
+      <td align="center">70.1 ± 1.1</td>
+    </tr>
+    <tr>
+      <td align="left">MinerU v1.3.10</td>
+      <td align="center">75.4</td>
+      <td align="center">47.4</td>
+      <td align="center">60.9</td>
+      <td align="center">17.3</td>
+      <td align="center"><strong>96.6</strong></td>
+      <td align="center">59.0</td>
+      <td align="center">39.1</td>
+      <td align="center">96.6</td>
+      <td align="center">61.5 ± 1.1</td>
+    </tr>
+    <tr>
+      <td align="left">Mistral OCR API</td>
+      <td align="center"><strong>77.2</strong></td>
+      <td align="center">67.5</td>
+      <td align="center">60.6</td>
+      <td align="center">29.3</td>
+      <td align="center">93.6</td>
+      <td align="center">71.3</td>
+      <td align="center">77.1</td>
+      <td align="center"><strong>99.4</strong></td>
+      <td align="center">72.0 ± 1.1</td>
+    </tr>
+    <tr>
+      <td align="left">Nanonets OCR</td>
+      <td align="center">67.0</td>
+      <td align="center">68.6</td>
+      <td align="center"><strong>77.7</strong></td>
+      <td align="center">39.5</td>
+      <td align="center">40.7</td>
+      <td align="center">69.9</td>
+      <td align="center">53.4</td>
+      <td align="center">99.3</td>
+      <td align="center">64.5 ± 1.1</td>
+    </tr>
+    <tr>
+      <td align="left">GPT-4o (No Anchor)</td>
+      <td align="center">51.5</td>
+      <td align="center"><strong>75.5</strong></td>
+      <td align="center">69.1</td>
+      <td align="center">40.9</td>
+      <td align="center">94.2</td>
+      <td align="center">68.9</td>
+      <td align="center">54.1</td>
+      <td align="center">96.7</td>
+      <td align="center">68.9 ± 1.1</td>
+    </tr>
+    <tr>
+      <td align="left">GPT-4o (Anchored)</td>
+      <td align="center">53.5</td>
+      <td align="center">74.5</td>
+      <td align="center">70.0</td>
+      <td align="center">40.7</td>
+      <td align="center">93.8</td>
+      <td align="center">69.3</td>
+      <td align="center">60.6</td>
+      <td align="center">96.8</td>
+      <td align="center">69.9 ± 1.1</td>
+    </tr>
+    <tr>
+      <td align="left">Gemini Flash 2 (No Anchor)</td>
+      <td align="center">32.1</td>
+      <td align="center">56.3</td>
+      <td align="center">61.4</td>
+      <td align="center">27.8</td>
+      <td align="center">48.0</td>
+      <td align="center">58.7</td>
+      <td align="center"><strong>84.4</strong></td>
+      <td align="center">94.0</td>
+      <td align="center">57.8 ± 1.1</td>
+    </tr>
+    <tr>
+      <td align="left">Gemini Flash 2 (Anchored)</td>
+      <td align="center">54.5</td>
+      <td align="center">56.1</td>
+      <td align="center"><strong>72.1</strong></td>
+      <td align="center">34.2</td>
+      <td align="center">64.7</td>
+      <td align="center">61.5</td>
+      <td align="center">71.5</td>
+      <td align="center">95.6</td>
+      <td align="center">63.8 ± 1.2</td>
+    </tr>
+    <tr>
+      <td align="left">Qwen 2 VL (No Anchor)</td>
+      <td align="center">19.7</td>
+      <td align="center">31.7</td>
+      <td align="center">24.2</td>
+      <td align="center">17.1</td>
+      <td align="center">88.9</td>
+      <td align="center">8.3</td>
+      <td align="center">6.8</td>
+      <td align="center">55.5</td>
+      <td align="center">31.5 ± 0.9</td>
+    </tr>
+    <tr>
+      <td align="left">Qwen 2.5 VL (No Anchor)</td>
+      <td align="center">63.1</td>
+      <td align="center">65.7</td>
+      <td align="center">67.3</td>
+      <td align="center">38.6</td>
+      <td align="center">73.6</td>
+      <td align="center">68.3</td>
+      <td align="center">49.1</td>
+      <td align="center">98.3</td>
+      <td align="center">65.5 ± 1.2</td>
+    </tr>
+    <tr>
+      <td align="left">olmOCR v0.1.75 (No Anchor)</td>
+      <td align="center">71.5</td>
+      <td align="center">71.4</td>
+      <td align="center">71.4</td>
+      <td align="center"><strong>42.8</strong></td>
+      <td align="center">94.1</td>
+      <td align="center">77.7</td>
+      <td align="center">71.0</td>
+      <td align="center">97.8</td>
+      <td align="center">74.7 ± 1.1</td>
+    </tr>
+    <tr>
+      <td align="left">olmOCR v0.1.75 (Anchored)</td>
+      <td align="center">74.9</td>
+      <td align="center">71.2</td>
+      <td align="center">71.0</td>
+      <td align="center">42.2</td>
+      <td align="center">94.5</td>
+      <td align="center"><strong>78.3</strong></td>
+      <td align="center">73.3</td>
+      <td align="center">98.3</td>
+      <td align="center"><strong>75.5 ± 1.0</strong></td>
+    </tr>
+  </tbody>
+</table>
 
 
 Also, the olmOCR project provides an **evaluation toolkit** (`runeval.py`) for side-by-side comparison of PDF conversion
