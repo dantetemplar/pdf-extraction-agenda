@@ -685,6 +685,12 @@ OmniDocBench is *“a benchmark for evaluating diverse document parsing in real-
 establishes a
 comprehensive evaluation standard for document content extraction methods.
 
+[2025/09/25] **Major update**: Updated from **v1.0** to **v1.5**
+  - Evaluation code: (1) Updated the **hybrid matching algorithm**, allowing formulas and text to be matched with each other, which alleviates score errors caused by models outputting formulas as unicode; (2) Integrated **CDM** calculation directly into the metric section, so users with a CDM environment can compute the metric directly by calling `CDM` in config file. The previous interface for outputting formula matching pairs as a JSON file is still retained, now named `CDM_plain` in config file.
+  - Benchmark dataset: (1) Increased the image resolution for newspaper and note types from 72 DPI to **200 DPI**; (2) Added **374 new pages**, balanced the number of Chinese and English pages, and increased the proportion of pages containing formulas; (3) Formulas update language atrributes; (4) Fixed typos in some text and table annotations.
+  - Leaderboard: (1) Removed the Chinese/English grouping, now calculating the average score across all pages; (2) The **Overall** metric is now calculated as ((1 - text Edit distance) * 100 + table TEDS + formula CDM) / 3;
+  - Note: The `main` branch of evaludation code (this repo) and dataset in HuggingFace and OpenDataLab are now updated to Version **v1.5**, if you still want to evaluate your model in v1.0, please checkout to branch `v1_0`.
+
 **Notable features:** OmniDocBench covers a wide variety of document types and layouts, comprising **981 PDF pages
 across 9 document types, 4 layout styles, and 3 languages**. It provides **rich annotations**: over 20k block-level
 elements (paragraphs, headings, tables, etc.) and 80k+ span-level elements (lines, formulas, etc.), including reading
