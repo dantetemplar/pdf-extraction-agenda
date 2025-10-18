@@ -60,10 +60,6 @@ contents [by default](https://github.blog/changelog/2021-04-13-table-of-contents
 - ⚠️ means the pipeline authors are the ones who did the benchmark.
 - `Overall ↑` in column name means higher value is better, when `Overall ↓` - lower value is better.
 
-> [!NOTE]
-> I'm working on implementing an easy-to-repeat benchmarking (just run notebook on colab to repeat results, or extend
-> them), but for now I'm struggling with finding suitable dataset.
-
 ## Pipelines
 
 ### [MinerU](https://github.com/opendatalab/MinerU)
@@ -117,6 +113,31 @@ handle a wide range of document types in all languages and produce structured ou
 
 **Additional Notes:**
 **Demo available after registration on https://www.datalab.to/**
+
+### [dots.ocr](https://huggingface.co/rednote-hilab/dots.ocr)
+[✏️](https://github.com/dantetemplar/pdf-extraction-agenda/issues/29)
+[![GitHub last commit](https://img.shields.io/github/last-commit/rednote-hilab/dots.ocr?label=GitHub&logo=github)](https://github.com/rednote-hilab/dots.ocr)
+![License](https://img.shields.io/badge/License-MIT-brightgreen)
+[![Demo](https://img.shields.io/badge/DEMO-black?logo=awwwards)](https://dotsocr.xiaohongshu.com)
+[![API](https://img.shields.io/badge/API-Available-blue?logo=swagger&logoColor=85EA2D)](https://replicate.com/sljeff/dots.ocr)
+
+**License:** MIT
+
+**Description:** dots.ocr is a powerful, multilingual document parser that unifies layout detection and content recognition within a single vision-language model while maintaining good reading order. Despite its compact 1.7B-parameter LLM foundation, it achieves state-of-the-art (SOTA) performance on text, tables, and reading order tasks. The model supports over 100 languages and can handle various document types including PDFs, images, tables, formulas, and maintains proper reading order. It offers a significantly more streamlined architecture than conventional methods that rely on complex, multi-model pipelines, allowing users to switch between tasks simply by altering the input prompt.​
+
+**Benchmark Results:** https://huggingface.co/rednote-hilab/dots.ocr#benchmark-results
+
+**API Details:**
+- **API URL:** https://replicate.com/sljeff/dots.ocr
+
+**Additional Notes:**
+- Built on 1.7B parameters, providing faster inference speeds than larger models
+- Supports both layout detection and content recognition in a unified architecture
+- Multiple deployment options including Docker, vLLM, Hugging Face Transformers, and cloud APIs
+- Strong multilingual capabilities with particular strength in low-resource languages
+- Can output structured data in JSON, Markdown, and HTML formats
+- Includes specialized prompts for different use cases: layout detection, OCR-only, and grounding OCR
+- 4-bit quantized version available for consumer-grade GPUs
 
 ### [MarkItDown](https://github.com/microsoft/markitdown)
 
