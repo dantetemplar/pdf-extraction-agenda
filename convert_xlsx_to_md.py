@@ -73,13 +73,13 @@ def main(path_to_benches: Path) -> None:
         if pipeline.startswith("_"):
             continue
         if pipeline in sections: # if found, replace Pipeline with [Pipeline](#escape(Pipeline))
-            df.loc[df["Pipeline"] == pipeline, "Pipeline"] = f"[{pipeline}](#{(pipeline.replace(" ", "-"))})"
+            df.loc[df["Pipeline"] == pipeline, "Pipeline"] = f"[{pipeline}](#{(pipeline.replace(" ", "-").replace(".", ""))})"
         else:
             warnings.warn(f"Pipeline {pipeline} not found in README.md")
     
     # rename columns
     df.rename(columns=CONVERT_COLUMNS, inplace=True)
-    
+
     as_dicts = df.to_dict(orient="records")
     md = (
         markdown_table(as_dicts)

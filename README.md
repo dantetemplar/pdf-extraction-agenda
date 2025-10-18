@@ -34,7 +34,7 @@ contents [by default](https://github.blog/changelog/2021-04-13-table-of-contents
 |            [Markdrop](#Markdrop)            |                                         |                                     |                                   |                             |
 |        [Vision Parse](#Vision-Parse)        |                                         |                                     |                                   |                             |
 |            _↓ Specialized VLMs_             |                                         |                                     |                                   |                             |
-|            [dots.ocr](#dots.ocr)            |       **0.125 <sup>[1]</sup>** ⚠️       |        88.41 <sup>[3]</sup>         |    **79.1 <sup>[1]</sup>** ⚠️     |                             |
+|            [dots.ocr](#dotsocr)             |       **0.125 <sup>[1]</sup>** ⚠️       |        88.41 <sup>[3]</sup>         |    **79.1 <sup>[1]</sup>** ⚠️     |                             |
 |             [Dolphin](#Dolphin)             |                  0.205                  |                74.67                |                                   |                             |
 |             [OCRFlux](#OCRFlux)             |                  0.238                  |                74.82                |                                   |                             |
 |        [Nanonets-OCR](#Nanonets-OCR)        |                  0.283                  |                85.59                |               64.5                |                             |
