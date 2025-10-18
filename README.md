@@ -16,48 +16,52 @@ contents [by default](https://github.blog/changelog/2021-04-13-table-of-contents
 > [!IMPORTANT]
 > Open [README.md in separate page](https://github.com/dantetemplar/pdf-extraction-agenda/blob/main/README.md), not in repository preview! It will look better.
 
-| Pipeline                                  | [OmniDocBench](#omnidocbench) Overall ↓ | [olmOCR](#olmoocr-eval) Overall ↑ | [Omni OCR](#omni-ocr-benchmark) Accuracy ↑ | [Marker](#marker-benchmarks) Overall ↓ | [Mistral](#mistral-ocr-benchmarks) Overall ↑ | [dp-bench](#dp-bench) NID ↑ | [READoc](#readoc) Overall ↑ | [Actualize.pro](#actualize-pro) Overall ↑ |
-| ----------------------------------------- | --------------------------------------- | --------------------------------- | :----------------------------------------- | -------------------------------------- | :------------------------------------------- | --------------------------- | --------------------------- | ----------------------------------------- |
-| [MinerU](#MinerU)                         | 0.150 <sup>[3]</sup> ⚠️                 | 61.5                              |                                            |                                        |                                              |                             | 60.17                       | **8**                                     |
-| [Marker](#Marker)                         | 0.336                                   | 70.1                              |                                            | **4.24** ⚠️                            |                                              |                             | 63.57                       | 6.5                                       |
-| [MonkeyOCR (pro-3B)](#MonkeyOCR)          | **0.138 <sup>[1]</sup>** ⚠️             | **75.8 <sup>[1]</sup>** ⚠️        |                                            |                                        |                                              |                             |                             |                                           |
-| [olmOCR](#olmOCR)                         | 0.326                                   | 75.5 <sup>[2]</sup> ⚠️            |                                            |                                        |                                              |                             |                             |                                           |
-| [DocLing](#DocLing)                       | 0.589                                   |                                   |                                            | 3.70                                   |                                              |                             |                             | 7.3                                       |
-| [MarkItDown](#MarkItDown)                 |                                         |                                   |                                            |                                        |                                              |                             |                             | 7.78                                      |
-| [Zerox (OmniAI)](#Zerox)                  |                                         |                                   | **91.7 <sup>[1]</sup>** ⚠️                 |                                        |                                              |                             |                             | 7.9                                       |
-| [Unstructured](#Unstructured)             | 0.586                                   |                                   | 50.8                                       |                                        |                                              | 91.18                       |                             | 6.2                                       |
-| [Pix2Text](#Pix2Text)                     | 0.32                                    |                                   |                                            |                                        |                                              |                             | 64.39                       |                                           |
-| [open-parse](#open-parse)                 | 0.646                                   |                                   |                                            |                                        |                                              |                             |                             |                                           |
-| [Markdrop](#markdrop)                     |                                         |                                   |                                            |                                        |                                              |                             |                             |                                           |
-| [Vision Parse](#Vision-Parse)             |                                         |                                   |                                            |                                        |                                              |                             |                             |                                           |
-| _↓ Proprietary pipelines_                 |                                         |                                   |                                            |                                        |                                              |                             |                             |                                           |
-| [Mistral OCR](#MistralOCR)                | 0.268                                   | 72.0 <sup>[3]</sup>               |                                            |                                        | **94.89 ⚠️**                                 |                             |                             |                                           |
-| [Google Document AI](#Google-Document-AI) |                                         |                                   | 67.8                                       |                                        | 83.42                                        | 90.86                       |                             |                                           |
-| [Azure OCR](#Azure-OCR)                   |                                         |                                   | 85.1                                       |                                        | 89.52                                        | 87.69                       |                             |                                           |
-| [Amazon Textract](#Amazon-Textract)       |                                         |                                   | 74.3                                       |                                        |                                              | 96.71                       |                             |                                           |
-| [LlamaParse](#LlamaParse)                 |                                         |                                   |                                            | 3.98                                   |                                              | 92.82                       |                             | 7.1                                       |
-| [Mathpix](#Mathpix)                       | 0.191                                   |                                   |                                            | 4.16                                   |                                              |                             |                             |                                           |
-| [upstage](#upstage-ai)                    |                                         |                                   |                                            |                                        |                                              | **97.02**  ⚠️               |                             |                                           |
-| [doc2x](#doc2x)                           |                                         |                                   |                                            |                                        |                                              |                             |                             |                                           |
-| _↓ Expert VLMs_                           |                                         |                                   |                                            |                                        |                                              |                             |                             |                                           |
-| [Nougat](#Nougat)                         | 0.452                                   |                                   |                                            |                                        |                                              |                             | **81.42**                   |                                           |
-| [GOT-OCR](#GOT-OCR)                       | 0.287                                   | 48.3                              |                                            |                                        |                                              |                             |                             |                                           |
-| [SmolDocling](#SmolDocling)               | 0.493                                   |                                   |                                            |                                        |                                              |                             |                             |                                           |
-| Nanonets-OCR                              |                                         | 64.5                              |                                            |                                        |                                              |                             |                             |                                           |
-| _↓ General VLMs_                          |                                         |                                   |                                            |                                        |                                              |                             |                             |                                           |
-| Gemini-1.5 Flash                          |                                         |                                   |                                            |                                        | 90.23                                        |                             |                             |                                           |
-| Gemini-1.5 Pro                            |                                         |                                   |                                            |                                        | 89.92                                        |                             |                             |                                           |
-| Gemini-2.0 Flash                          | 0.191                                   | 63.8                              | 86.1 <sup>[2]</sup>                        |                                        | 88.69                                        |                             |                             |                                           |
-| Gemini-2.5 Pro                            | 0.148 <sup>[2]</sup>                    |                                   |                                            |                                        |                                              |                             |                             |                                           |
-| GPT4o                                     | 0.233                                   | 69.9                              | 75.5                                       |                                        | 89.77                                        |                             |                             |                                           |
-| Claude Sonnet 3.5                         |                                         |                                   | 69.3                                       |                                        |                                              |                             |                             |                                           |
-| Qwen2-VL-72B                              | 0.252                                   |                                   |                                            |                                        |                                              |                             |                             |                                           |
-| Qwen2.5-VL-72B                            | 0.214                                   | 65.5                              |                                            |                                        |                                              |                             |                             |                                           |
-| InternVL2-76B                             | 0.44                                    |                                   |                                            |                                        |                                              |                             |                             |                                           |
+<benches>
+
+|                  Pipeline                   | [OmniDocBench](#omnidocbench) Overall ↓ | [OmniDocBench](#omnidocbench) New ↑ | [olmOCR](#olmoocr-eval) Overall ↑ | [dp-bench](#dp-bench) NID ↑ |
+|---------------------------------------------|-----------------------------------------|-------------------------------------|-----------------------------------|-----------------------------|
+|              [MinerU](#MinerU)              |         0.133 <sup>[2]</sup> ⚠️         |     **90.67 <sup>[1]</sup>** ⚠️     |               61.5                |            91.18            |
+|           [MonkeyOCR](#MonkeyOCR)           |         0.138 <sup>[3]</sup> ⚠️         |        88.85 <sup>[2]</sup>         |      75.8 <sup>[3]</sup> ⚠️       |                             |
+|      [PP-StructureV3](#PP-StructureV3)      |                  0.145                  |                86.73                |                                   |                             |
+|              [Marker](#Marker)              |                  0.296                  |                71.3                 |               70.1                |                             |
+|            [Pix2Text](#Pix2Text)            |                  0.32                   |                                     |                                   |                             |
+|              [olmOCR](#olmOCR)              |                  0.326                  |                81.79                |      78.5 <sup>[2]</sup> ⚠️       |                             |
+|        [Unstructured](#Unstructured)        |                  0.586                  |                                     |                                   |                             |
+|             [DocLing](#DocLing)             |                  0.589                  |                                     |                                   |                             |
+|          [Open-Parse](#Open-Parse)          |                  0.646                  |                                     |                                   |                             |
+|          [MarkItDown](#MarkItDown)          |                                         |                                     |                                   |                             |
+|               [Zerox](#Zerox)               |                                         |                                     |                                   |                             |
+|            [Markdrop](#Markdrop)            |                                         |                                     |                                   |                             |
+|        [Vision Parse](#Vision-Parse)        |                                         |                                     |                                   |                             |
+|            _↓ Specialized VLMs_             |                                         |                                     |                                   |                             |
+|            [dots.ocr](#dots.ocr)            |       **0.125 <sup>[1]</sup>** ⚠️       |        88.41 <sup>[3]</sup>         |    **79.1 <sup>[1]</sup>** ⚠️     |                             |
+|             [Dolphin](#Dolphin)             |                  0.205                  |                74.67                |                                   |                             |
+|             [OCRFlux](#OCRFlux)             |                  0.238                  |                74.82                |                                   |                             |
+|        [Nanonets-OCR](#Nanonets-OCR)        |                  0.283                  |                85.59                |               64.5                |                             |
+|             [GOT-OCR](#GOT-OCR)             |                  0.287                  |                                     |               48.3                |                             |
+|              [Nougat](#Nougat)              |                  0.452                  |                                     |                                   |                             |
+|         [SmolDocling](#SmolDocling)         |                  0.493                  |                                     |                                   |                             |
+|          _↓ Proprietary pipelines_          |                                         |                                     |                                   |                             |
+|             [Mathpix](#Mathpix)             |                  0.191                  |                                     |                                   |                             |
+|         [Mistral OCR](#Mistral-OCR)         |                  0.268                  |                78.83                |               72.0                |                             |
+|  [Google Document AI](#Google-Document-AI)  |                                         |                                     |                                   |            90.86            |
+|           [Azure OCR](#Azure-OCR)           |                                         |                                     |                                   |            87.69            |
+|     [Amazon Textract](#Amazon-Textract)     |                                         |                                     |                                   |    96.71 <sup>[2]</sup>     |
+|          [LlamaParse](#LlamaParse)          |                                         |                                     |                                   |    92.82 <sup>[3]</sup>     |
+|          [Upstage AI](#Upstage-AI)          |                                         |                                     |                                   |  **97.02 <sup>[1]</sup>**   |
+|               [doc2x](#doc2x)               |                                         |                                     |                                   |                             |
+|              _↓ General VLMs_               |                                         |                                     |                                   |                             |
+|               Gemini-2.5 Pro                |                  0.148                  |                88.03                |                                   |                             |
+|              Gemini-2.0 Flash               |                  0.191                  |                                     |               63.8                |                             |
+|               Qwen2.5-VL-72B                |                  0.214                  |                87.02                |               65.5                |                             |
+|                InternVL3-78B                |                  0.218                  |                80.33                |                                   |                             |
+|                    GPT4o                    |                  0.233                  |                75.02                |               69.9                |                             |
+|                Qwen2-VL-72B                 |                  0.252                  |                                     |               31.5                |                             |
+</benches>
 
 - **Bold** indicates the best result for a given metric, and <sup>[2]</sup> indicates 2nd place in that benchmark.
 - " " means the pipeline was not evaluated in that benchmark.
-- ⚠️ means the pipeline authors are the ones who did the benchmark.
+- ⚠️ means the pipeline authors are the ones who suggested the results.
 - `Overall ↑` in column name means higher value is better, when `Overall ↓` - lower value is better.
 
 ## Pipelines
@@ -139,6 +143,95 @@ handle a wide range of document types in all languages and produce structured ou
 - Includes specialized prompts for different use cases: layout detection, OCR-only, and grounding OCR
 - 4-bit quantized version available for consumer-grade GPUs
 
+### [OCRFlux](https://github.com/chatdoc-com/OCRFlux)
+[✏️](https://github.com/dantetemplar/pdf-extraction-agenda/issues/31)
+[![GitHub last commit](https://img.shields.io/github/last-commit/chatdoc-com/OCRFlux?label=GitHub&logo=github)](https://github.com/chatdoc-com/OCRFlux)
+![License](https://img.shields.io/badge/License-Apache--2.0-brightgreen)
+[![Demo](https://img.shields.io/badge/DEMO-black?logo=awwwards)](https://ocrflux.pdfparser.io/)
+
+**License:** Apache-2.0
+
+**Description:** OCRFlux is a multimodal large language model based toolkit designed to convert PDFs and images into clean, readable, plain Markdown text. It excels in complex layout handling, including multi-column layouts, figures, insets, complicated tables, and equations. The system also provides automated removal of headers and footers, alongside native support for cross-page table and paragraph merging, a pioneering feature among open-source OCR tools. Built on a 3 billion parameter vision-language model, it can run efficiently on GPUs such as the GTX 3090. OCRFlux provides batch inference support for whole documents and detailed parsing quality with benchmarks demonstrating significant improvements over several leading OCR models.​
+
+**Additional Notes:**
+- Recommended GPU: 24GB or more VRAM for best performance, but supports tensor parallelism to divide workload across multiple smaller GPUs
+- Includes Docker container support for easy deployment
+- Supports various command-line options for customizing inference, GPU memory utilization, page merging behavior, and data type selection
+- Outputs results as JSONL files convertible into Markdown documents
+- Developed and maintained by ChatDOC team
+- Has 2.3k stars on GitHub
+
+### [Dolphin](https://huggingface.co/ByteDance/Dolphin)
+[✏️](https://github.com/dantetemplar/pdf-extraction-agenda/issues/30)
+[![GitHub last commit](https://img.shields.io/github/last-commit/bytedance/Dolphin?label=GitHub&logo=github)](https://github.com/bytedance/Dolphin)
+![License](https://img.shields.io/badge/License-MIT-brightgreen)
+[![Demo](https://img.shields.io/badge/DEMO-black?logo=awwwards)](https://huggingface.co/spaces/ByteDance/Dolphin)
+[![API](https://img.shields.io/badge/API-Available-blue?logo=swagger&logoColor=85EA2D)](https://replicate.com/bytedance/dolphin)
+
+**License:** MIT
+
+**Description:** Dolphin is a novel multimodal document image parsing model (0.3B parameters) that follows an analyze-then-parse paradigm. It addresses complex document understanding challenges through a two-stage approach: Stage 1 performs comprehensive page-level layout analysis by generating element sequences in natural reading order, while Stage 2 enables efficient parallel parsing of document elements using heterogeneous anchors and task-specific prompts. The model handles intertwined elements such as text paragraphs, figures, formulas, and tables while maintaining superior efficiency through its lightweight architecture and parallel parsing mechanism. Built on a vision-encoder-decoder architecture using Swin Transformer for visual encoding and MBart for text decoding, Dolphin supports both page-level and element-level parsing tasks.
+
+**API Details:**
+- **API URL:** https://replicate.com/bytedance/dolphin
+- **Average Price:** Approximately $17 per 1000 pages (based on Replicate pricing of $0.017 per run)​
+
+**Additional Notes:**
+- Compact 0.3B parameter model optimized for efficiency
+- Supports both original config-based framework and Hugging Face integration
+- Multi-page PDF document parsing capability added in June 2025
+- TensorRT-LLM and vLLM support for accelerated inference
+- Two parsing granularities: page-level (entire document) and element-level (individual components)
+- Element-decoupled parsing strategy allows for easier data collection and training
+- Natural language prompt-based interface for controlling parsing tasks
+- Supports various document elements including text paragraphs, tables, formulas, and figures
+- Open-source with active development and community support (7.4k GitHub stars)
+- Published research paper accepted at ACL 2025 conference
+
+### [Nanonets-OCR](https://huggingface.co/nanonets/Nanonets-OCR-s)
+[✏️](https://github.com/dantetemplar/pdf-extraction-agenda/issues/32)
+[![GitHub last commit](https://img.shields.io/github/last-commit/NanoNets/docstrange?label=GitHub&logo=github)](https://github.com/NanoNets/docstrange)
+![License](https://img.shields.io/badge/License-Other (please specify below)-red)
+[![Demo](https://img.shields.io/badge/DEMO-black?logo=awwwards)](https://huggingface.co/spaces/Souvik3333/Nanonets-ocr-s)
+[![API](https://img.shields.io/badge/API-Available-blue?logo=swagger&logoColor=85EA2D)](https://nanonets.com/ocr-api)
+
+**License:** Other (please specify below)
+
+**Description:** Nanonets-OCR-s is a powerful open-source OCR model that converts images or documents into richly structured markdown with intelligent content recognition and semantic tags. Key features include automatic LaTeX equation recognition, intelligent image description, signature detection, watermark extraction, smart checkbox handling, and complex table extraction. It is designed for downstream processing by large language models for tasks like document understanding and parsing.
+
+**API Details:**
+- **API URL:** https://nanonets.com/ocr-api
+- **Pricing:** https://nanonets.com/pricing
+
+**Additional Notes:**
+- The open-source model supports inference via Hugging Face transformers and vLLM server.
+- It can be fine-tuned and adapted for custom datasets.
+- Useful for research, experimentation, and building customized OCR pipelines without commercial restrictions.
+
+### [PP-StructureV3](https://github.com/PaddlePaddle/PaddleOCR)
+[✏️](https://github.com/dantetemplar/pdf-extraction-agenda/issues/33)
+[![GitHub last commit](https://img.shields.io/github/last-commit/PaddlePaddle/PaddleOCR?label=GitHub&logo=github)](https://github.com/PaddlePaddle/PaddleOCR)
+![License](https://img.shields.io/badge/License-Apache--2.0-brightgreen)
+[![Demo](https://img.shields.io/badge/DEMO-black?logo=awwwards)](https://huggingface.co/spaces/PaddlePaddle/PP-StructureV3_Online_Demo)
+
+**License:** Apache-2.0
+
+**Description:** PP-StructureV3 is a multi-model pipeline for document image parsing that converts document images or PDFs into structured JSON and Markdown files. It integrates several key modules: preprocessing for image quality improvements, an OCR engine (PP-OCRv5), layout detection via PP-DocLayout-plus, document item recognition (tables, formulas, charts, seals), and post-processing to reconstruct element relationships and reading order. The pipeline is designed for high accuracy in complex layouts including multi-column texts, magazines, handwritten documents, and vertically typeset languages.
+
+It supports comprehensive recognition with specialized models for tables (PP-TableMagic), formulas (PP-FormulaNet_plus), charts (PP-Chart2Table), and seals (PP-OCRv4_seal). It achieves state-of-the-art results on benchmarks like OmniDocBench, especially for Chinese and English documents, competing well with expert and general vision-language models.
+
+**Additional Notes:**
+-   PP-StructureV3 uses PP-OCRv5 as the OCR backbone, which includes improvements in network architecture and training, supporting vertical text, handwriting, and rare Chinese characters.
+-   Preprocessing includes document orientation classification and text unwarping.
+-   Layout analysis uses PP-DocLayout-plus and a region detection model to handle multiple articles per page.
+-   Table recognition with PP-TableMagic outputs HTML formatted structures.
+-   Formula recognition with PP-FormulaNet_plus outputs LaTeX.
+-   Chart parsing converts charts into markdown tables.
+-   Seal recognition handles curved text and round/oval seals.
+-   Post-processing enhances reading order reconstruction especially for complex document layouts (e.g., multi-column magazines, vertical typesetting).
+-  Performance is tested on NVIDIA V100/A100 GPUs with detailed resource usage statistics available.
+-  The system can process PDFs and images and can save results in JSON and Markdown formats.
+
 ### [MarkItDown](https://github.com/microsoft/markitdown)
 
 [✏️](https://github.com/dantetemplar/pdf-extraction-agenda/issues/9)
@@ -207,7 +300,7 @@ NVIDIA 3090 GPU—making it practical for real‑world document workloads.
 
 **Benchmark Results:** https://github.com/Yuliang-Liu/MonkeyOCR?tab=readme-ov-file#benchmark-results
 
-### [MistralOCR](https://mistral.ai/news/mistral-ocr)
+### [Mistral OCR](https://mistral.ai/news/mistral-ocr)
 
 [✏️](https://github.com/dantetemplar/pdf-extraction-agenda/issues/20)
 ![License](https://img.shields.io/badge/License-Proprietary-red)
