@@ -18,45 +18,45 @@ contents [by default](https://github.blog/changelog/2021-04-13-table-of-contents
 
 <benches>
 
-|                  Pipeline                   | [OmniDocBench](#omnidocbench) Overall ↓ | [OmniDocBench](#omnidocbench) New ↑ | [olmOCR](#olmoocr-eval) Overall ↑ | [dp-bench](#dp-bench) NID ↑ |
-|---------------------------------------------|-----------------------------------------|-------------------------------------|-----------------------------------|-----------------------------|
-|              [MinerU](#MinerU)              |         0.133 <sup>[2]</sup> ⚠️         |     **90.67 <sup>[1]</sup>** ⚠️     |               61.5                |            91.18            |
-|           [MonkeyOCR](#MonkeyOCR)           |         0.138 <sup>[3]</sup> ⚠️         |        88.85 <sup>[2]</sup>         |      75.8 <sup>[3]</sup> ⚠️       |                             |
-|      [PP-StructureV3](#PP-StructureV3)      |                  0.145                  |                86.73                |                                   |                             |
-|              [Marker](#Marker)              |                  0.296                  |                71.3                 |               70.1                |                             |
-|            [Pix2Text](#Pix2Text)            |                  0.32                   |                                     |                                   |                             |
-|              [olmOCR](#olmOCR)              |                  0.326                  |                81.79                |      78.5 <sup>[2]</sup> ⚠️       |                             |
-|        [Unstructured](#Unstructured)        |                  0.586                  |                                     |                                   |                             |
-|             [DocLing](#DocLing)             |                  0.589                  |                                     |                                   |                             |
-|          [Open-Parse](#Open-Parse)          |                  0.646                  |                                     |                                   |                             |
-|          [MarkItDown](#MarkItDown)          |                                         |                                     |                                   |                             |
-|               [Zerox](#Zerox)               |                                         |                                     |                                   |                             |
-|            [Markdrop](#Markdrop)            |                                         |                                     |                                   |                             |
-|        [Vision Parse](#Vision-Parse)        |                                         |                                     |                                   |                             |
-|            _↓ Specialized VLMs_             |                                         |                                     |                                   |                             |
-|            [dots.ocr](#dotsocr)             |       **0.125 <sup>[1]</sup>** ⚠️       |        88.41 <sup>[3]</sup>         |    **79.1 <sup>[1]</sup>** ⚠️     |                             |
-|             [Dolphin](#Dolphin)             |                  0.205                  |                74.67                |                                   |                             |
-|             [OCRFlux](#OCRFlux)             |                  0.238                  |                74.82                |                                   |                             |
-|        [Nanonets-OCR](#Nanonets-OCR)        |                  0.283                  |                85.59                |               64.5                |                             |
-|             [GOT-OCR](#GOT-OCR)             |                  0.287                  |                                     |               48.3                |                             |
-|              [Nougat](#Nougat)              |                  0.452                  |                                     |                                   |                             |
-|         [SmolDocling](#SmolDocling)         |                  0.493                  |                                     |                                   |                             |
-|          _↓ Proprietary pipelines_          |                                         |                                     |                                   |                             |
-|             [Mathpix](#Mathpix)             |                  0.191                  |                                     |                                   |                             |
-|         [Mistral OCR](#Mistral-OCR)         |                  0.268                  |                78.83                |               72.0                |                             |
-|  [Google Document AI](#Google-Document-AI)  |                                         |                                     |                                   |            90.86            |
-|           [Azure OCR](#Azure-OCR)           |                                         |                                     |                                   |            87.69            |
-|     [Amazon Textract](#Amazon-Textract)     |                                         |                                     |                                   |    96.71 <sup>[2]</sup>     |
-|          [LlamaParse](#LlamaParse)          |                                         |                                     |                                   |    92.82 <sup>[3]</sup>     |
-|          [Upstage AI](#Upstage-AI)          |                                         |                                     |                                   |  **97.02 <sup>[1]</sup>**   |
-|               [doc2x](#doc2x)               |                                         |                                     |                                   |                             |
-|              _↓ General VLMs_               |                                         |                                     |                                   |                             |
-|               Gemini-2.5 Pro                |                  0.148                  |                88.03                |                                   |                             |
-|              Gemini-2.0 Flash               |                  0.191                  |                                     |               63.8                |                             |
-|               Qwen2.5-VL-72B                |                  0.214                  |                87.02                |               65.5                |                             |
-|                InternVL3-78B                |                  0.218                  |                80.33                |                                   |                             |
-|                    GPT4o                    |                  0.233                  |                75.02                |               69.9                |                             |
-|                Qwen2-VL-72B                 |                  0.252                  |                                     |               31.5                |                             |
+|                  Pipeline                   | [OmniDocBench](#omnidocbench) Overall ↓ | [OmniDocBench](#omnidocbench) New ↑ | [olmOCR](#olmoocr-eval) Overall ↑ |  [dp-bench](#dp-bench) NID ↑  |
+|---------------------------------------------|-----------------------------------------|-------------------------------------|-----------------------------------|-------------------------------|
+|              [MinerU](#MinerU)              |         0.133 <sup>[2]</sup> ⚠️         |     **90.67 <sup>[1]</sup>** ⚠️     |               61.5                |             91.18             |
+|           [MonkeyOCR](#MonkeyOCR)           |         0.138 <sup>[3]</sup> ⚠️         |        88.85 <sup>[2]</sup>         |      75.8 <sup>[3]</sup> ⚠️       |                               |
+|      [PP-StructureV3](#PP-StructureV3)      |                  0.145                  |                86.73                |                                   |                               |
+|              [Marker](#Marker)              |                  0.296                  |                71.3                 |               70.1                |                               |
+|            [Pix2Text](#Pix2Text)            |                  0.32                   |                                     |                                   |                               |
+|              [olmOCR](#olmOCR)              |                  0.326                  |                81.79                |      78.5 <sup>[2]</sup> ⚠️       |                               |
+|        [Unstructured](#Unstructured)        |                  0.586                  |                                     |                                   |                               |
+|             [DocLing](#DocLing)             |                  0.589                  |                                     |                                   |                               |
+|          [Open-Parse](#Open-Parse)          |                  0.646                  |                                     |                                   |                               |
+|          [MarkItDown](#MarkItDown)          |                                         |                                     |                                   |                               |
+|               [Zerox](#Zerox)               |                                         |                                     |                                   |                               |
+|            [Markdrop](#Markdrop)            |                                         |                                     |                                   |                               |
+|        [Vision Parse](#Vision-Parse)        |                                         |                                     |                                   |                               |
+|            _↓ Specialized VLMs_             |                                         |                                     |                                   |                               |
+|            [dots.ocr](#dotsocr)             |       **0.125 <sup>[1]</sup>** ⚠️       |        88.41 <sup>[3]</sup>         |    **79.1 <sup>[1]</sup>** ⚠️     |                               |
+|             [Dolphin](#Dolphin)             |                  0.205                  |                74.67                |                                   |                               |
+|             [OCRFlux](#OCRFlux)             |                  0.238                  |                74.82                |                                   |                               |
+|        [Nanonets-OCR](#Nanonets-OCR)        |                  0.283                  |                85.59                |               64.5                |                               |
+|             [GOT-OCR](#GOT-OCR)             |                  0.287                  |                                     |               48.3                |                               |
+|              [Nougat](#Nougat)              |                  0.452                  |                                     |                                   |                               |
+|         [SmolDocling](#SmolDocling)         |                  0.493                  |                                     |                                   |                               |
+|          _↓ Proprietary pipelines_          |                                         |                                     |                                   |                               |
+|             [Mathpix](#Mathpix)             |                  0.191                  |                                     |                                   |                               |
+|         [Mistral OCR](#Mistral-OCR)         |                  0.268                  |                78.83                |               72.0                |                               |
+|  [Google Document AI](#Google-Document-AI)  |                                         |                                     |                                   |             90.86             |
+|           [Azure OCR](#Azure-OCR)           |                                         |                                     |                                   |             87.69             |
+|     [Amazon Textract](#Amazon-Textract)     |                                         |                                     |                                   |     96.71 <sup>[2]</sup>      |
+|          [LlamaParse](#LlamaParse)          |                                         |                                     |                                   |     92.82 <sup>[3]</sup>      |
+|          [Upstage AI](#Upstage-AI)          |                                         |                                     |                                   |  **97.02 <sup>[1]</sup>** ⚠️  |
+|               [doc2x](#doc2x)               |                                         |                                     |                                   |                               |
+|              _↓ General VLMs_               |                                         |                                     |                                   |                               |
+|               Gemini-2.5 Pro                |                  0.148                  |                88.03                |                                   |                               |
+|              Gemini-2.0 Flash               |                  0.191                  |                                     |               63.8                |                               |
+|               Qwen2.5-VL-72B                |                  0.214                  |                87.02                |               65.5                |                               |
+|                InternVL3-78B                |                  0.218                  |                80.33                |                                   |                               |
+|                    GPT4o                    |                  0.233                  |                75.02                |               69.9                |                               |
+|                Qwen2-VL-72B                 |                  0.252                  |                                     |               31.5                |                               |
 </benches>
 
 - **Bold** indicates the best result for a given metric, and <sup>[2]</sup> indicates 2nd place in that benchmark.

@@ -10,7 +10,7 @@ RESULTS_REPORTED_BY_AUTHORS = {
     "OmniDocBench Overall ↓": ["MinerU", "MonkeyOCR", "dots.ocr"],
     "OmniDocBench New ↑": ["MinerU"],
     "olmOCR Overall ↑": ["olmOCR", "MonkeyOCR", "dots.ocr"],
-    "dp-bench NID ↑": ["upstage"],
+    "dp-bench NID ↑": ["Upstage AI"],
 }
 CONVERT_COLUMNS = {
     "OmniDocBench Overall ↓": " [OmniDocBench](#omnidocbench) Overall ↓ ",
