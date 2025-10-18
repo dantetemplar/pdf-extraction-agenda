@@ -21,7 +21,7 @@ contents [by default](https://github.blog/changelog/2021-04-13-table-of-contents
 |                  Pipeline                   | [OmniDocBench](#omnidocbench) Overall ↓ | [OmniDocBench](#omnidocbench) New ↑ | [olmOCR](#olmoocr-eval) Overall ↑ |  [dp-bench](#dp-bench) NID ↑  |
 |---------------------------------------------|-----------------------------------------|-------------------------------------|-----------------------------------|-------------------------------|
 |              [MinerU](#MinerU)              |         0.133 <sup>[2]</sup> ⚠️         |     **90.67 <sup>[1]</sup>** ⚠️     |               61.5                |             91.18             |
-|           [MonkeyOCR](#MonkeyOCR)           |         0.138 <sup>[3]</sup> ⚠️         |        88.85 <sup>[2]</sup>         |      75.8 <sup>[3]</sup> ⚠️       |                               |
+|           [MonkeyOCR](#MonkeyOCR)           |                  0.138                  |        88.85 <sup>[2]</sup>         |      75.8 <sup>[3]</sup> ⚠️       |                               |
 |      [PP-StructureV3](#PP-StructureV3)      |                  0.145                  |                86.73                |                                   |                               |
 |              [Marker](#Marker)              |                  0.296                  |                71.3                 |               70.1                |                               |
 |            [Pix2Text](#Pix2Text)            |                  0.32                   |                                     |                                   |                               |
@@ -35,6 +35,7 @@ contents [by default](https://github.blog/changelog/2021-04-13-table-of-contents
 |        [Vision Parse](#Vision-Parse)        |                                         |                                     |                                   |                               |
 |            _↓ Specialized VLMs_             |                                         |                                     |                                   |                               |
 |            [dots.ocr](#dotsocr)             |       **0.125 <sup>[1]</sup>** ⚠️       |        88.41 <sup>[3]</sup>         |    **79.1 <sup>[1]</sup>** ⚠️     |                               |
+|       [POINTS-Reader](#POINTS-Reader)       |         0.133 <sup>[3]</sup> ⚠️         |                80.98                |                                   |                               |
 |             [Dolphin](#Dolphin)             |                  0.205                  |                74.67                |                                   |                               |
 |             [OCRFlux](#OCRFlux)             |                  0.238                  |                74.82                |                                   |                               |
 |        [Nanonets-OCR](#Nanonets-OCR)        |                  0.283                  |                85.59                |               64.5                |                               |
@@ -297,6 +298,25 @@ covering 10+ document types), MonkeyOCR achieves state‑of‑the‑art performa
 Remarkably, the 3B‑parameter variant runs efficiently—approximately 0.84 pages per second on multi‑page input using a single 
 NVIDIA 3090 GPU—making it practical for real‑world document workloads.
 
+### [POINTS-Reader](https://huggingface.co/tencent/POINTS-Reader)
+[✏️](https://github.com/dantetemplar/pdf-extraction-agenda/issues/34)
+[![GitHub last commit](https://img.shields.io/github/last-commit/Tencent/POINTS-Reader?label=GitHub&logo=github)](https://github.com/Tencent/POINTS-Reader)
+![License](https://img.shields.io/badge/License-MIT-brightgreen)
+[![Demo](https://img.shields.io/badge/DEMO-black?logo=awwwards)](https://huggingface.co/spaces/prithivMLmods/POINTS-Reader-OCR)
+
+**License:** MIT
+
+**Description:** POINTS-Reader is a powerful, distillation-free vision-language model for end-to-end document conversion developed by Tencent's WeChat AI team. It supports English and Chinese document extraction with a streamlined model architecture based on the POINTS1.5 structure, replacing Qwen2.5-7B-Instruct with the more efficient Qwen2.5-3B-Instruct. The input is a fixed prompt with a document image, and the output is a text string representing the extracted content without post-processing. The model excels in handling complex documents including tables, formulas, and multi-column layouts and is designed for high throughput in production environments with support for inference frameworks like SGLang and upcoming vLLM. It employs a novel two-stage data augmentation strategy: first training on large-scale synthetic data, then iteratively self-improving through annotation filtering and retraining on real-world documents. This approach achieves state-of-the-art performance, notably 0.133 overall score for English and 0.212 for Chinese on the OmniDocBench benchmark.
+
+**Additional Notes:**
+- Built on a compact yet effective architecture prioritizing throughput and efficiency.
+- Offers a distillation-free two-stage training approach for continuous self-improvement without teacher model reliance.
+- Unified output format with consistent representation for text, tables (HTML), and formulas (LaTeX).
+- High scalability with support for large-scale synthetic data and real-world document adaptation.
+- Currently supports English and Chinese; multilingual support is limited compared to dots.ocr.
+- Designed to work well in production environments with mainstream inference frameworks (SGLang, upcoming vLLM support).
+- Open-source with source code and model weights available on GitHub and Hugging Face.
+- Suitable for complex layout parsing involving tables, multi-column text, and formulas with minimal post-processing needed.
 
 **Benchmark Results:** https://github.com/Yuliang-Liu/MonkeyOCR?tab=readme-ov-file#benchmark-results
 
