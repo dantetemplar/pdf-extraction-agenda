@@ -192,7 +192,7 @@ handle a wide range of document types in all languages and produce structured ou
 ### [Nanonets-OCR](https://huggingface.co/nanonets/Nanonets-OCR-s)
 [✏️](https://github.com/dantetemplar/pdf-extraction-agenda/issues/32)
 [![GitHub last commit](https://img.shields.io/github/last-commit/NanoNets/docstrange?label=GitHub&logo=github)](https://github.com/NanoNets/docstrange)
-[![Demo](https://img.shields.io/badge/DEMO-black?logo=awwwards)](https://huggingface.co/spaces/Souvik3333/Nanonets-ocr-s)
+[![Demo](https://img.shields.io/badge/DEMO-black?logo=awwwards)](https://docstrange.nanonets.com/)
 [![API](https://img.shields.io/badge/API-Available-blue?logo=swagger&logoColor=85EA2D)](https://nanonets.com/ocr-api)
 
 **Description:** Nanonets-OCR-s is a powerful open-source OCR model that converts images or documents into richly structured markdown with intelligent content recognition and semantic tags. Key features include automatic LaTeX equation recognition, intelligent image description, signature detection, watermark extraction, smart checkbox handling, and complex table extraction. It is designed for downstream processing by large language models for tasks like document understanding and parsing.
