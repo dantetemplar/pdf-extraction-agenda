@@ -20,12 +20,12 @@ contents [by default](https://github.blog/changelog/2021-04-13-table-of-contents
 
 |                  Pipeline                   | [OmniDocBench](#omnidocbench) Overall ↓ | [OmniDocBench](#omnidocbench) New ↑ | [olmOCR](#olmoocr-eval) Overall ↑ |  [dp-bench](#dp-bench) NID ↑  |
 |---------------------------------------------|-----------------------------------------|-------------------------------------|-----------------------------------|-------------------------------|
-|              [MinerU](#MinerU)              |         0.133 <sup>[2]</sup> ⚠️         |     **90.67 <sup>[1]</sup>** ⚠️     |               61.5                |             91.18             |
-|           [MonkeyOCR](#MonkeyOCR)           |                  0.138                  |        88.85 <sup>[2]</sup>         |      75.8 <sup>[3]</sup> ⚠️       |                               |
+|              [MinerU](#MinerU)              |         0.133 <sup>[2]</sup> ⚠️         |       90.67 <sup>[2]</sup> ⚠️       |               75.2                |             91.18             |
+|           [MonkeyOCR](#MonkeyOCR)           |                  0.138                  |        88.85 <sup>[3]</sup>         |               75.8                |                               |
 |      [PP-StructureV3](#PP-StructureV3)      |                  0.145                  |                86.73                |                                   |                               |
-|              [Marker](#Marker)              |                  0.296                  |                71.3                 |               70.1                |                               |
+|              [Marker](#Marker)              |                  0.296                  |                71.3                 |               76.1                |                               |
 |            [Pix2Text](#Pix2Text)            |                  0.32                   |                                     |                                   |                               |
-|              [olmOCR](#olmOCR)              |                  0.326                  |                81.79                |      78.5 <sup>[2]</sup> ⚠️       |                               |
+|              [olmOCR](#olmOCR)              |                  0.326                  |                81.79                |      82.4 <sup>[2]</sup> ⚠️       |                               |
 |        [Unstructured](#Unstructured)        |                  0.586                  |                                     |                                   |                               |
 |             [DocLing](#DocLing)             |                  0.589                  |                                     |                                   |                               |
 |          [Open-Parse](#Open-Parse)          |                  0.646                  |                                     |                                   |                               |
@@ -34,11 +34,14 @@ contents [by default](https://github.blog/changelog/2021-04-13-table-of-contents
 |            [Markdrop](#Markdrop)            |                                         |                                     |                                   |                               |
 |        [Vision Parse](#Vision-Parse)        |                                         |                                     |                                   |                               |
 |            _↓ Specialized VLMs_             |                                         |                                     |                                   |                               |
-|            [dots.ocr](#dotsocr)             |       **0.125 <sup>[1]</sup>** ⚠️       |        88.41 <sup>[3]</sup>         |    **79.1 <sup>[1]</sup>** ⚠️     |                               |
+|        [PaddleOCR-VL](#PaddleOCR-VL)        |                                         |      **91.93 <sup>[1]</sup>**       |      80.0 <sup>[3]</sup> ⚠️       |                               |
+|        [Deepseek OCR](#Deepseek-OCR)        |                                         |                87.01                |               75.7                |                               |
+|            [dots.ocr](#dotsocr)             |       **0.125 <sup>[1]</sup>** ⚠️       |                88.41                |               79.1                |                               |
 |       [POINTS-Reader](#POINTS-Reader)       |         0.133 <sup>[3]</sup> ⚠️         |                80.98                |                                   |                               |
-|             [Dolphin](#Dolphin)             |                  0.205                  |                74.67                |                                   |                               |
+|     [Infinity Parser](#Infinity-Parser)     |                  0.141                  |                                     |    **82.5 <sup>[1]</sup>** ⚠️     |                               |
+|             [Dolphin](#Dolphin)             |                  0.205                  |                83.21                |                                   |                               |
 |             [OCRFlux](#OCRFlux)             |                  0.238                  |                74.82                |                                   |                               |
-|        [Nanonets-OCR](#Nanonets-OCR)        |                  0.283                  |                85.59                |               64.5                |                               |
+|        [Nanonets-OCR](#Nanonets-OCR)        |                  0.283                  |                85.59                |               69.5                |                               |
 |             [GOT-OCR](#GOT-OCR)             |                  0.287                  |                                     |               48.3                |                               |
 |              [Nougat](#Nougat)              |                  0.452                  |                                     |                                   |                               |
 |         [SmolDocling](#SmolDocling)         |                  0.493                  |                                     |                                   |                               |
@@ -316,6 +319,29 @@ NVIDIA 3090 GPU—making it practical for real‑world document workloads.
 - Suitable for complex layout parsing involving tables, multi-column text, and formulas with minimal post-processing needed.
 
 **Benchmark Results:** https://github.com/Yuliang-Liu/MonkeyOCR?tab=readme-ov-file#benchmark-results
+
+### [PaddleOCR-VL](https://huggingface.co/PaddlePaddle/PaddleOCR-VL)
+[✏️](https://github.com/dantetemplar/pdf-extraction-agenda/issues/36)
+[![GitHub last commit](https://img.shields.io/github/last-commit/PaddlePaddle/PaddleOCR?label=GitHub&logo=github)](https://github.com/PaddlePaddle/PaddleOCR)
+![License](https://img.shields.io/badge/License-Apache--2.0-brightgreen)
+[![Demo](https://img.shields.io/badge/DEMO-black?logo=awwwards)](https://huggingface.co/spaces/PaddlePaddle/PaddleOCR-VL_Online_Demo)
+
+**License:** Apache-2.0
+### [Deepseek OCR](https://huggingface.co/deepseek-ai/DeepSeek-OCR)
+[✏️](https://github.com/dantetemplar/pdf-extraction-agenda/issues/35)
+[![GitHub last commit](https://img.shields.io/github/last-commit/deepseek-ai/DeepSeek-OCR?label=GitHub&logo=github)](https://github.com/deepseek-ai/DeepSeek-OCR)
+![License](https://img.shields.io/badge/License-MIT-brightgreen)
+[![Demo](https://img.shields.io/badge/DEMO-black?logo=awwwards)](https://huggingface.co/spaces/merterbak/DeepSeek-OCR-Demo)
+
+**License:** MIT
+
+### [Infinity Parser](https://huggingface.co/infly/Infinity-Parser-7B)
+[✏️](https://github.com/dantetemplar/pdf-extraction-agenda/issues/37)
+[![GitHub last commit](https://img.shields.io/github/last-commit/infly-ai/INF-MLLM?label=GitHub&logo=github)](https://github.com/infly-ai/INF-MLLM)
+![License](https://img.shields.io/badge/License-Apache--2.0-brightgreen)
+[![Demo](https://img.shields.io/badge/DEMO-black?logo=awwwards)](https://huggingface.co/spaces/infly/Infinity-Parser-Demo)
+
+**License:** Apache-2.0
 
 ### [Mistral OCR](https://mistral.ai/news/mistral-ocr)
 

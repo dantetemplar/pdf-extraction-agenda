@@ -7,9 +7,9 @@ from py_markdown_table.markdown_table import markdown_table
 
 NOT_PIPELINES = ["↓ Specialized VLMs", "↓ Proprietary pipelines", "↓ General VLMs"]
 RESULTS_REPORTED_BY_AUTHORS = {
-    "OmniDocBench Overall ↓": ["MinerU", "MonkeyOCR", "dots.ocr", "POINTS-Reader"],
+    "OmniDocBench Overall ↓": ["MinerU", "MonkeyOCR", "dots.ocr", "POINTS-Reader", "Infinity Parser"],
     "OmniDocBench New ↑": ["MinerU"],
-    "olmOCR Overall ↑": ["olmOCR", "MonkeyOCR", "dots.ocr"],
+    "olmOCR Overall ↑": ["olmOCR", "MonkeyOCR", "dots.ocr", "Infinity Parser", "PaddleOCR-VL"],
     "dp-bench NID ↑": ["Upstage AI"],
 }
 CONVERT_COLUMNS = {
